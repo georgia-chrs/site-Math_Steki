@@ -84,4 +84,3 @@ INSERT INTO Classes (class_name, course_id, teacher_id) VALUES ('Α1 Μαθημ�
 INSERT INTO Students (first_name, last_name, father_name, username, password_hash) VALUES ('Μαρία', 'Ιωάννου', 'Νίκος', 'mariaio', '123');
 INSERT INTO Enrollments (student_id, class_id) VALUES (1, 1);
 INSERT INTO Grades (enrollment_id, grade, comments) VALUES (1, 18.5, 'Πολύ καλή πρόοδος');
--- ...existing code...
