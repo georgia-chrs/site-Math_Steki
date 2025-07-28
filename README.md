@@ -8,3 +8,12 @@
 -dynamic text (at the bottom of the sdmin page , the administrator can change the "teachers" text and the changes will be visible to evry user )
 
 The design is still under construction 
+
+
+Commands:
+------      npm run dev      --------
+
+node db.js
+node app.js
+node hash.js  (για εξαγωγή κωδικών )
+
