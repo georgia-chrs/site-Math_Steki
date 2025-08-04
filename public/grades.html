@@ -30,15 +30,46 @@
   </header>
   
   <main>
-    <!-- ++Μαθήματα στην καρτελα  -->
-   <div class="student-container1">
-    <h1>Βαθμολογίες Μαθητή</h1>
-  
-  </div>
-
-
-
-
+    <div class="student-container">
+      <h1>Βαθμολογίες Μαθητή</h1>
+      
+      <div id="studentInfo" style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: none;">
+        <h3>Στοιχεία Μαθητή</h3>
+        <div id="studentDetails"></div>
+      </div>
+      
+      <div id="gradesContainer">
+        <div id="loadingMessage" style="text-align: center; padding: 40px; color: #666;">
+          Φόρτωση βαθμολογίας...
+        </div>
+        
+        <div id="gradesContent" style="display: none;">
+          <div class="grades-filters" style="margin-bottom: 20px; padding: 20px; background: #f5f5f5; border-radius: 8px;">
+            <label for="subjectFilter">Φίλτρο ανά μάθημα:</label>
+            <select id="subjectFilter" style="margin-left: 10px; margin-right: 20px; padding: 8px; border-radius: 4px; border: 1px solid #ddd;">
+              <option value="">Όλα τα μαθήματα</option>
+            </select>
+            
+            <label for="examTypeFilter">Φίλτρο ανά τύπο:</label>
+            <select id="examTypeFilter" style="margin-left: 10px; padding: 8px; border-radius: 4px; border: 1px solid #ddd;">
+              <option value="">Όλοι οι τύποι</option>
+            </select>
+          </div>
+          
+          <div id="gradesStats" style="margin-bottom: 20px;">
+            <!-- Grade statistics will be displayed here -->
+          </div>
+          
+          <div id="gradesList">
+            <!-- Grades will be loaded here -->
+          </div>
+        </div>
+        
+        <div id="noGradesMessage" style="text-align: center; padding: 40px; color: #666; display: none;">
+          Δεν υπάρχουν βαθμοί για αυτόν τον μαθητή.
+        </div>
+      </div>
+    </div>
   </main>
   <footer>
     <div class="footer-content">

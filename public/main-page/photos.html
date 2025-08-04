@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Μαθητικό Στέκι - Φωτογραφίες</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <style>
+    .photos-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+
+    .photos-container h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 3rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+
+    .photo-gallery {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      overflow: hidden;
+      padding: 2rem;
+    }
+
+    .gallery-container {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .photos-wrapper {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .photo-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .photo-slide.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .photo-slide.prev {
+      transform: translateX(-100%);
+    }
+
+    .photo-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-slide img:not(.loaded) {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+    }
+
+    .photo-slide img.loaded {
+      animation: none;
+      background: none;
+    }
+
+    @keyframes loading {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .photo-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      padding: 2rem 1.5rem 1rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.9);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .nav-btn:hover {
+      background: white;
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .prev-btn {
+      left: 1rem;
+    }
+
+    .next-btn {
+      right: 1rem;
+    }
+
+    .nav-btn svg {
+      color: #2c3e50;
+    }
+
+    .photo-thumbnails {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .thumbnail {
+      width: 80px;
+      height: 60px;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 3px solid transparent;
+    }
+
+    .thumbnail:hover {
+      transform: scale(1.05);
+    }
+
+    .thumbnail.active {
+      border-color: #3498db;
+      transform: scale(1.1);
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-counter {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .photos-container {
+        padding: 0 1rem;
+      }
+      
+      .photos-wrapper {
+        height: 300px;
+      }
+
+      .nav-btn {
+        width: 40px;
+        height: 40px;
+      }
+
+      .prev-btn {
+        left: 0.5rem;
+      }
+
+      .next-btn {
+        right: 0.5rem;
+      }
+
+      .thumbnail {
+        width: 60px;
+        height: 45px;
+      }
+
+      .photo-caption {
+        font-size: 1rem;
+        padding: 1.5rem 1rem 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .photos-wrapper {
+        height: 250px;
+      }
+      
+      .thumbnail {
+        width: 50px;
+        height: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="logo"><img src="logo.png" alt="logo"></div>
+      <nav>
+        <a href="#">Αρχική Σελίδα</a>
+        <a href="#">Προγράμματα</a>
+        <a href="#">Πανελλαδικές Εξετάσεις</a>
+        <a href="#">Φωτογραφίες</a>
+        <a href="#">Σχετικά με εμάς</a>
+      </nav>
+      <div class="icons">
+        <a href="#"><img src="\elements\Group 17.svg" alt="fb" class="facebook-icon"></a>
+        <a href="#"><img src="\elements\mdi_instagram.svg" alt="insta" class="instagram-icon"></a>
+        <a href="#"><img src="\elements\phone.svg" alt="phone"></a>
+        <a href="#"><img src="\elements\mail.svg" alt="mail"></a>
+      </div>
+      <a href="../index2.html" class="login-btn" style="text-decoration: none;">Είσοδος</a>
+    </div>
+  </header>
+  
+  <main>
+    <div class="photos-container">
+      <h1>Φωτογραφίες του Μαθητικού Στεκιού</h1>
+      
+      <div style="text-align: center; margin-bottom: 1rem;">
+        <button onclick="loadPhotosFromAPI()" style="padding: 0.5rem 1rem; background: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">
+          🔄 Ανανέωση φωτογραφιών
+        </button>
+      </div>
+      
+      <div class="photo-gallery">
+        <div class="gallery-container">
+          <button class="nav-btn prev-btn" id="prevBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          
+          <div class="photos-wrapper" id="photosWrapper">
+            <!-- Photos will be loaded dynamically -->
+            <div class="loading-placeholder" style="display: flex; align-items: center; justify-content: center; height: 100%; color: #666;">
+              <div style="text-align: center;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">📷</div>
+                <p>Φόρτωση φωτογραφιών...</p>
+              </div>
+            </div>
+          </div>
+          
+          <button class="nav-btn next-btn" id="nextBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="photo-thumbnails" id="photoThumbnails">
+          <!-- Thumbnails will be loaded dynamically -->
+        </div>
+        
+        <div class="photo-counter">
+          <span id="currentPhoto">0</span> / <span id="totalPhotos">0</span>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">Μαθητικό Στέκι</div>
+      <div class="footer-links"  data-id="footer-links">
+        <span>Καθηγητές:</span>
+        <span>...</span>
+      </div>
+      <div class="footer-map" >
+        <img src="map.png" alt="Χάρτης">
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Μαθητικό Στέκι
+    </div>
+  </footer>
+  
+  <script src="../main.js"></script>
+  <script src="../client-text.js"></script>
+  
+  <script>
+    class PhotoGallery {
+      constructor() {
+        this.currentSlide = 0;
+        this.slides = document.querySelectorAll('.photo-slide');
+        this.thumbnails = document.querySelectorAll('.thumbnail');
+        this.totalSlides = this.slides.length;
+        this.autoSlideInterval = null;
+        
+        this.init();
+      }
+      
+      init() {
+        // Refresh slides and thumbnails (in case they were loaded dynamically)
+        this.slides = document.querySelectorAll('.photo-slide');
+        this.thumbnails = document.querySelectorAll('.thumbnail');
+        this.totalSlides = this.slides.length;
+        
+        if (this.totalSlides === 0) return; // No photos to display
+        
+        // Ensure first slide is visible
+        if (this.slides[0]) this.slides[0].classList.add('active');
+        if (this.thumbnails[0]) this.thumbnails[0].classList.add('active');
+        
+        // Event listeners for navigation buttons
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        
+        if (prevBtn) prevBtn.addEventListener('click', () => this.prevSlide());
+        if (nextBtn) nextBtn.addEventListener('click', () => this.nextSlide());
+        
+        // Event listeners for thumbnails
+        this.thumbnails.forEach((thumb, index) => {
+          thumb.addEventListener('click', () => this.goToSlide(index));
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') this.prevSlide();
+          if (e.key === 'ArrowRight') this.nextSlide();
+        });
+        
+        // Touch/swipe support
+        this.addTouchSupport();
+        
+        // Auto-slide functionality
+        this.startAutoSlide();
+        
+        // Pause auto-slide on hover
+        const gallery = document.querySelector('.gallery-container');
+        gallery.addEventListener('mouseenter', () => this.stopAutoSlide());
+        gallery.addEventListener('mouseleave', () => this.startAutoSlide());
+        
+        // Update counter
+        this.updateCounter();
+      }
+      
+      goToSlide(slideIndex) {
+        // Remove active classes
+        this.slides[this.currentSlide].classList.remove('active');
+        this.thumbnails[this.currentSlide].classList.remove('active');
+        
+        // Add prev class for smooth transition
+        if (slideIndex < this.currentSlide) {
+          this.slides[this.currentSlide].classList.add('prev');
+        }
+        
+        // Update current slide
+        this.currentSlide = slideIndex;
+        
+        // Add active classes
+        this.slides[this.currentSlide].classList.add('active');
+        this.thumbnails[this.currentSlide].classList.add('active');
+        
+        // Remove prev class after transition
+        setTimeout(() => {
+          this.slides.forEach(slide => slide.classList.remove('prev'));
+        }, 600);
+        
+        this.updateCounter();
+      }
+      
+      nextSlide() {
+        const nextIndex = (this.currentSlide + 1) % this.totalSlides;
+        this.goToSlide(nextIndex);
+      }
+      
+      prevSlide() {
+        const prevIndex = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+        this.goToSlide(prevIndex);
+      }
+      
+      updateCounter() {
+        const currentPhotoEl = document.getElementById('currentPhoto');
+        const totalPhotosEl = document.getElementById('totalPhotos');
+        
+        if (currentPhotoEl) currentPhotoEl.textContent = this.currentSlide + 1;
+        if (totalPhotosEl) totalPhotosEl.textContent = this.totalSlides;
+      }
+      
+      startAutoSlide() {
+        this.stopAutoSlide();
+        this.autoSlideInterval = setInterval(() => {
+          this.nextSlide();
+        }, 5000); // Change slide every 5 seconds
+      }
+      
+      stopAutoSlide() {
+        if (this.autoSlideInterval) {
+          clearInterval(this.autoSlideInterval);
+          this.autoSlideInterval = null;
+        }
+      }
+      
+      addTouchSupport() {
+        const gallery = document.querySelector('.photos-wrapper');
+        let startX = 0;
+        let endX = 0;
+        
+        gallery.addEventListener('touchstart', (e) => {
+          startX = e.touches[0].clientX;
+        });
+        
+        gallery.addEventListener('touchmove', (e) => {
+          e.preventDefault(); // Prevent scrolling
+        });
+        
+        gallery.addEventListener('touchend', (e) => {
+          endX = e.changedTouches[0].clientX;
+          const difference = startX - endX;
+          
+          if (Math.abs(difference) > 50) { // Minimum swipe distance
+            if (difference > 0) {
+              this.nextSlide(); // Swipe left - next slide
+            } else {
+              this.prevSlide(); // Swipe right - previous slide
+            }
+          }
+        });
+      }
+    }
+    
+    // Initialize gallery when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      // Load photos from API and initialize gallery
+      loadPhotosFromAPI();
+      
+      // Set up auto-refresh every 30 seconds to check for new photos
+      setInterval(loadPhotosFromAPI, 30000);
+    });
+
+    // Function to load photos from API
+    async function loadPhotosFromAPI() {
+      try {
+        const response = await fetch('/api/photos');
+        if (!response.ok) {
+          throw new Error('Failed to load photos');
+        }
+
+        const photos = await response.json();
+        
+        if (photos.length === 0) {
+          showNoPhotosMessage();
+          return;
+        }
+
+        renderPhotosGallery(photos);
+        initializePhotoGallery(photos);
+      } catch (error) {
+        console.error('Error loading photos:', error);
+        showErrorMessage();
+      }
+    }
+
+    // Function to render photos gallery HTML
+    function renderPhotosGallery(photos) {
+      const photosWrapper = document.getElementById('photosWrapper');
+      const photoThumbnails = document.getElementById('photoThumbnails');
+      
+      // Render main slides
+      const slidesHTML = photos.map((photo, index) => `
+        <div class="photo-slide ${index === 0 ? 'active' : ''}">
+          <img src="/photos/${photo.filename}" alt="${photo.filename}">
+          <div class="photo-caption">${getPhotoCaption(photo.filename, index)}</div>
+        </div>
+      `).join('');
+      
+      photosWrapper.innerHTML = slidesHTML;
+      
+      // Render thumbnails
+      const thumbnailsHTML = photos.map((photo, index) => `
+        <div class="thumbnail ${index === 0 ? 'active' : ''}" data-slide="${index}">
+          <img src="/photos/${photo.filename}" alt="Thumbnail ${index + 1}">
+        </div>
+      `).join('');
+      
+      photoThumbnails.innerHTML = thumbnailsHTML;
+      
+      // Update counter
+      document.getElementById('totalPhotos').textContent = photos.length;
+      document.getElementById('currentPhoto').textContent = photos.length > 0 ? '1' : '0';
+    }
+
+    // Function to get caption for photos
+    function getPhotoCaption(filename, index) {
+      // Default captions - you can customize this based on filename or add a caption field to the API
+      const captions = [
+        'Εξωτερική άποψη του Μαθητικού Στεκιού',
+        'Εσωτερικός χώρος - Διάδρομος',
+        'Αίθουσα διδασκαλίας',
+        'Χώρος μελέτης',
+        'Δημιουργικές δραστηριότητες μαθητών',
+        'Εορταστικές στιγμές',
+        'Χριστουγεννιάτικη ατμόσφαιρα',
+        'Εορταστικός στολισμός'
+      ];
+      
+      return captions[index] || `Φωτογραφία ${index + 1} - ${filename}`;
+    }
+
+    // Function to initialize photo gallery after photos are loaded
+    function initializePhotoGallery(photos) {
+      if (photos.length === 0) return;
+      
+      // Simple image loading handler
+      const images = document.querySelectorAll('.photo-slide img, .thumbnail img');
+      images.forEach((img, index) => {
+        img.addEventListener('error', function() {
+          console.error(`Image failed to load: ${this.src}`);
+          const placeholder = document.createElement('div');
+          placeholder.style.cssText = `
+            width: 100%;
+            height: 100%;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+          `;
+          placeholder.textContent = `Εικόνα ${index + 1} - Δεν βρέθηκε`;
+          this.parentNode.replaceChild(placeholder, this);
+        });
+        
+        img.addEventListener('load', function() {
+          this.classList.add('loaded');
+        });
+      });
+      
+      new PhotoGallery();
+    }
+
+    // Function to show no photos message
+    function showNoPhotosMessage() {
+      const photosWrapper = document.getElementById('photosWrapper');
+      photosWrapper.innerHTML = `
+        <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #666; text-align: center;">
+          <div>
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📷</div>
+            <h3>Δεν υπάρχουν φωτογραφίες</h3>
+            <p>Δεν έχουν ανέβει φωτογραφίες ακόμη.</p>
+          </div>
+        </div>
+      `;
+      
+      document.getElementById('photoThumbnails').innerHTML = '';
+      document.getElementById('totalPhotos').textContent = '0';
+      document.getElementById('currentPhoto').textContent = '0';
+    }
+
+    // Function to show error message
+    function showErrorMessage() {
+      const photosWrapper = document.getElementById('photosWrapper');
+      photosWrapper.innerHTML = `
+        <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #e74c3c; text-align: center;">
+          <div>
+            <div style="font-size: 3rem; margin-bottom: 1rem;"></div>
+            <h3>Σφάλμα φόρτωσης</h3>
+            <p>Δεν ήταν δυνατή η φόρτωση των φωτογραφιών.</p>
+            <button onclick="loadPhotosFromAPI()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer;">
+              Δοκιμή ξανά
+            </button>
+          </div>
+        </div>
+      `;
+    }
+    
+    // Image loading with error handling
+    document.addEventListener('DOMContentLoaded', () => {
+      const images = document.querySelectorAll('.photo-slide img, .thumbnail img');
+      images.forEach((img, index) => {
+        console.log(`Image ${index + 1}: ${img.src}`);
+      });
+    });
+  </script>
+
+
+</body>
+</html>

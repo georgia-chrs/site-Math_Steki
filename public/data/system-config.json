@@ -1,0 +1,93 @@
+{
+  "lykeiaTypes": [
+    {
+      "id": "gel",
+      "name": "ΓΕΛ",
+      "pedia": ["anthropistikes", "thetikes", "ygeia", "oikonomikes"]
+    },
+    {
+      "id": "epal",
+      "name": "ΕΠΑΛ", 
+      "pedia": ["technologika", "oikonomika", "tourismou"]
+    }
+  ],
+  "pedia": {
+    "anthropistikes": {
+      "name": "Ανθρωπιστικές, Νομικές και Κοινωνικές Επιστήμες",
+      "mathimata": [
+        {"key": "glossa", "name": "Νεοελληνική Γλώσσα", "required": true},
+        {"key": "archaia", "name": "Αρχαία Ελληνικά", "required": true},
+        {"key": "istoria", "name": "Ιστορία", "required": true},
+        {"key": "latina", "name": "Λατινικά", "required": true}
+      ],
+      "eidikaMathimata": ["Λατινικά", "Αγγλικά", "Γαλλικά", "Γερμανικά"],
+      "dataFile": "anthropistikes-scholes.json"
+    },
+    "thetikes": {
+      "name": "Θετικές και Τεχνολογικές Επιστήμες",
+      "mathimata": [
+        {"key": "mathimatika", "name": "Μαθηματικά", "required": true},
+        {"key": "fysiki", "name": "Φυσική", "required": true},
+        {"key": "chimeia", "name": "Χημεία", "required": true},
+        {"key": "viologia", "name": "Βιολογία", "required": true}
+      ],
+      "eidikaMathimata": ["Αγγλικά", "Γαλλικά", "Γερμανικά"],
+      "dataFile": "thetikes-scholes.json"
+    },
+    "ygeia": {
+      "name": "Επιστήμες Υγείας",
+      "mathimata": [
+        {"key": "viologia", "name": "Βιολογία", "required": true},
+        {"key": "chimeia", "name": "Χημεία", "required": true},
+        {"key": "fysiki", "name": "Φυσική", "required": true},
+        {"key": "mathimatika", "name": "Μαθηματικά", "required": true}
+      ],
+      "eidikaMathimata": ["Αγγλικά", "Γαλλικά", "Γερμανικά"],
+      "dataFile": "ygeias-scholes.json"
+    },
+    "oikonomikes": {
+      "name": "Επιστήμες Οικονομικών και Πληροφορικής",
+      "mathimata": [
+        {"key": "mathimatika", "name": "Μαθηματικά", "required": true},
+        {"key": "statistiki", "name": "Στατιστική", "required": true},
+        {"key": "oikonomika", "name": "Οικονομικά", "required": true},
+        {"key": "plirofiriki", "name": "Πληροφορική", "required": false}
+      ],
+      "eidikaMathimata": ["Αγγλικά", "Γαλλικά", "Γερμανικά"],
+      "dataFile": "oikonomikes-scholes.json"
+    },
+    "technologika": {
+      "name": "Τεχνολογικά Τμήματα",
+      "mathimata": [
+        {"key": "mathimatika", "name": "Μαθηματικά", "required": true},
+        {"key": "fysiki", "name": "Φυσική", "required": true},
+        {"key": "technologia", "name": "Τεχνολογία", "required": true},
+        {"key": "eidikotita", "name": "Ειδικότητα", "required": true}
+      ],
+      "eidikaMathimata": ["Αγγλικά", "Γαλλικά"],
+      "dataFile": "technologika-scholes.json"
+    },
+    "oikonomika": {
+      "name": "Οικονομικά και Διοίκηση",
+      "mathimata": [
+        {"key": "mathimatika", "name": "Μαθηματικά", "required": true},
+        {"key": "oikonomika", "name": "Οικονομικά", "required": true},
+        {"key": "dioikisi", "name": "Διοίκηση", "required": true},
+        {"key": "logistika", "name": "Λογιστικά", "required": false}
+      ],
+      "eidikaMathimata": ["Αγγλικά", "Γαλλικά", "Γερμανικά"],
+      "dataFile": "oikonomika-scholes.json"
+    },
+    "tourismou": {
+      "name": "Τουρισμός",
+      "mathimata": [
+        {"key": "geografia", "name": "Γεωγραφία", "required": true},
+        {"key": "istoria", "name": "Ιστορία", "required": true},
+        {"key": "oikonomika", "name": "Οικονομικά", "required": true},
+        {"key": "xenes_glosses", "name": "Ξένες Γλώσσες", "required": true}
+      ],
+      "eidikaMathimata": ["Αγγλικά", "Γαλλικά", "Γερμανικά", "Ιταλικά"],
+      "dataFile": "tourismou-scholes.json"
+    }
+  }
+}

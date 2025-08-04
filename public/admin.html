@@ -14,8 +14,11 @@
       <nav>
         <a href="#">Αρχική Σελίδα</a>
         <a href="#">Προγράμματα</a>
-        <a href="#">Πανελλαδικές Εξετάσεις</a>
-        <a href="#">Φωτογραφίες</a>
+        <a href="admin-kartela.html">Καρτέλα Μαθητή</a>
+        <a href="admin-diaxirisi.html">Διαχείριση</a>
+        <a href="admin-panelladikes.html">Πανελλαδικές Εξετάσεις</a>
+        <a href="admin-kodikoi.html">Κωδικοί</a>
+        <a href="admin-photos.html">Φωτογραφίες</a>
         <a href="#">Σχετικά με εμάς</a>
       </nav>
       <div class="icons">
@@ -129,7 +132,7 @@
 
   <section class="announcements">
     <div class="container-2">
-      <div class="announcements" style="height: 300px;">
+      <div class="announcements">
         <!-- Εδώ θα μπουν οι ανακοινώσεις από JS -->
       </div>
     </div>
@@ -277,6 +280,105 @@ observer.observe(document.getElementById('stats'));
 </script>
 
     </section>
+
+    <!-- Teachers Management Section -->
+    <section class="teachers-management" style="padding: 40px 20px; background: #f8f9fa;">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="text-align: center; color: #2C5F4F; margin-bottom: 30px;">Διαχείριση Καθηγητών</h2>
+        
+        <!-- Add Teacher Form -->
+        <div style="background: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+          <h3>Προσθήκη Νέου Καθηγητή</h3>
+          <form id="teacherForm" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: end;">
+            <div>
+              <label for="teacherName" style="display: block; margin-bottom: 5px; font-weight: bold;">Όνομα Καθηγητή:</label>
+              <input type="text" id="teacherName" required style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px;">
+            </div>
+            <div>
+              <label for="teacherSubject" style="display: block; margin-bottom: 5px; font-weight: bold;">Ειδικότητα:</label>
+              <input type="text" id="teacherSubject" required style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px;">
+            </div>
+            <div>
+              <label for="teacherPhone" style="display: block; margin-bottom: 5px; font-weight: bold;">Τηλέφωνο:</label>
+              <input type="tel" id="teacherPhone" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px;">
+            </div>
+            <div>
+              <label for="teacherEmail" style="display: block; margin-bottom: 5px; font-weight: bold;">Email:</label>
+              <input type="email" id="teacherEmail" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px;">
+            </div>
+            <button type="submit" style="grid-column: span 2; padding: 12px 20px; background: #E39C50; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
+              Προσθήκη Καθηγητή
+            </button>
+          </form>
+        </div>
+
+        <!-- Teachers List -->
+        <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+          <h3 style="padding: 20px; margin: 0; background: #2C5F4F; color: white;">Λίστα Καθηγητών</h3>
+          <div style="overflow-x: auto;">
+            <table id="teachersTable" style="width: 100%; border-collapse: collapse;">
+              <thead>
+                <tr style="background: #f8f9fa;">
+                  <th style="padding: 15px; text-align: left; border-bottom: 1px solid #ddd;">ID</th>
+                  <th style="padding: 15px; text-align: left; border-bottom: 1px solid #ddd;">Όνομα</th>
+                  <th style="padding: 15px; text-align: left; border-bottom: 1px solid #ddd;">Ειδικότητα</th>
+                  <th style="padding: 15px; text-align: left; border-bottom: 1px solid #ddd;">Τηλέφωνο</th>
+                  <th style="padding: 15px; text-align: left; border-bottom: 1px solid #ddd;">Email</th>
+                  <th style="padding: 15px; text-align: left; border-bottom: 1px solid #ddd;">Τμήματα</th>
+                  <th style="padding: 15px; text-align: left; border-bottom: 1px solid #ddd;">Ενέργειες</th>
+                </tr>
+              </thead>
+              <tbody id="teachersTableBody">
+                <!-- Teachers will be loaded here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Edit Teacher Modal -->
+    <div id="editTeacherModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
+      <div style="background-color: white; margin: 5% auto; padding: 30px; border-radius: 10px; width: 90%; max-width: 600px;">
+        <span onclick="closeEditTeacherModal()" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+        <h2>Επεξεργασία Καθηγητή</h2>
+        
+        <form id="editTeacherForm">
+          <input type="hidden" id="editTeacherId">
+          
+          <div style="margin-bottom: 20px;">
+            <label for="editTeacherName" style="display: block; margin-bottom: 5px; font-weight: bold;">Όνομα Καθηγητή:</label>
+            <input type="text" id="editTeacherName" required style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+          </div>
+          
+          <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+            <div style="flex: 1;">
+              <label for="editTeacherSubject" style="display: block; margin-bottom: 5px; font-weight: bold;">Ειδικότητα:</label>
+              <input type="text" id="editTeacherSubject" required style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+            </div>
+            <div style="flex: 1;">
+              <label for="editTeacherPhone" style="display: block; margin-bottom: 5px; font-weight: bold;">Τηλέφωνο:</label>
+              <input type="tel" id="editTeacherPhone" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+            </div>
+          </div>
+          
+          <div style="margin-bottom: 30px;">
+            <label for="editTeacherEmail" style="display: block; margin-bottom: 5px; font-weight: bold;">Email:</label>
+            <input type="email" id="editTeacherEmail" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+          </div>
+
+          <div style="text-align: center;">
+            <button type="button" onclick="closeEditTeacherModal()" style="padding: 12px 20px; background: #6c757d; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-right: 10px;">
+              Ακύρωση
+            </button>
+            <button type="submit" style="padding: 12px 20px; background: #28a745; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
+              Αποθήκευση
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <section class="faq">
       <h2>FAQ</h2>
       <details>
@@ -308,6 +410,171 @@ observer.observe(document.getElementById('stats'));
       &copy; 2025 Μαθητικό Στέκι
     </div>
   </footer>
+  
+  <script>
+    // Teachers data (shared with admin-kartela.html)
+    let teachers = [
+      { id: 1, name: "Δρ. Μαρία Αντωνίου", subject: "Μαθηματικά", phone: "6901234567", email: "maria.antoniou@mathsteki.gr" },
+      { id: 2, name: "Κώστας Γεωργίου", subject: "Φυσική", phone: "6902345678", email: "kostas.georgiou@mathsteki.gr" },
+      { id: 3, name: "Ελένη Παπαδάκη", subject: "Χημεία", phone: "6903456789", email: "eleni.papadaki@mathsteki.gr" },
+      { id: 4, name: "Γιάννης Νικολάου", subject: "Αρχαία", phone: "6904567890", email: "giannis.nikolaou@mathsteki.gr" },
+      { id: 5, name: "Άννα Κωνσταντίνου", subject: "Νέα Ελληνικά", phone: "6905678901", email: "anna.konstantinou@mathsteki.gr" }
+    ];
+
+    // Sample subjects data (to show teacher assignments)
+    let subjects = [
+      { id: 1, name: "Μαθηματικά", code: "Μγ4", class: "Γ' Λυκείου", teacherId: 1 },
+      { id: 2, name: "Χημεία", code: "Χγ2", class: "Γ' Λυκείου", teacherId: 3 },
+      { id: 3, name: "Φυσική", code: "Φβ1", class: "Β' Λυκείου", teacherId: 2 },
+      { id: 4, name: "Αρχαία", code: "Αρα3", class: "Α' Λυκείου", teacherId: 4 },
+      { id: 5, name: "Νέα Ελληνικά", code: "Νεγ1", class: "Γ' Γυμνασίου", teacherId: 5 }
+    ];
+
+    // Load teachers on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      loadTeachers();
+    });
+
+    // Load teachers into table
+    function loadTeachers() {
+      const tbody = document.getElementById('teachersTableBody');
+      tbody.innerHTML = '';
+
+      teachers.forEach(teacher => {
+        // Find subjects taught by this teacher
+        const teacherSubjects = subjects.filter(s => s.teacherId === teacher.id);
+        const subjectsText = teacherSubjects.map(s => `${s.name} ${s.code}`).join('<br>') || 'Δεν έχει ανατεθεί';
+
+        const row = document.createElement('tr');
+        row.style.borderBottom = '1px solid #ddd';
+        row.innerHTML = `
+          <td style="padding: 12px;">${teacher.id}</td>
+          <td style="padding: 12px;">${teacher.name}</td>
+          <td style="padding: 12px;">${teacher.subject}</td>
+          <td style="padding: 12px;">${teacher.phone || '-'}</td>
+          <td style="padding: 12px;">${teacher.email || '-'}</td>
+          <td style="padding: 12px;">${subjectsText}</td>
+          <td style="padding: 12px;">
+            <button onclick="editTeacher(${teacher.id})" style="padding: 6px 12px; background: #E39C50; color: white; border: none; border-radius: 3px; cursor: pointer; margin-right: 5px; font-size: 12px;">
+              Επεξεργασία
+            </button>
+            <button onclick="deleteTeacher(${teacher.id})" style="padding: 6px 12px; background: #dc3545; color: white; border: none; border-radius: 3px; cursor: pointer; font-size: 12px;">
+              Διαγραφή
+            </button>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    // Add teacher form submission
+    document.getElementById('teacherForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const teacherData = {
+        name: document.getElementById('teacherName').value,
+        subject: document.getElementById('teacherSubject').value,
+        phone: document.getElementById('teacherPhone').value,
+        email: document.getElementById('teacherEmail').value
+      };
+
+      const newId = Math.max(...teachers.map(t => t.id)) + 1;
+      teachers.push({ id: newId, ...teacherData });
+      
+      this.reset();
+      loadTeachers();
+      showAlert('Ο νέος καθηγητής προστέθηκε επιτυχώς!');
+    });
+
+    // Edit teacher
+    function editTeacher(id) {
+      const teacher = teachers.find(t => t.id === id);
+      if (!teacher) return;
+
+      document.getElementById('editTeacherId').value = teacher.id;
+      document.getElementById('editTeacherName').value = teacher.name;
+      document.getElementById('editTeacherSubject').value = teacher.subject;
+      document.getElementById('editTeacherPhone').value = teacher.phone || '';
+      document.getElementById('editTeacherEmail').value = teacher.email || '';
+      
+      document.getElementById('editTeacherModal').style.display = 'block';
+    }
+
+    function closeEditTeacherModal() {
+      document.getElementById('editTeacherModal').style.display = 'none';
+    }
+
+    // Edit teacher form submission
+    document.getElementById('editTeacherForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const teacherId = parseInt(document.getElementById('editTeacherId').value);
+      const teacher = teachers.find(t => t.id === teacherId);
+      
+      if (!teacher) return;
+
+      teacher.name = document.getElementById('editTeacherName').value;
+      teacher.subject = document.getElementById('editTeacherSubject').value;
+      teacher.phone = document.getElementById('editTeacherPhone').value;
+      teacher.email = document.getElementById('editTeacherEmail').value;
+      
+      closeEditTeacherModal();
+      loadTeachers();
+      showAlert('Ο καθηγητής ενημερώθηκε επιτυχώς!');
+    });
+
+    // Delete teacher
+    function deleteTeacher(id) {
+      const teacher = teachers.find(t => t.id === id);
+      if (!teacher) return;
+
+      // Check if teacher has assigned subjects
+      const assignedSubjects = subjects.filter(s => s.teacherId === id);
+      if (assignedSubjects.length > 0) {
+        alert(`Δεν μπορείτε να διαγράψετε τον καθηγητή "${teacher.name}" γιατί έχει ανατεθεί σε ${assignedSubjects.length} τμήματα.`);
+        return;
+      }
+
+      if (confirm(`Είστε βέβαιοι ότι θέλετε να διαγράψετε τον καθηγητή "${teacher.name}";`)) {
+        teachers = teachers.filter(t => t.id !== id);
+        loadTeachers();
+        showAlert('Ο καθηγητής διαγράφηκε επιτυχώς!');
+      }
+    }
+
+    // Simple alert function
+    function showAlert(message) {
+      // Create a simple alert div
+      const alertDiv = document.createElement('div');
+      alertDiv.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #d4edda;
+        color: #155724;
+        padding: 15px 20px;
+        border-radius: 5px;
+        border: 1px solid #c3e6cb;
+        z-index: 2000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      `;
+      alertDiv.textContent = message;
+      document.body.appendChild(alertDiv);
+
+      setTimeout(() => {
+        document.body.removeChild(alertDiv);
+      }, 3000);
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modal = document.getElementById('editTeacherModal');
+      if (event.target === modal) {
+        closeEditTeacherModal();
+      }
+    }
+  </script>
+  
     <script src="main.js"></script>
     <script src="client-text.js"></script>
 

@@ -15,8 +15,11 @@ async function fetchStudents() {
   });
 }
 
-
-document.getElementById('fetch-students-btn').addEventListener('click', fetchStudents);
+// Check if the element exists before adding event listener
+const fetchStudentsBtn = document.getElementById('fetch-students-btn');
+if (fetchStudentsBtn) {
+  fetchStudentsBtn.addEventListener('click', fetchStudents);
+}
 
 
 

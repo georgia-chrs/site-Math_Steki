@@ -30,10 +30,50 @@
   </header>
   
  <main>
-  <h1>Ημερολόγιο</h1>
-  <div style="display: flex; justify-content: center;">
-    <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id%40group.calendar.google.com&ctz=Europe%2FAthens"
-      style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+  <div class="student-container">
+    <h1>📅 Ημερολόγιο Μαθητή</h1>
+    
+    <div id="studentInfo" style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: none;">
+      <h3>Στοιχεία Μαθητή</h3>
+      <div id="studentDetails"></div>
+    </div>
+
+    <!-- Calendar Container -->
+    <div class="calendar-container" style="margin-bottom: 20px;">
+      <div id="loadingMessage" style="text-align: center; padding: 40px; color: #666;">
+        Φόρτωση ημερολογίου...
+      </div>
+      
+      <div id="calendarContent" style="display: none;">
+        <div class="calendar-filters" style="margin-bottom: 20px; padding: 20px; background: #f5f5f5; border-radius: 8px;">
+          <label for="eventTypeFilter">Φίλτρο ανά τύπο:</label>
+          <select id="eventTypeFilter" style="margin-left: 10px; margin-right: 20px; padding: 8px; border-radius: 4px; border: 1px solid #ddd;">
+            <option value="">Όλα τα γεγονότα</option>
+          </select>
+          
+          <label for="subjectFilter">Φίλτρο ανά μάθημα:</label>
+          <select id="subjectFilter" style="margin-left: 10px; padding: 8px; border-radius: 4px; border: 1px solid #ddd;">
+            <option value="">Όλα τα μαθήματα</option>
+          </select>
+        </div>
+        
+        <div id="calendarView" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div id="upcomingEvents">
+            <h3>Προσεχή Γεγονότα</h3>
+            <div id="upcomingEventsList"></div>
+          </div>
+          
+          <div id="pastEvents">
+            <h3>Παλαιότερα Γεγονότα</h3>
+            <div id="pastEventsList"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="noEventsMessage" style="text-align: center; padding: 40px; color: #666; display: none;">
+        Δεν υπάρχουν γεγονότα στο ημερολόγιο για αυτόν τον μαθητή.
+      </div>
+    </div>
   </div>
 </main>
   <footer>
@@ -51,6 +91,6 @@
       &copy; 2025 Μαθητικό Στέκι
     </div>
   </footer>
-<script src="progress.js"></script>
+<script src="calendar.js"></script>
 </body>
 </html>

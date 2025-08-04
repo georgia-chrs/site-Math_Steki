@@ -1,8 +1,31 @@
 import bcrypt from 'bcryptjs';
 
-const password = "123";  // Ο απλός κωδικός που θέλεις
-const hash = bcrypt.hashSync(password, 10); // 10 γύροι κρυπτογράφησης
-console.log("Hashed password:", hash);
+// Δημιουργία διαφορετικών κωδικών για διαφορετικούς χρήστες
+console.log('=== HASHING PASSWORDS ===');
 
-const hash2 = await bcrypt.hash('123456', 10);
-console.log(hash2);
+// Για admin
+const adminPassword = "admin123";
+const adminHash = bcrypt.hashSync(adminPassword, 10);
+console.log(`Admin: username='admin', password='${adminPassword}', hash='${adminHash}'`);
+
+// Για mariaio
+const mariaPassword = "maria123";
+const mariaHash = bcrypt.hashSync(mariaPassword, 10);
+console.log(`Maria: username='mariaio', password='${mariaPassword}', hash='${mariaHash}'`);
+
+// Για giannisp
+const giannisPassword = "giannis123";
+const giannisHash = bcrypt.hashSync(giannisPassword, 10);
+console.log(`Giannis: username='giannisp', password='${giannisPassword}', hash='${giannisHash}'`);
+
+// Για kostasd
+const kostasPassword = "kostas123";
+const kostasHash = bcrypt.hashSync(kostasPassword, 10);
+console.log(`Kostas: username='kostasd', password='${kostasPassword}', hash='${kostasHash}'`);
+
+console.log('\n=== COPY THESE TO SQL ===');
+console.log('UPDATE Admins SET password_hash = "' + adminHash + '" WHERE username = "admin";');
+console.log('UPDATE Admins SET password_hash = "' + mariaHash + '" WHERE username = "mariaio";');
+console.log('UPDATE Students SET password_hash = "' + mariaHash + '" WHERE username = "mariaio";');
+console.log('UPDATE Students SET password_hash = "' + giannisHash + '" WHERE username = "giannisp";');
+console.log('UPDATE Students SET password_hash = "' + kostasHash + '" WHERE username = "kostasd";');
