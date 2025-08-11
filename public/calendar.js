@@ -126,8 +126,12 @@ function populateFilters(calendarEntries) {
   
   // Event types
   const eventTypes = [...new Set(calendarEntries.map(entry => entry.event_type).filter(Boolean))];
-  const firstEventOption = eventTypeFilter.querySelector('option[value=""]');
   eventTypeFilter.innerHTML = '';
+  
+  // Recreate the first option with arrow
+  const firstEventOption = document.createElement('option');
+  firstEventOption.value = '';
+  firstEventOption.textContent = 'Όλα τα γεγονότα';
   eventTypeFilter.appendChild(firstEventOption);
   
   eventTypes.forEach(type => {
@@ -139,8 +143,12 @@ function populateFilters(calendarEntries) {
   
   // Subjects
   const subjects = [...new Set(calendarEntries.map(entry => entry.subject_name).filter(Boolean))];
-  const firstSubjectOption = subjectFilter.querySelector('option[value=""]');
   subjectFilter.innerHTML = '';
+  
+  // Recreate the first option with arrow
+  const firstSubjectOption = document.createElement('option');
+  firstSubjectOption.value = '';
+  firstSubjectOption.textContent = 'Όλα τα μαθήματα';
   subjectFilter.appendChild(firstSubjectOption);
   
   subjects.forEach(subject => {
@@ -185,7 +193,16 @@ function updateCalendarDisplay(calendarEntries) {
     .sort((a, b) => {
       const dateA = new Date(a.eventDate || a.entry_date);
       const dateB = new Date(b.eventDate || b.entry_date);
-      return dateA - dateB;
+      
+      // Πρώτα ταξινόμηση κατά ημερομηνία γεγονότος (πιο πρόσφατα πρώτα)
+      if (dateA.getTime() !== dateB.getTime()) {
+        return dateB - dateA;
+      }
+      
+      // Αν οι ημερομηνίες είναι ίδιες, ταξινόμηση κατά ώρα καταχώρισης (πιο πρόσφατα πρώτα)
+      const createdA = new Date(a.created_at || a.eventDate || a.entry_date);
+      const createdB = new Date(b.created_at || b.eventDate || b.entry_date);
+      return createdB - createdA;
     });
     
   const pastEvents = calendarEntries
@@ -196,7 +213,16 @@ function updateCalendarDisplay(calendarEntries) {
     .sort((a, b) => {
       const dateA = new Date(a.eventDate || a.entry_date);
       const dateB = new Date(b.eventDate || b.entry_date);
-      return dateB - dateA;
+      
+      // Πρώτα ταξινόμηση κατά ημερομηνία γεγονότος (πιο πρόσφατα πρώτα)
+      if (dateA.getTime() !== dateB.getTime()) {
+        return dateB - dateA;
+      }
+      
+      // Αν οι ημερομηνίες είναι ίδιες, ταξινόμηση κατά ώρα καταχώρισης (πιο πρόσφατα πρώτα)
+      const createdA = new Date(a.created_at || a.eventDate || a.entry_date);
+      const createdB = new Date(b.created_at || b.eventDate || b.entry_date);
+      return createdB - createdA;
     });
   
   // Display upcoming events
@@ -235,7 +261,7 @@ function createEventCard(entry, isUpcoming) {
       background: white; 
       border-left: 4px solid ${eventTypeColor}; 
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      ${isToday ? 'border: 2px solid #007bff;' : ''}
+      ${isToday ? 'border: 2px solid rgba(252, 151, 62, 0.76);' : ''}
       ${isAnnouncement ? 'background-color: #f8f9fa;' : ''}
     ">
       <div class="event-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
@@ -260,9 +286,10 @@ function createEventCard(entry, isUpcoming) {
             font-size: 12px;
             font-weight: bold;
           ">
-            ${isAnnouncement ? '📢 Ανακοίνωση' : (entry.eventType || entry.event_type)}
+            ${isAnnouncement ? '📢 Ανακοίνωση' : getDisplayEventType(entry.eventType || entry.event_type)}
           </span>
           ${subjectName ? `<span style="margin-left: 10px; color: #666;">Μάθημα: ${subjectName}</span>` : ''}
+          ${entry.student_class ? `<span style="margin-left: 10px; color: #666;">Τάξη: ${entry.student_class}</span>` : ''}
           ${entry.target_class ? `<span style="margin-left: 10px; color: #666;">Τάξη: ${entry.target_class}</span>` : ''}
           ${isAnnouncement ? `
             <span class="priority-badge" style="
@@ -304,11 +331,20 @@ function createEventCard(entry, isUpcoming) {
 
 function getEventTypeColor(eventType) {
   switch(eventType) {
+    case 'makeup_class':
     case 'Αναπλήρωση': return '#dc3545';
+    case 'exam':
     case 'Διαγώνισμα': return '#ffc107';
+    case 'assignment':
     case 'Εργασία': return '#17a2b8';
+    case 'presentation':
     case 'Παρουσίαση': return '#28a745';
+    case 'announcement':
     case 'Ενημέρωση': return '#6c757d';
+    case 'test':
+    case 'Τεστ': return '#orange';
+    case 'project':
+    case 'Έργο': return '#purple';
     default: return '#007bff';
   }
 }
@@ -334,6 +370,19 @@ function getPriorityText(priority) {
   return texts[priority] || texts.normal;
 }
 
+function getDisplayEventType(eventType) {
+  switch(eventType) {
+    case 'makeup_class': return 'Αναπλήρωση';
+    case 'exam': return 'Διαγώνισμα';
+    case 'assignment': return 'Εργασία';
+    case 'presentation': return 'Παρουσίαση';
+    case 'announcement': return 'Ενημέρωση';
+    case 'test': return 'Τεστ';
+    case 'project': return 'Έργο';
+    default: return eventType || 'Γεγονός';
+  }
+}
+
 // Initialize page
 document.addEventListener('DOMContentLoaded', async function() {
   try {
@@ -342,13 +391,9 @@ document.addEventListener('DOMContentLoaded', async function() {
     
     displayStudentInfo(student);
     
+    // Load only calendar entries (no announcements)
     const calendarEntries = await loadCalendarEntries(student.id);
     displayCalendarEntries(calendarEntries);
-    
-    // Load announcements and merge with calendar entries
-    const announcements = await loadStudentAnnouncements(student.username);
-    const allEntries = mergeCalendarAndAnnouncements(calendarEntries, announcements);
-    displayCalendarEntries(allEntries);
     
   } catch (error) {
     console.error('Error initializing calendar page:', error);

@@ -86,9 +86,13 @@ function populateSubjectFilter(progressNotes) {
   const subjectFilter = document.getElementById('subjectFilter');
   const subjects = [...new Set(progressNotes.map(note => note.subject_name).filter(Boolean))];
   
-  // Clear existing options except first one
-  const firstOption = subjectFilter.querySelector('option[value=""]');
+  // Clear existing options and recreate first one with arrow
   subjectFilter.innerHTML = '';
+  
+  // Recreate the first option with arrow
+  const firstOption = document.createElement('option');
+  firstOption.value = '';
+  firstOption.textContent = 'Όλα τα μαθήματα';
   subjectFilter.appendChild(firstOption);
   
   subjects.forEach(subject => {
@@ -117,7 +121,7 @@ function updateProgressDisplay(progressNotes) {
   }
   
   const progressHtml = progressNotes
-    .sort((a, b) => new Date(b.note_date) - new Date(a.note_date))
+    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
     .map(note => {
       const performanceClass = getPerformanceClass(note.performance_level);
       const performanceText = getPerformanceText(note.performance_level);

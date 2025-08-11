@@ -9,7 +9,7 @@
     "minMoria": 10000,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15000,
     "city": "Αθήνα"
   },
   {
@@ -22,7 +22,7 @@
     "minMoria": 10010,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 10010,
     "city": "Αθήνα"
   },
   {
@@ -35,7 +35,7 @@
     "minMoria": 8350,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12575,
     "city": "Αθήνα"
   },
   {
@@ -48,7 +48,7 @@
     "minMoria": 8325,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13250,
     "city": "Αθήνα"
   },
   {
@@ -61,7 +61,7 @@
     "minMoria": 18550,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 20655,
     "city": "Αθήνα"
   },
   {
@@ -74,7 +74,7 @@
     "minMoria": 12695,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14228,
     "city": "Αθήνα"
   },
   {
@@ -86,8 +86,8 @@
     "maxMoria": 22125,
     "minMoria": 17365,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 19745,
     "city": "Αθήνα"
   },
   {
@@ -100,7 +100,7 @@
     "minMoria": 17322,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18217,
     "city": "Αθήνα"
   },
   {
@@ -113,7 +113,7 @@
     "minMoria": 12070,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15400,
     "city": "Αθήνα"
   },
   {
@@ -126,7 +126,7 @@
     "minMoria": 11970,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16695,
     "city": "Αθήνα"
   },
   {
@@ -139,7 +139,7 @@
     "minMoria": 9825,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12163,
     "city": "Αθήνα"
   },
   {
@@ -152,7 +152,7 @@
     "minMoria": 14290,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15680,
     "city": "Αθήνα"
   },
   {
@@ -164,8 +164,8 @@
     "maxMoria": 14510,
     "minMoria": 11670,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13090,
     "city": "Αθήνα"
   },
   {
@@ -178,7 +178,7 @@
     "minMoria": 16040,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 19015,
     "city": "Αθήνα"
   },
   {
@@ -190,8 +190,8 @@
     "maxMoria": 20894,
     "minMoria": 16811,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18853,
     "city": "Αθήνα"
   },
   {
@@ -203,8 +203,8 @@
     "maxMoria": 17634,
     "minMoria": 13945,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 15790,
     "city": "Αθήνα"
   },
   {
@@ -217,7 +217,7 @@
     "minMoria": 14175,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16100,
     "city": "Αθήνα"
   },
   {
@@ -229,8 +229,8 @@
     "maxMoria": 19780,
     "minMoria": 17920,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18850,
     "city": "Αθήνα"
   },
   {
@@ -243,7 +243,7 @@
     "minMoria": 11625,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14713,
     "city": "Αθήνα"
   },
   {
@@ -256,7 +256,7 @@
     "minMoria": 9150,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12250,
     "city": "Αθήνα"
   },
   {
@@ -269,7 +269,7 @@
     "minMoria": 9175,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 9175,
     "city": "Αθήνα"
   },
   {
@@ -281,8 +281,8 @@
     "maxMoria": 19475,
     "minMoria": 18550,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 19013,
     "city": "Αθήνα"
   },
   {
@@ -295,7 +295,7 @@
     "minMoria": 12575,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15600,
     "city": "Αθήνα"
   },
   {
@@ -308,7 +308,7 @@
     "minMoria": 12730,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16080,
     "city": "Αθήνα"
   },
   {
@@ -321,7 +321,7 @@
     "minMoria": 12975,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15450,
     "city": "Αθήνα"
   },
   {
@@ -334,7 +334,7 @@
     "minMoria": 9400,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13603,
     "city": "Αθήνα"
   },
   {
@@ -346,8 +346,8 @@
     "maxMoria": 19302,
     "minMoria": 17692,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18497,
     "city": "Αθήνα"
   },
   {
@@ -359,8 +359,8 @@
     "maxMoria": 18845,
     "minMoria": 14460,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16653,
     "city": "Αθήνα"
   },
   {
@@ -373,7 +373,7 @@
     "minMoria": 11175,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13438,
     "city": "Αθήνα"
   },
   {
@@ -385,8 +385,8 @@
     "maxMoria": 19150,
     "minMoria": 17450,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18300,
     "city": "Αθήνα"
   },
   {
@@ -399,7 +399,7 @@
     "minMoria": 14310,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16325,
     "city": "Αθήνα"
   },
   {
@@ -412,7 +412,7 @@
     "minMoria": 17340,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18305,
     "city": "Αθήνα"
   },
   {
@@ -424,8 +424,8 @@
     "maxMoria": 19225,
     "minMoria": 17965,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18595,
     "city": "Αθήνα"
   },
   {
@@ -437,8 +437,8 @@
     "maxMoria": 17390,
     "minMoria": 13090,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 15240,
     "city": "Αθήνα"
   },
   {
@@ -451,7 +451,7 @@
     "minMoria": 16100,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17713,
     "city": "Αθήνα"
   },
   {
@@ -463,8 +463,8 @@
     "maxMoria": 19340,
     "minMoria": 17440,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18390,
     "city": "Αθήνα"
   },
   {
@@ -476,8 +476,8 @@
     "maxMoria": 18320,
     "minMoria": 14320,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16320,
     "city": "Αθήνα"
   },
   {
@@ -489,8 +489,8 @@
     "maxMoria": 17870,
     "minMoria": 15355,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16613,
     "city": "Αθήνα"
   },
   {
@@ -502,8 +502,8 @@
     "maxMoria": 19225,
     "minMoria": 17625,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18425,
     "city": "Αθήνα"
   },
   {
@@ -516,7 +516,7 @@
     "minMoria": 11495,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15155,
     "city": "Αθήνα"
   },
   {
@@ -529,7 +529,7 @@
     "minMoria": 11860,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14905,
     "city": "Αθήνα"
   },
   {
@@ -541,8 +541,8 @@
     "maxMoria": 19319,
     "minMoria": 14237,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16778,
     "city": "Αθήνα"
   },
   {
@@ -555,7 +555,7 @@
     "minMoria": 16665,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17495,
     "city": "Αθήνα"
   },
   {
@@ -568,7 +568,7 @@
     "minMoria": 16640,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17665,
     "city": "Αθήνα"
   },
   {
@@ -581,7 +581,7 @@
     "minMoria": 17340,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18135,
     "city": "Αθήνα"
   },
   {
@@ -593,8 +593,8 @@
     "maxMoria": 12590,
     "minMoria": 10250,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 11420,
     "city": "Αθήνα"
   },
   {
@@ -606,8 +606,8 @@
     "maxMoria": 12995,
     "minMoria": 10430,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 11713,
     "city": "Αθήνα"
   },
   {
@@ -619,8 +619,8 @@
     "maxMoria": 12525,
     "minMoria": 10255,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 11390,
     "city": "Αθήνα"
   },
   {
@@ -632,8 +632,8 @@
     "maxMoria": 12710,
     "minMoria": 10350,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 11530,
     "city": "Αθήνα"
   },
   {
@@ -646,7 +646,7 @@
     "minMoria": 11912,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13881,
     "city": "Αθήνα"
   },
   {
@@ -659,7 +659,7 @@
     "minMoria": 11678,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14343,
     "city": "Αθήνα"
   },
   {
@@ -672,7 +672,7 @@
     "minMoria": 10060,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14705,
     "city": "Αθήνα"
   },
   {
@@ -685,7 +685,7 @@
     "minMoria": 17240,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18035,
     "city": "Αθήνα"
   },
   {
@@ -698,7 +698,7 @@
     "minMoria": 16470,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16710,
     "city": "Αθήνα"
   },
   {
@@ -711,7 +711,7 @@
     "minMoria": 17230,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17230,
     "city": "Αθήνα"
   },
   {
@@ -724,7 +724,7 @@
     "minMoria": 17500,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18260,
     "city": "Αθήνα"
   },
   {
@@ -737,7 +737,7 @@
     "minMoria": 17090,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17290,
     "city": "Αθήνα"
   },
   {
@@ -750,7 +750,7 @@
     "minMoria": 17490,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17490,
     "city": "Αθήνα"
   },
   {
@@ -763,7 +763,7 @@
     "minMoria": 13180,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15330,
     "city": "Αθήνα"
   },
   {
@@ -776,7 +776,7 @@
     "minMoria": 10330,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11740,
     "city": "Αθήνα"
   },
   {
@@ -789,7 +789,7 @@
     "minMoria": 12660,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12920,
     "city": "Αθήνα"
   },
   {
@@ -802,7 +802,7 @@
     "minMoria": 12290,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14910,
     "city": "Αθήνα"
   },
   {
@@ -814,8 +814,8 @@
     "maxMoria": 16585,
     "minMoria": 11120,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13853,
     "city": "Αθήνα"
   },
   {
@@ -827,8 +827,8 @@
     "maxMoria": 18010,
     "minMoria": 15945,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16978,
     "city": "Αθήνα"
   },
   {
@@ -840,8 +840,8 @@
     "maxMoria": 10325,
     "minMoria": 9900,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 10113,
     "city": "Αθήνα"
   },
   {
@@ -854,7 +854,7 @@
     "minMoria": 8600,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 10360,
     "city": "Αθήνα"
   },
   {
@@ -867,7 +867,7 @@
     "minMoria": 11980,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13200,
     "city": "Αθήνα"
   },
   {
@@ -880,7 +880,7 @@
     "minMoria": 14720,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15788,
     "city": "Αθήνα"
   },
   {
@@ -893,7 +893,7 @@
     "minMoria": 12120,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14158,
     "city": "Αθήνα"
   },
   {
@@ -905,8 +905,8 @@
     "maxMoria": 9440,
     "minMoria": 6860,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 8150,
     "city": "Αθήνα"
   },
   {
@@ -919,7 +919,7 @@
     "minMoria": 9050,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 10900,
     "city": "Αθήνα"
   },
   {
@@ -931,8 +931,8 @@
     "maxMoria": 14140,
     "minMoria": 9360,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 11750,
     "city": "Αθήνα"
   },
   {
@@ -944,8 +944,8 @@
     "maxMoria": 19515,
     "minMoria": 14650,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17083,
     "city": "Αθήνα"
   },
   {
@@ -958,7 +958,7 @@
     "minMoria": 9080,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 10330,
     "city": "Αθήνα"
   },
   {
@@ -970,8 +970,8 @@
     "maxMoria": 15265,
     "minMoria": 8950,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12108,
     "city": "Αθήνα"
   },
   {
@@ -983,8 +983,8 @@
     "maxMoria": 9340,
     "minMoria": 9290,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 9315,
     "city": "Αθήνα"
   },
   {
@@ -996,8 +996,8 @@
     "maxMoria": 12900,
     "minMoria": 8270,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 10585,
     "city": "Αθήνα"
   },
   {
@@ -1010,7 +1010,7 @@
     "minMoria": 9204,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13374,
     "city": "Αθήνα"
   },
   {
@@ -1022,8 +1022,8 @@
     "maxMoria": 20925,
     "minMoria": 13444,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17185,
     "city": "Αθήνα"
   },
   {
@@ -1036,7 +1036,7 @@
     "minMoria": 11050,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13700,
     "city": "Αθήνα"
   },
   {
@@ -1048,8 +1048,8 @@
     "maxMoria": 17720,
     "minMoria": 14120,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 15920,
     "city": "Αθήνα"
   },
   {
@@ -1061,8 +1061,8 @@
     "maxMoria": 19075,
     "minMoria": 17975,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18525,
     "city": "Αθήνα"
   },
   {
@@ -1075,7 +1075,7 @@
     "minMoria": 9225,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12750,
     "city": "Αθήνα"
   },
   {
@@ -1088,7 +1088,7 @@
     "minMoria": 14580,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15955,
     "city": "Αθήνα"
   },
   {
@@ -1100,8 +1100,8 @@
     "maxMoria": 14715,
     "minMoria": 11280,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12998,
     "city": "Αθήνα"
   },
   {
@@ -1113,8 +1113,8 @@
     "maxMoria": 15360,
     "minMoria": 7920,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 11640,
     "city": "Αθήνα"
   },
   {
@@ -1127,7 +1127,7 @@
     "minMoria": 11490,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14165,
     "city": "Αθήνα"
   },
   {
@@ -1140,7 +1140,7 @@
     "minMoria": 9320,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12965,
     "city": "Αθήνα"
   },
   {
@@ -1153,7 +1153,7 @@
     "minMoria": 16570,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17315,
     "city": "Αθήνα"
   },
   {
@@ -1166,7 +1166,7 @@
     "minMoria": 16650,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17663,
     "city": "Αθήνα"
   },
   {
@@ -1178,8 +1178,8 @@
     "maxMoria": 12900,
     "minMoria": 11675,
     "schoolType": "gel",
-    "field": "pliroforiki",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12288,
     "city": "Αθήνα"
   },
   {
@@ -1191,8 +1191,8 @@
     "maxMoria": 17112,
     "minMoria": 9764,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13438,
     "city": "Αθήνα"
   },
   {
@@ -1205,7 +1205,7 @@
     "minMoria": 13025,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15513,
     "city": "Αθήνα"
   },
   {
@@ -1217,8 +1217,8 @@
     "maxMoria": 17180,
     "minMoria": 12135,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 14658,
     "city": "Αθήνα"
   },
   {
@@ -1230,8 +1230,8 @@
     "maxMoria": 16440,
     "minMoria": 10220,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13330,
     "city": "Αθήνα"
   },
   {
@@ -1243,8 +1243,8 @@
     "maxMoria": 16208,
     "minMoria": 12852,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 14530,
     "city": "Αθήνα"
   },
   {
@@ -1256,8 +1256,8 @@
     "maxMoria": 13393,
     "minMoria": 9338,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 11366,
     "city": "Αθήνα"
   },
   {
@@ -1270,7 +1270,7 @@
     "minMoria": 14788,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16091,
     "city": "Αθήνα"
   },
   {
@@ -1283,7 +1283,7 @@
     "minMoria": 15300,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15975,
     "city": "Αθήνα"
   },
   {
@@ -1296,7 +1296,7 @@
     "minMoria": 11475,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13288,
     "city": "Αθήνα"
   },
   {
@@ -1309,7 +1309,7 @@
     "minMoria": 9275,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11675,
     "city": "Αθήνα"
   },
   {
@@ -1322,7 +1322,7 @@
     "minMoria": 14365,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16228,
     "city": "Αθήνα"
   },
   {
@@ -1335,7 +1335,7 @@
     "minMoria": 10800,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12588,
     "city": "Αθήνα"
   },
   {
@@ -1348,7 +1348,7 @@
     "minMoria": 8325,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12050,
     "city": "Αθήνα"
   },
   {
@@ -1361,7 +1361,7 @@
     "minMoria": 9520,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12390,
     "city": "Αθήνα"
   },
   {
@@ -1374,7 +1374,7 @@
     "minMoria": 11630,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14060,
     "city": "Αθήνα"
   },
   {
@@ -1386,8 +1386,8 @@
     "maxMoria": 14740,
     "minMoria": 12760,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13750,
     "city": "Αθήνα"
   },
   {
@@ -1400,7 +1400,7 @@
     "minMoria": 14210,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15485,
     "city": "Αθήνα"
   },
   {
@@ -1412,8 +1412,8 @@
     "maxMoria": 19960,
     "minMoria": 12550,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16255,
     "city": "Αθήνα"
   },
   {
@@ -1425,8 +1425,8 @@
     "maxMoria": 15870,
     "minMoria": 11960,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13915,
     "city": "Αθήνα"
   },
   {
@@ -1439,7 +1439,7 @@
     "minMoria": 12201,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14314,
     "city": "Αθήνα"
   },
   {
@@ -1452,7 +1452,7 @@
     "minMoria": 11900,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14358,
     "city": "Αθήνα"
   },
   {
@@ -1465,7 +1465,7 @@
     "minMoria": 10085,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12098,
     "city": "Αθήνα"
   },
   {
@@ -1477,8 +1477,8 @@
     "maxMoria": 17465,
     "minMoria": 15030,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16248,
     "city": "Αθήνα"
   },
   {
@@ -1490,8 +1490,8 @@
     "maxMoria": 16390,
     "minMoria": 13440,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 14915,
     "city": "Αθήνα"
   },
   {
@@ -1503,8 +1503,8 @@
     "maxMoria": 11610,
     "minMoria": 10150,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 10880,
     "city": "Αθήνα"
   },
   {
@@ -1516,8 +1516,8 @@
     "maxMoria": 14160,
     "minMoria": 10340,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12250,
     "city": "Αθήνα"
   },
   {
@@ -1530,7 +1530,7 @@
     "minMoria": 12710,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14570,
     "city": "Αθήνα"
   },
   {
@@ -1542,8 +1542,8 @@
     "maxMoria": 16200,
     "minMoria": 9080,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12640,
     "city": "Αθήνα"
   },
   {
@@ -1556,7 +1556,7 @@
     "minMoria": 8750,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12000,
     "city": "Αθήνα"
   },
   {
@@ -1568,8 +1568,8 @@
     "maxMoria": 13783,
     "minMoria": 11477,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12630,
     "city": "Αθήνα"
   },
   {
@@ -1581,8 +1581,8 @@
     "maxMoria": 18090,
     "minMoria": 15350,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16720,
     "city": "Αθήνα"
   },
   {
@@ -1595,7 +1595,7 @@
     "minMoria": 17715,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 19943,
     "city": "Αθήνα"
   },
   {
@@ -1607,8 +1607,8 @@
     "maxMoria": 13580,
     "minMoria": 9970,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 11775,
     "city": "Αθήνα"
   },
   {
@@ -1620,8 +1620,8 @@
     "maxMoria": 13850,
     "minMoria": 10180,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12015,
     "city": "Αθήνα"
   },
   {
@@ -1634,7 +1634,7 @@
     "minMoria": 17493,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18329,
     "city": "Αθήνα"
   },
   {
@@ -1647,7 +1647,7 @@
     "minMoria": 11820,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16235,
     "city": "Αθήνα"
   },
   {
@@ -1660,7 +1660,7 @@
     "minMoria": 11945,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15370,
     "city": "Αθήνα"
   },
   {
@@ -1673,7 +1673,7 @@
     "minMoria": 10875,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13200,
     "city": "Αθήνα"
   },
   {
@@ -1686,7 +1686,7 @@
     "minMoria": 10925,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13538,
     "city": "Αθήνα"
   },
   {
@@ -1699,7 +1699,7 @@
     "minMoria": 14760,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15575,
     "city": "Αθήνα"
   },
   {
@@ -1712,7 +1712,7 @@
     "minMoria": 14800,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16313,
     "city": "Αθήνα"
   },
   {
@@ -1725,7 +1725,7 @@
     "minMoria": 15840,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18345,
     "city": "Αθήνα"
   },
   {
@@ -1737,8 +1737,8 @@
     "maxMoria": 21960,
     "minMoria": 17096,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 19528,
     "city": "Αθήνα"
   },
   {
@@ -1751,7 +1751,7 @@
     "minMoria": 10170,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13905,
     "city": "Αθήνα"
   },
   {
@@ -1764,7 +1764,7 @@
     "minMoria": 9460,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12485,
     "city": "Αθήνα"
   },
   {
@@ -1776,8 +1776,8 @@
     "maxMoria": 19775,
     "minMoria": 18775,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 19275,
     "city": "Αθήνα"
   },
   {
@@ -1790,7 +1790,7 @@
     "minMoria": 12630,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16568,
     "city": "Αθήνα"
   },
   {
@@ -1803,7 +1803,7 @@
     "minMoria": 11958,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15534,
     "city": "Αθήνα"
   },
   {
@@ -1816,7 +1816,7 @@
     "minMoria": 10966,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13636,
     "city": "Αθήνα"
   },
   {
@@ -1829,7 +1829,7 @@
     "minMoria": 12515,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16663,
     "city": "Αθήνα"
   },
   {
@@ -1842,7 +1842,7 @@
     "minMoria": 8750,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 10655,
     "city": "Αθήνα"
   },
   {
@@ -1855,7 +1855,7 @@
     "minMoria": 13380,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14950,
     "city": "Αθήνα"
   },
   {
@@ -1867,8 +1867,8 @@
     "maxMoria": 19575,
     "minMoria": 14405,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16990,
     "city": "Αθήνα"
   },
   {
@@ -1881,7 +1881,7 @@
     "minMoria": 14510,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16775,
     "city": "Αθήνα"
   },
   {
@@ -1894,7 +1894,7 @@
     "minMoria": 18025,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18825,
     "city": "Αθήνα"
   },
   {
@@ -1907,7 +1907,7 @@
     "minMoria": 14375,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15950,
     "city": "Αθήνα"
   },
   {
@@ -1919,8 +1919,8 @@
     "maxMoria": 19350,
     "minMoria": 17850,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18600,
     "city": "Αθήνα"
   },
   {
@@ -1932,8 +1932,8 @@
     "maxMoria": 17304,
     "minMoria": 13574,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 15439,
     "city": "Αθήνα"
   },
   {
@@ -1946,7 +1946,7 @@
     "minMoria": 11940,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13930,
     "city": "Αθήνα"
   },
   {
@@ -1959,7 +1959,7 @@
     "minMoria": 16100,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17600,
     "city": "Αθήνα"
   },
   {
@@ -1971,8 +1971,8 @@
     "maxMoria": 19275,
     "minMoria": 17075,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18175,
     "city": "Αθήνα"
   },
   {
@@ -1984,8 +1984,8 @@
     "maxMoria": 17940,
     "minMoria": 14340,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16140,
     "city": "Αθήνα"
   },
   {
@@ -1998,7 +1998,7 @@
     "minMoria": 10770,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13410,
     "city": "Αθήνα"
   },
   {
@@ -2010,8 +2010,8 @@
     "maxMoria": 15215,
     "minMoria": 9440,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12328,
     "city": "Αθήνα"
   },
   {
@@ -2024,7 +2024,7 @@
     "minMoria": 11090,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13465,
     "city": "Αθήνα"
   },
   {
@@ -2036,8 +2036,8 @@
     "maxMoria": 19190,
     "minMoria": 17880,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18535,
     "city": "Αθήνα"
   },
   {
@@ -2050,7 +2050,7 @@
     "minMoria": 12660,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15736,
     "city": "Αθήνα"
   },
   {
@@ -2063,7 +2063,7 @@
     "minMoria": 11750,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14358,
     "city": "Αθήνα"
   },
   {
@@ -2075,8 +2075,8 @@
     "maxMoria": 19138,
     "minMoria": 14183,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16661,
     "city": "Αθήνα"
   },
   {
@@ -2089,7 +2089,7 @@
     "minMoria": 17180,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17990,
     "city": "Αθήνα"
   },
   {
@@ -2102,7 +2102,7 @@
     "minMoria": 10640,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13865,
     "city": "Αθήνα"
   },
   {
@@ -2115,7 +2115,7 @@
     "minMoria": 17595,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18440,
     "city": "Αθήνα"
   },
   {
@@ -2127,8 +2127,8 @@
     "maxMoria": 16620,
     "minMoria": 14575,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 15598,
     "city": "Αθήνα"
   },
   {
@@ -2140,8 +2140,8 @@
     "maxMoria": 23085,
     "minMoria": 19335,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 21210,
     "city": "Αθήνα"
   },
   {
@@ -2153,8 +2153,8 @@
     "maxMoria": 19140,
     "minMoria": 15510,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17325,
     "city": "Αθήνα"
   },
   {
@@ -2166,8 +2166,8 @@
     "maxMoria": 19740,
     "minMoria": 18490,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 19115,
     "city": "Αθήνα"
   },
   {
@@ -2180,7 +2180,7 @@
     "minMoria": 13375,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14875,
     "city": "Αθήνα"
   },
   {
@@ -2192,8 +2192,8 @@
     "maxMoria": 19576,
     "minMoria": 18230,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18903,
     "city": "Αθήνα"
   },
   {
@@ -2205,8 +2205,8 @@
     "maxMoria": 19240,
     "minMoria": 17760,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18500,
     "city": "Αθήνα"
   },
   {
@@ -2218,8 +2218,8 @@
     "maxMoria": 19020,
     "minMoria": 16832,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17926,
     "city": "Αθήνα"
   },
   {
@@ -2232,7 +2232,7 @@
     "minMoria": 17510,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18360,
     "city": "Αθήνα"
   },
   {
@@ -2245,7 +2245,7 @@
     "minMoria": 10070,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12730,
     "city": "Αθήνα"
   },
   {
@@ -2258,7 +2258,7 @@
     "minMoria": 10072,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12690,
     "city": "Αθήνα"
   },
   {
@@ -2270,8 +2270,8 @@
     "maxMoria": 17220,
     "minMoria": 8180,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12700,
     "city": "Αθήνα"
   },
   {
@@ -2283,8 +2283,8 @@
     "maxMoria": 13760,
     "minMoria": 11000,
     "schoolType": "gel",
-    "field": "pliroforiki",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12380,
     "city": "Αθήνα"
   },
   {
@@ -2296,8 +2296,8 @@
     "maxMoria": 15650,
     "minMoria": 10830,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13240,
     "city": "Αθήνα"
   },
   {
@@ -2310,7 +2310,7 @@
     "minMoria": 9740,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12715,
     "city": "Αθήνα"
   },
   {
@@ -2323,7 +2323,7 @@
     "minMoria": 13300,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15363,
     "city": "Αθήνα"
   },
   {
@@ -2335,8 +2335,8 @@
     "maxMoria": 15510,
     "minMoria": 8580,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12045,
     "city": "Αθήνα"
   },
   {
@@ -2348,8 +2348,8 @@
     "maxMoria": 16645,
     "minMoria": 11395,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 14020,
     "city": "Αθήνα"
   },
   {
@@ -2361,8 +2361,8 @@
     "maxMoria": 14350,
     "minMoria": 8350,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 11350,
     "city": "Αθήνα"
   },
   {
@@ -2375,7 +2375,7 @@
     "minMoria": 10375,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12275,
     "city": "Αθήνα"
   },
   {
@@ -2388,7 +2388,7 @@
     "minMoria": 9190,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 9560,
     "city": "Αθήνα"
   },
   {
@@ -2400,8 +2400,8 @@
     "maxMoria": 13645,
     "minMoria": 9583,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 11614,
     "city": "Αθήνα"
   },
   {
@@ -2414,7 +2414,7 @@
     "minMoria": 8400,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12570,
     "city": "Αθήνα"
   },
   {
@@ -2427,7 +2427,7 @@
     "minMoria": 12880,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15615,
     "city": "Αθήνα"
   },
   {
@@ -2440,7 +2440,7 @@
     "minMoria": 14820,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 20200,
     "city": "Αθήνα"
   },
   {
@@ -2453,7 +2453,7 @@
     "minMoria": 8755,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11188,
     "city": "Αθήνα"
   },
   {
@@ -2465,8 +2465,8 @@
     "maxMoria": 16930,
     "minMoria": 9630,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13280,
     "city": "Αθήνα"
   },
   {
@@ -2479,7 +2479,7 @@
     "minMoria": 9570,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12810,
     "city": "Αθήνα"
   },
   {
@@ -2492,7 +2492,7 @@
     "minMoria": 9620,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12915,
     "city": "Αθήνα"
   },
   {
@@ -2505,7 +2505,7 @@
     "minMoria": 8980,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11285,
     "city": "Αθήνα"
   },
   {
@@ -2518,7 +2518,7 @@
     "minMoria": 16030,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16515,
     "city": "Αθήνα"
   },
   {
@@ -2531,7 +2531,7 @@
     "minMoria": 15480,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15595,
     "city": "Αθήνα"
   },
   {
@@ -2544,7 +2544,7 @@
     "minMoria": 17420,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17420,
     "city": "Αθήνα"
   },
   {
@@ -2557,7 +2557,7 @@
     "minMoria": 17040,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17565,
     "city": "Αθήνα"
   },
   {
@@ -2570,7 +2570,7 @@
     "minMoria": 16980,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16990,
     "city": "Αθήνα"
   },
   {
@@ -2582,8 +2582,8 @@
     "maxMoria": 17570,
     "minMoria": 14790,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16180,
     "city": "Αθήνα"
   },
   {
@@ -2595,8 +2595,8 @@
     "maxMoria": 19500,
     "minMoria": 18175,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18838,
     "city": "Αθήνα"
   },
   {
@@ -2608,8 +2608,8 @@
     "maxMoria": 18865,
     "minMoria": 15340,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17103,
     "city": "Αθήνα"
   },
   {
@@ -2622,7 +2622,7 @@
     "minMoria": 15975,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17300,
     "city": "Αθήνα"
   },
   {
@@ -2634,8 +2634,8 @@
     "maxMoria": 18850,
     "minMoria": 15700,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17275,
     "city": "Αθήνα"
   },
   {
@@ -2648,7 +2648,7 @@
     "minMoria": 17025,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18125,
     "city": "Αθήνα"
   },
   {
@@ -2660,8 +2660,8 @@
     "maxMoria": 19420,
     "minMoria": 17220,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18320,
     "city": "Αθήνα"
   },
   {
@@ -2674,7 +2674,7 @@
     "minMoria": 13982,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16195,
     "city": "Αθήνα"
   },
   {
@@ -2687,7 +2687,7 @@
     "minMoria": 9760,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 9760,
     "city": "Αθήνα"
   },
   {
@@ -2700,7 +2700,7 @@
     "minMoria": 11840,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14130,
     "city": "Αθήνα"
   },
   {
@@ -2713,7 +2713,7 @@
     "minMoria": 18895,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 20573,
     "city": "Αθήνα"
   },
   {
@@ -2725,8 +2725,8 @@
     "maxMoria": 17675,
     "minMoria": 13725,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 15700,
     "city": "Αθήνα"
   },
   {
@@ -2738,8 +2738,8 @@
     "maxMoria": 18520,
     "minMoria": 16735,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17628,
     "city": "Αθήνα"
   },
   {
@@ -2751,8 +2751,8 @@
     "maxMoria": 18310,
     "minMoria": 16375,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17343,
     "city": "Αθήνα"
   },
   {
@@ -2764,8 +2764,8 @@
     "maxMoria": 18850,
     "minMoria": 13775,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16313,
     "city": "Αθήνα"
   },
   {
@@ -2778,7 +2778,7 @@
     "minMoria": 15380,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17070,
     "city": "Αθήνα"
   },
   {
@@ -2790,8 +2790,8 @@
     "maxMoria": 18950,
     "minMoria": 14210,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16580,
     "city": "Αθήνα"
   },
   {
@@ -2804,7 +2804,7 @@
     "minMoria": 15375,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17123,
     "city": "Αθήνα"
   },
   {
@@ -2817,7 +2817,7 @@
     "minMoria": 7870,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 9385,
     "city": "Αθήνα"
   },
   {
@@ -2830,7 +2830,7 @@
     "minMoria": 7830,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12823,
     "city": "Αθήνα"
   },
   {
@@ -2843,7 +2843,7 @@
     "minMoria": 9600,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 10675,
     "city": "Αθήνα"
   },
   {
@@ -2856,7 +2856,7 @@
     "minMoria": 10525,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11563,
     "city": "Αθήνα"
   },
   {
@@ -2869,7 +2869,7 @@
     "minMoria": 8960,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 10165,
     "city": "Αθήνα"
   },
   {
@@ -2882,7 +2882,7 @@
     "minMoria": 8840,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11695,
     "city": "Αθήνα"
   },
   {
@@ -2894,8 +2894,8 @@
     "maxMoria": 16065,
     "minMoria": 9210,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12638,
     "city": "Αθήνα"
   },
   {
@@ -2908,7 +2908,7 @@
     "minMoria": 8765,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11865,
     "city": "Αθήνα"
   },
   {
@@ -2921,7 +2921,7 @@
     "minMoria": 9100,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11438,
     "city": "Αθήνα"
   },
   {
@@ -2934,7 +2934,7 @@
     "minMoria": 9800,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13808,
     "city": "Αθήνα"
   },
   {
@@ -2947,7 +2947,7 @@
     "minMoria": 9510,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13160,
     "city": "Αθήνα"
   },
   {
@@ -2960,7 +2960,7 @@
     "minMoria": 9850,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12810,
     "city": "Αθήνα"
   },
   {
@@ -2972,8 +2972,8 @@
     "maxMoria": 14780,
     "minMoria": 10975,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12878,
     "city": "Αθήνα"
   },
   {
@@ -2986,7 +2986,7 @@
     "minMoria": 12125,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14075,
     "city": "Αθήνα"
   },
   {
@@ -2999,7 +2999,7 @@
     "minMoria": 8650,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 10025,
     "city": "Αθήνα"
   },
   {
@@ -3011,8 +3011,8 @@
     "maxMoria": 15825,
     "minMoria": 8790,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12308,
     "city": "Αθήνα"
   },
   {
@@ -3024,8 +3024,8 @@
     "maxMoria": 13750,
     "minMoria": 8825,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 11288,
     "city": "Αθήνα"
   },
   {
@@ -3038,7 +3038,7 @@
     "minMoria": 9235,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12575,
     "city": "Αθήνα"
   },
   {
@@ -3051,7 +3051,7 @@
     "minMoria": 12920,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14090,
     "city": "Αθήνα"
   },
   {
@@ -3064,7 +3064,7 @@
     "minMoria": 9310,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11830,
     "city": "Αθήνα"
   },
   {
@@ -3077,7 +3077,7 @@
     "minMoria": 14110,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16023,
     "city": "Αθήνα"
   },
   {
@@ -3090,7 +3090,7 @@
     "minMoria": 13325,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17660,
     "city": "Αθήνα"
   },
   {
@@ -3103,7 +3103,7 @@
     "minMoria": 11625,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12953,
     "city": "Αθήνα"
   },
   {
@@ -3116,7 +3116,7 @@
     "minMoria": 12560,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14895,
     "city": "Αθήνα"
   },
   {
@@ -3129,7 +3129,7 @@
     "minMoria": 13710,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15630,
     "city": "Αθήνα"
   },
   {
@@ -3141,8 +3141,8 @@
     "maxMoria": 16490,
     "minMoria": 13850,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 15170,
     "city": "Αθήνα"
   },
   {
@@ -3155,7 +3155,7 @@
     "minMoria": 11790,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14530,
     "city": "Αθήνα"
   },
   {
@@ -3168,7 +3168,7 @@
     "minMoria": 14530,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16370,
     "city": "Αθήνα"
   },
   {
@@ -3180,8 +3180,8 @@
     "maxMoria": 19965,
     "minMoria": 13475,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16720,
     "city": "Αθήνα"
   },
   {
@@ -3193,8 +3193,8 @@
     "maxMoria": 17730,
     "minMoria": 12820,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 15275,
     "city": "Αθήνα"
   },
   {
@@ -3207,7 +3207,7 @@
     "minMoria": 16040,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17340,
     "city": "Αθήνα"
   },
   {
@@ -3219,8 +3219,8 @@
     "maxMoria": 14351,
     "minMoria": 12321,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13336,
     "city": "Αθήνα"
   },
   {
@@ -3233,7 +3233,7 @@
     "minMoria": 13175,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14688,
     "city": "Αθήνα"
   },
   {
@@ -3246,7 +3246,7 @@
     "minMoria": 13665,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15668,
     "city": "Αθήνα"
   },
   {
@@ -3259,7 +3259,7 @@
     "minMoria": 11832,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13902,
     "city": "Αθήνα"
   },
   {
@@ -3271,8 +3271,8 @@
     "maxMoria": 18444,
     "minMoria": 15380,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16912,
     "city": "Αθήνα"
   },
   {
@@ -3284,8 +3284,8 @@
     "maxMoria": 13660,
     "minMoria": 11220,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12440,
     "city": "Αθήνα"
   },
   {
@@ -3297,8 +3297,8 @@
     "maxMoria": 17483,
     "minMoria": 14367,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 15925,
     "city": "Αθήνα"
   },
   {
@@ -3311,7 +3311,7 @@
     "minMoria": 13980,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15720,
     "city": "Αθήνα"
   },
   {
@@ -3324,7 +3324,7 @@
     "minMoria": 13175,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13763,
     "city": "Αθήνα"
   },
   {
@@ -3336,8 +3336,8 @@
     "maxMoria": 16495,
     "minMoria": 12785,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 14640,
     "city": "Αθήνα"
   },
   {
@@ -3350,7 +3350,7 @@
     "minMoria": 9450,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11670,
     "city": "Αθήνα"
   },
   {
@@ -3362,8 +3362,8 @@
     "maxMoria": 17550,
     "minMoria": 15525,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16538,
     "city": "Αθήνα"
   },
   {
@@ -3376,7 +3376,7 @@
     "minMoria": 11640,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14503,
     "city": "Αθήνα"
   },
   {
@@ -3389,7 +3389,7 @@
     "minMoria": 9290,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12135,
     "city": "Αθήνα"
   },
   {
@@ -3401,8 +3401,8 @@
     "maxMoria": 15625,
     "minMoria": 8325,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 11975,
     "city": "Αθήνα"
   },
   {
@@ -3414,8 +3414,8 @@
     "maxMoria": 16000,
     "minMoria": 7970,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 11985,
     "city": "Αθήνα"
   },
   {
@@ -3428,7 +3428,7 @@
     "minMoria": 11270,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14675,
     "city": "Αθήνα"
   },
   {
@@ -3441,7 +3441,7 @@
     "minMoria": 13421,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15088,
     "city": "Αθήνα"
   },
   {
@@ -3453,8 +3453,8 @@
     "maxMoria": 16790,
     "minMoria": 13645,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 15218,
     "city": "Αθήνα"
   },
   {
@@ -3466,8 +3466,8 @@
     "maxMoria": 13580,
     "minMoria": 7550,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 10565,
     "city": "Αθήνα"
   },
   {
@@ -3479,8 +3479,8 @@
     "maxMoria": 12125,
     "minMoria": 9725,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 10925,
     "city": "Αθήνα"
   },
   {
@@ -3493,7 +3493,7 @@
     "minMoria": 10387,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11922,
     "city": "Αθήνα"
   },
   {
@@ -3506,7 +3506,7 @@
     "minMoria": 9725,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 10925,
     "city": "Αθήνα"
   },
   {
@@ -3519,7 +3519,7 @@
     "minMoria": 9125,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13250,
     "city": "Αθήνα"
   },
   {
@@ -3531,8 +3531,8 @@
     "maxMoria": 17036,
     "minMoria": 14518,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 15777,
     "city": "Αθήνα"
   },
   {
@@ -3544,8 +3544,8 @@
     "maxMoria": 14770,
     "minMoria": 8870,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 11820,
     "city": "Αθήνα"
   },
   {
@@ -3558,7 +3558,7 @@
     "minMoria": 8090,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 9270,
     "city": "Αθήνα"
   },
   {
@@ -3571,7 +3571,7 @@
     "minMoria": 12980,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15600,
     "city": "Αθήνα"
   },
   {
@@ -3584,7 +3584,7 @@
     "minMoria": 11200,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12750,
     "city": "Αθήνα"
   },
   {
@@ -3596,8 +3596,8 @@
     "maxMoria": 17020,
     "minMoria": 10500,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13760,
     "city": "Αθήνα"
   },
   {
@@ -3610,7 +3610,7 @@
     "minMoria": 7415,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11353,
     "city": "Αθήνα"
   },
   {
@@ -3623,7 +3623,7 @@
     "minMoria": 14485,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15458,
     "city": "Αθήνα"
   },
   {
@@ -3636,7 +3636,7 @@
     "minMoria": 16080,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16950,
     "city": "Αθήνα"
   },
   {
@@ -3648,8 +3648,8 @@
     "maxMoria": 20875,
     "minMoria": 16400,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18638,
     "city": "Αθήνα"
   },
   {
@@ -3661,8 +3661,8 @@
     "maxMoria": 17940,
     "minMoria": 16080,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17010,
     "city": "Αθήνα"
   },
   {
@@ -3674,8 +3674,8 @@
     "maxMoria": 14175,
     "minMoria": 10050,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12113,
     "city": "Αθήνα"
   },
   {
@@ -3688,7 +3688,7 @@
     "minMoria": 9600,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12300,
     "city": "Αθήνα"
   },
   {
@@ -3701,7 +3701,7 @@
     "minMoria": 10970,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12755,
     "city": "Αθήνα"
   },
   {
@@ -3714,7 +3714,7 @@
     "minMoria": 10170,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12710,
     "city": "Αθήνα"
   },
   {
@@ -3727,7 +3727,7 @@
     "minMoria": 9005,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 10873,
     "city": "Αθήνα"
   },
   {
@@ -3740,7 +3740,7 @@
     "minMoria": 10175,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11800,
     "city": "Αθήνα"
   },
   {
@@ -3753,7 +3753,7 @@
     "minMoria": 12805,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14078,
     "city": "Αθήνα"
   },
   {
@@ -3766,7 +3766,7 @@
     "minMoria": 9405,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12315,
     "city": "Αθήνα"
   },
   {
@@ -3779,7 +3779,7 @@
     "minMoria": 9600,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 10588,
     "city": "Αθήνα"
   },
   {
@@ -3792,7 +3792,7 @@
     "minMoria": 10425,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11950,
     "city": "Αθήνα"
   },
   {
@@ -3804,8 +3804,8 @@
     "maxMoria": 20384,
     "minMoria": 14860,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17622,
     "city": "Αθήνα"
   },
   {
@@ -3817,8 +3817,8 @@
     "maxMoria": 18780,
     "minMoria": 15725,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17253,
     "city": "Αθήνα"
   },
   {
@@ -3830,8 +3830,8 @@
     "maxMoria": 18975,
     "minMoria": 18125,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18550,
     "city": "Αθήνα"
   },
   {
@@ -3844,7 +3844,7 @@
     "minMoria": 10000,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12963,
     "city": "Αθήνα"
   },
   {
@@ -3856,8 +3856,8 @@
     "maxMoria": 17625,
     "minMoria": 17175,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17400,
     "city": "Αθήνα"
   },
   {
@@ -3869,8 +3869,8 @@
     "maxMoria": 15543,
     "minMoria": 8863,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12203,
     "city": "Αθήνα"
   },
   {
@@ -3882,8 +3882,8 @@
     "maxMoria": 12395,
     "minMoria": 9530,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 10963,
     "city": "Αθήνα"
   },
   {
@@ -3896,7 +3896,7 @@
     "minMoria": 10269,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11849,
     "city": "Αθήνα"
   },
   {
@@ -3908,8 +3908,8 @@
     "maxMoria": 17940,
     "minMoria": 16230,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17085,
     "city": "Αθήνα"
   },
   {
@@ -3922,7 +3922,7 @@
     "minMoria": 10475,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12998,
     "city": "Αθήνα"
   },
   {
@@ -3934,8 +3934,8 @@
     "maxMoria": 17406,
     "minMoria": 11795,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 14601,
     "city": "Αθήνα"
   },
   {
@@ -3948,7 +3948,7 @@
     "minMoria": 15200,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16913,
     "city": "Αθήνα"
   },
   {
@@ -3961,7 +3961,7 @@
     "minMoria": 13100,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15750,
     "city": "Αθήνα"
   },
   {
@@ -3974,7 +3974,7 @@
     "minMoria": 12325,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14163,
     "city": "Αθήνα"
   },
   {
@@ -3987,7 +3987,7 @@
     "minMoria": 9845,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11955,
     "city": "Αθήνα"
   },
   {
@@ -3999,8 +3999,8 @@
     "maxMoria": 18825,
     "minMoria": 12375,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 15600,
     "city": "Αθήνα"
   },
   {
@@ -4012,8 +4012,8 @@
     "maxMoria": 18350,
     "minMoria": 12725,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 15538,
     "city": "Αθήνα"
   },
   {
@@ -4025,8 +4025,8 @@
     "maxMoria": 15920,
     "minMoria": 13630,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 14775,
     "city": "Αθήνα"
   },
   {
@@ -4039,7 +4039,7 @@
     "minMoria": 9330,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12645,
     "city": "Αθήνα"
   },
   {
@@ -4052,7 +4052,7 @@
     "minMoria": 9570,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 10855,
     "city": "Αθήνα"
   },
   {
@@ -4064,8 +4064,8 @@
     "maxMoria": 12125,
     "minMoria": 9750,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 10938,
     "city": "Αθήνα"
   },
   {
@@ -4077,8 +4077,8 @@
     "maxMoria": 15820,
     "minMoria": 14140,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 14980,
     "city": "Αθήνα"
   },
   {
@@ -4091,7 +4091,7 @@
     "minMoria": 10400,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14010,
     "city": "Αθήνα"
   },
   {
@@ -4104,7 +4104,7 @@
     "minMoria": 11222,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12294,
     "city": "Αθήνα"
   },
   {
@@ -4116,8 +4116,8 @@
     "maxMoria": 18950,
     "minMoria": 16030,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17490,
     "city": "Αθήνα"
   },
   {
@@ -4129,8 +4129,8 @@
     "maxMoria": 18290,
     "minMoria": 16270,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17280,
     "city": "Αθήνα"
   },
   {
@@ -4143,7 +4143,7 @@
     "minMoria": 9370,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12010,
     "city": "Αθήνα"
   },
   {
@@ -4155,8 +4155,8 @@
     "maxMoria": 19425,
     "minMoria": 18200,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18813,
     "city": "Αθήνα"
   },
   {
@@ -4169,7 +4169,7 @@
     "minMoria": 9458,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12931,
     "city": "Αθήνα"
   },
   {
@@ -4181,8 +4181,8 @@
     "maxMoria": 10930,
     "minMoria": 7570,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 9250,
     "city": "Αθήνα"
   },
   {
@@ -4195,7 +4195,7 @@
     "minMoria": 12830,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14138,
     "city": "Αθήνα"
   },
   {
@@ -4207,8 +4207,8 @@
     "maxMoria": 16950,
     "minMoria": 12150,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 14550,
     "city": "Αθήνα"
   },
   {
@@ -4221,7 +4221,7 @@
     "minMoria": 11400,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12950,
     "city": "Αθήνα"
   },
   {
@@ -4233,8 +4233,8 @@
     "maxMoria": 18163,
     "minMoria": 14761,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16462,
     "city": "Αθήνα"
   },
   {
@@ -4247,7 +4247,7 @@
     "minMoria": 15250,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16610,
     "city": "Αθήνα"
   },
   {
@@ -4260,7 +4260,7 @@
     "minMoria": 11115,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13453,
     "city": "Αθήνα"
   },
   {
@@ -4272,8 +4272,8 @@
     "maxMoria": 17250,
     "minMoria": 11375,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 14313,
     "city": "Αθήνα"
   },
   {
@@ -4286,7 +4286,7 @@
     "minMoria": 14600,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16138,
     "city": "Αθήνα"
   },
   {
@@ -4299,7 +4299,7 @@
     "minMoria": 11970,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14420,
     "city": "Αθήνα"
   },
   {
@@ -4311,8 +4311,8 @@
     "maxMoria": 15987,
     "minMoria": 9625,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12806,
     "city": "Αθήνα"
   },
   {
@@ -4325,7 +4325,7 @@
     "minMoria": 10346,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13946,
     "city": "Αθήνα"
   },
   {
@@ -4338,7 +4338,7 @@
     "minMoria": 9220,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11210,
     "city": "Αθήνα"
   },
   {
@@ -4350,8 +4350,8 @@
     "maxMoria": 16185,
     "minMoria": 10502,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13344,
     "city": "Αθήνα"
   },
   {
@@ -4364,7 +4364,7 @@
     "minMoria": 15720,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17285,
     "city": "Αθήνα"
   },
   {
@@ -4377,7 +4377,7 @@
     "minMoria": 17020,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17748,
     "city": "Αθήνα"
   },
   {
@@ -4390,7 +4390,7 @@
     "minMoria": 16465,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17265,
     "city": "Αθήνα"
   },
   {
@@ -4402,8 +4402,8 @@
     "maxMoria": 13060,
     "minMoria": 9640,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 11350,
     "city": "Αθήνα"
   },
   {
@@ -4416,7 +4416,7 @@
     "minMoria": 15813,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17307,
     "city": "Αθήνα"
   },
   {
@@ -4428,8 +4428,8 @@
     "maxMoria": 18900,
     "minMoria": 18050,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18475,
     "city": "Αθήνα"
   },
   {
@@ -4442,7 +4442,7 @@
     "minMoria": 9175,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13988,
     "city": "Αθήνα"
   },
   {
@@ -4455,7 +4455,7 @@
     "minMoria": 10620,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13475,
     "city": "Αθήνα"
   },
   {
@@ -4467,8 +4467,8 @@
     "maxMoria": 15000,
     "minMoria": 9450,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12225,
     "city": "Αθήνα"
   },
   {
@@ -4480,8 +4480,8 @@
     "maxMoria": 19120,
     "minMoria": 9375,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 14248,
     "city": "Αθήνα"
   },
   {
@@ -4493,8 +4493,8 @@
     "maxMoria": 16990,
     "minMoria": 10925,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13958,
     "city": "Αθήνα"
   },
   {
@@ -4507,7 +4507,7 @@
     "minMoria": 13625,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16288,
     "city": "Αθήνα"
   },
   {
@@ -4520,7 +4520,7 @@
     "minMoria": 12040,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13510,
     "city": "Αθήνα"
   },
   {
@@ -4532,8 +4532,8 @@
     "maxMoria": 16275,
     "minMoria": 9250,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12763,
     "city": "Αθήνα"
   },
   {
@@ -4546,7 +4546,7 @@
     "minMoria": 9308,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13511,
     "city": "Αθήνα"
   },
   {
@@ -4559,7 +4559,7 @@
     "minMoria": 9185,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11023,
     "city": "Αθήνα"
   },
   {
@@ -4571,8 +4571,8 @@
     "maxMoria": 18678,
     "minMoria": 12784,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 15731,
     "city": "Αθήνα"
   },
   {
@@ -4585,7 +4585,7 @@
     "minMoria": 15382,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16735,
     "city": "Αθήνα"
   },
   {
@@ -4598,7 +4598,7 @@
     "minMoria": 16520,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17210,
     "city": "Αθήνα"
   },
   {
@@ -4611,7 +4611,7 @@
     "minMoria": 10160,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 10800,
     "city": "Αθήνα"
   },
   {
@@ -4624,7 +4624,7 @@
     "minMoria": 10302,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 10942,
     "city": "Αθήνα"
   },
   {
@@ -4636,8 +4636,8 @@
     "maxMoria": 21272,
     "minMoria": 18554,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 19913,
     "city": "Αθήνα"
   },
   {
@@ -4650,7 +4650,7 @@
     "minMoria": 16766,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17536,
     "city": "Αθήνα"
   },
   {
@@ -4663,7 +4663,7 @@
     "minMoria": 9020,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11705,
     "city": "Αθήνα"
   },
   {
@@ -4676,7 +4676,7 @@
     "minMoria": 9040,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11760,
     "city": "Αθήνα"
   },
   {
@@ -4689,7 +4689,7 @@
     "minMoria": 11625,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14738,
     "city": "Αθήνα"
   },
   {
@@ -4702,7 +4702,7 @@
     "minMoria": 12325,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15238,
     "city": "Αθήνα"
   },
   {
@@ -4714,8 +4714,8 @@
     "maxMoria": 19030,
     "minMoria": 10940,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 14985,
     "city": "Αθήνα"
   },
   {
@@ -4727,8 +4727,8 @@
     "maxMoria": 13240,
     "minMoria": 10120,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 11680,
     "city": "Αθήνα"
   },
   {
@@ -4741,7 +4741,7 @@
     "minMoria": 10027,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11589,
     "city": "Αθήνα"
   },
   {
@@ -4754,7 +4754,7 @@
     "minMoria": 14520,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16440,
     "city": "Αθήνα"
   },
   {
@@ -4767,7 +4767,7 @@
     "minMoria": 13100,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14730,
     "city": "Αθήνα"
   },
   {
@@ -4779,8 +4779,8 @@
     "maxMoria": 19110,
     "minMoria": 16470,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17790,
     "city": "Αθήνα"
   },
   {
@@ -4793,7 +4793,7 @@
     "minMoria": 9320,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13665,
     "city": "Αθήνα"
   },
   {
@@ -4805,8 +4805,8 @@
     "maxMoria": 19415,
     "minMoria": 18460,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18938,
     "city": "Αθήνα"
   },
   {
@@ -4819,7 +4819,7 @@
     "minMoria": 8460,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13150,
     "city": "Αθήνα"
   },
   {
@@ -4832,7 +4832,7 @@
     "minMoria": 12816,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14217,
     "city": "Αθήνα"
   },
   {
@@ -4844,8 +4844,8 @@
     "maxMoria": 15696,
     "minMoria": 10064,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12880,
     "city": "Αθήνα"
   },
   {
@@ -4857,8 +4857,8 @@
     "maxMoria": 18511,
     "minMoria": 14260,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16386,
     "city": "Αθήνα"
   },
   {
@@ -4870,8 +4870,8 @@
     "maxMoria": 18980,
     "minMoria": 16700,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17840,
     "city": "Αθήνα"
   },
   {
@@ -4884,7 +4884,7 @@
     "minMoria": 11400,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13825,
     "city": "Αθήνα"
   },
   {
@@ -4896,8 +4896,8 @@
     "maxMoria": 17820,
     "minMoria": 12290,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 15055,
     "city": "Αθήνα"
   },
   {
@@ -4909,8 +4909,8 @@
     "maxMoria": 17380,
     "minMoria": 14285,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 15833,
     "city": "Αθήνα"
   },
   {
@@ -4922,8 +4922,8 @@
     "maxMoria": 19430,
     "minMoria": 17670,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18550,
     "city": "Αθήνα"
   },
   {
@@ -4936,7 +4936,7 @@
     "minMoria": 10750,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15110,
     "city": "Αθήνα"
   },
   {
@@ -4949,7 +4949,7 @@
     "minMoria": 9940,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12310,
     "city": "Αθήνα"
   },
   {
@@ -4961,8 +4961,8 @@
     "maxMoria": 18580,
     "minMoria": 11520,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 15050,
     "city": "Αθήνα"
   },
   {
@@ -4974,8 +4974,8 @@
     "maxMoria": 17596,
     "minMoria": 14441,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16019,
     "city": "Αθήνα"
   },
   {
@@ -4988,7 +4988,7 @@
     "minMoria": 16420,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17240,
     "city": "Αθήνα"
   },
   {
@@ -5001,7 +5001,7 @@
     "minMoria": 15730,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16930,
     "city": "Αθήνα"
   },
   {
@@ -5013,8 +5013,8 @@
     "maxMoria": 15695,
     "minMoria": 13460,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 14578,
     "city": "Αθήνα"
   },
   {
@@ -5027,7 +5027,7 @@
     "minMoria": 16795,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18515,
     "city": "Αθήνα"
   },
   {
@@ -5040,7 +5040,7 @@
     "minMoria": 18320,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 19960,
     "city": "Αθήνα"
   },
   {
@@ -5052,8 +5052,8 @@
     "maxMoria": 18310,
     "minMoria": 14660,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16485,
     "city": "Αθήνα"
   },
   {
@@ -5066,7 +5066,7 @@
     "minMoria": 16180,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17050,
     "city": "Αθήνα"
   },
   {
@@ -5078,8 +5078,8 @@
     "maxMoria": 18460,
     "minMoria": 16740,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17600,
     "city": "Αθήνα"
   },
   {
@@ -5092,7 +5092,7 @@
     "minMoria": 12755,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14735,
     "city": "Αθήνα"
   },
   {
@@ -5105,7 +5105,7 @@
     "minMoria": 14985,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17168,
     "city": "Αθήνα"
   },
   {
@@ -5117,8 +5117,8 @@
     "maxMoria": 18875,
     "minMoria": 14550,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16713,
     "city": "Αθήνα"
   },
   {
@@ -5131,7 +5131,7 @@
     "minMoria": 15830,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16975,
     "city": "Αθήνα"
   },
   {
@@ -5144,7 +5144,7 @@
     "minMoria": 9768,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11480,
     "city": "Αθήνα"
   },
   {
@@ -5157,7 +5157,7 @@
     "minMoria": 8810,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 10855,
     "city": "Αθήνα"
   },
   {
@@ -5169,8 +5169,8 @@
     "maxMoria": 17975,
     "minMoria": 9350,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13663,
     "city": "Αθήνα"
   },
   {
@@ -5183,7 +5183,7 @@
     "minMoria": 12130,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13730,
     "city": "Αθήνα"
   },
   {
@@ -5195,8 +5195,8 @@
     "maxMoria": 15090,
     "minMoria": 10890,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12990,
     "city": "Αθήνα"
   },
   {
@@ -5208,8 +5208,8 @@
     "maxMoria": 17778,
     "minMoria": 11923,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 14851,
     "city": "Αθήνα"
   },
   {
@@ -5222,7 +5222,7 @@
     "minMoria": 9150,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11875,
     "city": "Αθήνα"
   },
   {
@@ -5235,7 +5235,7 @@
     "minMoria": 8700,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11798,
     "city": "Αθήνα"
   },
   {
@@ -5247,8 +5247,8 @@
     "maxMoria": 13020,
     "minMoria": 10230,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 11625,
     "city": "Αθήνα"
   },
   {
@@ -5260,8 +5260,8 @@
     "maxMoria": 13145,
     "minMoria": 8695,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 10920,
     "city": "Αθήνα"
   },
   {
@@ -5274,7 +5274,7 @@
     "minMoria": 12440,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13875,
     "city": "Αθήνα"
   },
   {
@@ -5286,8 +5286,8 @@
     "maxMoria": 15175,
     "minMoria": 11700,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13438,
     "city": "Αθήνα"
   },
   {
@@ -5300,7 +5300,7 @@
     "minMoria": 11950,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12625,
     "city": "Αθήνα"
   },
   {
@@ -5312,8 +5312,8 @@
     "maxMoria": 14610,
     "minMoria": 9670,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 12140,
     "city": "Αθήνα"
   },
   {
@@ -5326,7 +5326,7 @@
     "minMoria": 8750,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11665,
     "city": "Αθήνα"
   },
   {
@@ -5339,7 +5339,7 @@
     "minMoria": 9250,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 10988,
     "city": "Αθήνα"
   },
   {
@@ -5351,8 +5351,8 @@
     "maxMoria": 16925,
     "minMoria": 11425,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 14175,
     "city": "Αθήνα"
   },
   {
@@ -5364,8 +5364,8 @@
     "maxMoria": 15000,
     "minMoria": 11240,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13120,
     "city": "Αθήνα"
   },
   {
@@ -5377,8 +5377,8 @@
     "maxMoria": 12562,
     "minMoria": 10503,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 11533,
     "city": "Αθήνα"
   },
   {
@@ -5391,7 +5391,7 @@
     "minMoria": 9590,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13150,
     "city": "Αθήνα"
   },
   {
@@ -5403,8 +5403,8 @@
     "maxMoria": 14430,
     "minMoria": 13390,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13910,
     "city": "Αθήνα"
   },
   {
@@ -5417,7 +5417,7 @@
     "minMoria": 9428,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11795,
     "city": "Αθήνα"
   },
   {
@@ -5430,7 +5430,7 @@
     "minMoria": 13125,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15450,
     "city": "Αθήνα"
   },
   {
@@ -5443,7 +5443,7 @@
     "minMoria": 16480,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18635,
     "city": "Αθήνα"
   },
   {
@@ -5456,7 +5456,7 @@
     "minMoria": 14720,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17325,
     "city": "Αθήνα"
   },
   {
@@ -5469,7 +5469,7 @@
     "minMoria": 12460,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14480,
     "city": "Αθήνα"
   },
   {
@@ -5481,8 +5481,8 @@
     "maxMoria": 15020,
     "minMoria": 12210,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13615,
     "city": "Αθήνα"
   },
   {
@@ -5495,7 +5495,7 @@
     "minMoria": 14260,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15770,
     "city": "Αθήνα"
   },
   {
@@ -5507,8 +5507,8 @@
     "maxMoria": 14325,
     "minMoria": 12675,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13500,
     "city": "Αθήνα"
   },
   {
@@ -5520,8 +5520,8 @@
     "maxMoria": 17600,
     "minMoria": 12650,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 15125,
     "city": "Αθήνα"
   },
   {
@@ -5534,7 +5534,7 @@
     "minMoria": 17290,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18095,
     "city": "Αθήνα"
   },
   {
@@ -5546,8 +5546,8 @@
     "maxMoria": 18900,
     "minMoria": 14575,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16738,
     "city": "Αθήνα"
   },
   {
@@ -5559,8 +5559,8 @@
     "maxMoria": 18082,
     "minMoria": 14492,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16287,
     "city": "Αθήνα"
   },
   {
@@ -5573,7 +5573,7 @@
     "minMoria": 9370,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 10813,
     "city": "Αθήνα"
   },
   {
@@ -5586,7 +5586,7 @@
     "minMoria": 12030,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14263,
     "city": "Αθήνα"
   },
   {
@@ -5599,7 +5599,7 @@
     "minMoria": 13400,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15263,
     "city": "Αθήνα"
   },
   {
@@ -5612,7 +5612,7 @@
     "minMoria": 17850,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18410,
     "city": "Αθήνα"
   },
   {
@@ -5625,7 +5625,7 @@
     "minMoria": 17370,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17370,
     "city": "Αθήνα"
   },
   {
@@ -5638,7 +5638,7 @@
     "minMoria": 17640,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17640,
     "city": "Αθήνα"
   },
   {
@@ -5651,7 +5651,7 @@
     "minMoria": 16270,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16855,
     "city": "Αθήνα"
   },
   {
@@ -5664,7 +5664,7 @@
     "minMoria": 17710,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17710,
     "city": "Αθήνα"
   },
   {
@@ -5677,7 +5677,7 @@
     "minMoria": 14750,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16100,
     "city": "Αθήνα"
   },
   {
@@ -5690,7 +5690,7 @@
     "minMoria": 15660,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16740,
     "city": "Αθήνα"
   },
   {
@@ -5703,7 +5703,7 @@
     "minMoria": 14870,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15240,
     "city": "Αθήνα"
   },
   {
@@ -5716,7 +5716,7 @@
     "minMoria": 15510,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15565,
     "city": "Αθήνα"
   },
   {
@@ -5729,7 +5729,7 @@
     "minMoria": 12310,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13980,
     "city": "Αθήνα"
   },
   {
@@ -5742,7 +5742,7 @@
     "minMoria": 12260,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12260,
     "city": "Αθήνα"
   },
   {
@@ -5755,7 +5755,7 @@
     "minMoria": 5600,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 9100,
     "city": "Αθήνα"
   },
   {
@@ -5768,7 +5768,7 @@
     "minMoria": 14425,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15900,
     "city": "Αθήνα"
   },
   {
@@ -5781,7 +5781,7 @@
     "minMoria": 17485,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18185,
     "city": "Αθήνα"
   },
   {
@@ -5794,7 +5794,7 @@
     "minMoria": 17310,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17310,
     "city": "Αθήνα"
   },
   {
@@ -5807,7 +5807,7 @@
     "minMoria": 16340,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17150,
     "city": "Αθήνα"
   },
   {
@@ -5820,7 +5820,7 @@
     "minMoria": 15075,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15633,
     "city": "Αθήνα"
   },
   {
@@ -5832,8 +5832,8 @@
     "maxMoria": 18865,
     "minMoria": 18435,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18650,
     "city": "Αθήνα"
   },
   {
@@ -5845,8 +5845,8 @@
     "maxMoria": 18210,
     "minMoria": 17890,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18050,
     "city": "Αθήνα"
   },
   {
@@ -5859,7 +5859,7 @@
     "minMoria": 17890,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18005,
     "city": "Αθήνα"
   },
   {
@@ -5872,7 +5872,7 @@
     "minMoria": 17715,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17715,
     "city": "Αθήνα"
   },
   {
@@ -5885,7 +5885,7 @@
     "minMoria": 14575,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16583,
     "city": "Αθήνα"
   },
   {
@@ -5898,7 +5898,7 @@
     "minMoria": 17280,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17713,
     "city": "Αθήνα"
   },
   {
@@ -5911,7 +5911,7 @@
     "minMoria": 17180,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17180,
     "city": "Αθήνα"
   },
   {
@@ -5924,7 +5924,7 @@
     "minMoria": 16525,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17483,
     "city": "Αθήνα"
   },
   {
@@ -5937,7 +5937,7 @@
     "minMoria": 15100,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15768,
     "city": "Αθήνα"
   },
   {
@@ -5950,7 +5950,7 @@
     "minMoria": 10290,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11180,
     "city": "Αθήνα"
   },
   {
@@ -5963,7 +5963,7 @@
     "minMoria": 14890,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 15975,
     "city": "Αθήνα"
   },
   {
@@ -5976,7 +5976,7 @@
     "minMoria": 12940,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13825,
     "city": "Αθήνα"
   },
   {
@@ -5989,7 +5989,7 @@
     "minMoria": 12210,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12210,
     "city": "Αθήνα"
   },
   {
@@ -6002,7 +6002,7 @@
     "minMoria": 16825,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17123,
     "city": "Αθήνα"
   },
   {
@@ -6015,7 +6015,7 @@
     "minMoria": 16400,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 16553,
     "city": "Αθήνα"
   },
   {
@@ -6028,7 +6028,7 @@
     "minMoria": 11495,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11495,
     "city": "Αθήνα"
   },
   {
@@ -6041,7 +6041,7 @@
     "minMoria": 13155,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14725,
     "city": "Αθήνα"
   },
   {
@@ -6054,7 +6054,7 @@
     "minMoria": 12075,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12553,
     "city": "Αθήνα"
   },
   {
@@ -6066,8 +6066,8 @@
     "maxMoria": 15920,
     "minMoria": 11985,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 13953,
     "city": "Αθήνα"
   },
   {
@@ -6080,7 +6080,7 @@
     "minMoria": 11080,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 13905,
     "city": "Αθήνα"
   },
   {
@@ -6093,7 +6093,7 @@
     "minMoria": 8880,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 9975,
     "city": "Αθήνα"
   },
   {
@@ -6106,7 +6106,7 @@
     "minMoria": 11076,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12901,
     "city": "Αθήνα"
   },
   {
@@ -6119,7 +6119,7 @@
     "minMoria": 10936,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 10936,
     "city": "Αθήνα"
   },
   {
@@ -6132,7 +6132,7 @@
     "minMoria": 11629,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14263,
     "city": "Αθήνα"
   },
   {
@@ -6145,7 +6145,7 @@
     "minMoria": 11258,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 11443,
     "city": "Αθήνα"
   },
   {
@@ -6157,8 +6157,8 @@
     "maxMoria": 18950,
     "minMoria": 17600,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18275,
     "city": "Αθήνα"
   },
   {
@@ -6170,8 +6170,8 @@
     "maxMoria": 17600,
     "minMoria": 16675,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17138,
     "city": "Αθήνα"
   },
   {
@@ -6183,8 +6183,8 @@
     "maxMoria": 18323,
     "minMoria": 17535,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17929,
     "city": "Αθήνα"
   },
   {
@@ -6196,8 +6196,8 @@
     "maxMoria": 17216,
     "minMoria": 17216,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17216,
     "city": "Αθήνα"
   },
   {
@@ -6210,7 +6210,7 @@
     "minMoria": 17930,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18400,
     "city": "Αθήνα"
   },
   {
@@ -6223,7 +6223,7 @@
     "minMoria": 17310,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17550,
     "city": "Αθήνα"
   },
   {
@@ -6235,8 +6235,8 @@
     "maxMoria": 17995,
     "minMoria": 17535,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17765,
     "city": "Αθήνα"
   },
   {
@@ -6248,8 +6248,8 @@
     "maxMoria": 17420,
     "minMoria": 17170,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17295,
     "city": "Αθήνα"
   },
   {
@@ -6261,8 +6261,8 @@
     "maxMoria": 16145,
     "minMoria": 16145,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16145,
     "city": "Αθήνα"
   },
   {
@@ -6274,8 +6274,8 @@
     "maxMoria": 19085,
     "minMoria": 17875,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 18480,
     "city": "Αθήνα"
   },
   {
@@ -6287,8 +6287,8 @@
     "maxMoria": 17750,
     "minMoria": 17350,
     "schoolType": "gel",
-    "field": "oikonomiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17550,
     "city": "Αθήνα"
   },
   {
@@ -6300,8 +6300,8 @@
     "maxMoria": 18075,
     "minMoria": 17375,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17725,
     "city": "Αθήνα"
   },
   {
@@ -6313,8 +6313,8 @@
     "maxMoria": 16975,
     "minMoria": 16975,
     "schoolType": "gel",
-    "field": "thetiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 16975,
     "city": "Αθήνα"
   },
   {
@@ -6327,7 +6327,7 @@
     "minMoria": 18295,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 18355,
     "city": "Αθήνα"
   },
   {
@@ -6340,7 +6340,7 @@
     "minMoria": 17830,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17830,
     "city": "Αθήνα"
   },
   {
@@ -6353,7 +6353,7 @@
     "minMoria": 12230,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14620,
     "city": "Αθήνα"
   },
   {
@@ -6366,7 +6366,7 @@
     "minMoria": 12415,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14528,
     "city": "Αθήνα"
   },
   {
@@ -6379,7 +6379,7 @@
     "minMoria": 12070,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12070,
     "city": "Αθήνα"
   },
   {
@@ -6392,7 +6392,7 @@
     "minMoria": 11425,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 12275,
     "city": "Αθήνα"
   },
   {
@@ -6405,7 +6405,7 @@
     "minMoria": 16344,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 17346,
     "city": "Αθήνα"
   },
   {
@@ -6418,7 +6418,7 @@
     "minMoria": 12552,
     "schoolType": "gel",
     "field": "theoretiko",
-    "avgScore": 15,
+    "avgScore": 14268,
     "city": "Αθήνα"
   },
   {
@@ -6430,8 +6430,8 @@
     "maxMoria": 18060,
     "minMoria": 16170,
     "schoolType": "gel",
-    "field": "technologiko",
-    "avgScore": 15,
+    "field": "theoretiko",
+    "avgScore": 17115,
     "city": "Αθήνα"
   }
 ]

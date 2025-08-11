@@ -13,9 +13,35 @@
       <div class="logo"><img src="logo.png" alt="logo"></div>
       <nav>
         <a href="#">Αρχική Σελίδα</a>
-        <a href="main-page/programs.html">Προγράμματα</a>
-        <a href="main-page/panelladikes.html">Πανελλαδικές Εξετάσεις</a>
-        <a href="main-page/pallia-themata.html">Παλιά Θέματα</a>
+        <div class="dropdown">
+          <a href="main-page/programs.html">Προγράμματα</a>
+          <div class="dropdown-content">
+            <a href="main-page/programs.html">Πλήρες Πρόγραμμα</a>
+            <a href="#">Μαθήματα ΓΕΛ</a>
+            <a href="#">Μαθήματα ΕΠΑΛ</a>
+            <a href="#">Ιδιαίτερα Μαθήματα</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#">Τμήματα</a>
+          <div class="dropdown-content">
+            <a href="#">ΓΕΛ</a>
+            <a href="#">ΕΠΑΛ</a>
+            <a href="#">Γυμνάσιο</a>
+            <a href="#">Δημοτικό</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="main-page/panelladikes.html">Πανελλαδικές Εξετάσεις</a>
+          <div class="dropdown-content">
+            <a href="#">Όλα τα παρακάτω</a>
+            <a href="moria-calculator.html">Υπολογισμός Μορίων</a>
+            <a href="main-page/pallia-themata.html">Παλιά Θέματα</a>
+            <a href="#">Τράπεζα Θεμάτων</a>
+            <a href="admin-vaseis-scholon.html">Βάσεις Σχολών</a>
+            <a href="#">Μηχανογραφικό</a>
+          </div>
+        </div>
         <a href="main-page/photos.html">Φωτογραφίες</a>
         <a href="#">Σχετικά με εμάς</a>
       </nav>
@@ -41,7 +67,7 @@
             <input type="text" placeholder="Αναζήτηση...">
             <button><img src="\elements\search.svg" alt="fb"></button> 
           </div>
-          <button class="contact-btn" >Επικοινωνήστε μαζί μας</button>
+          <button class="contact-btn" onclick="window.location.href='contact.html'">Επικοινωνήστε μαζί μας</button>
         </div>
 
       </div>

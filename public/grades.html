@@ -6,6 +6,96 @@
   <title>Μαθητικό Στέκι</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-brown: #A0522D;
+      --primary-brown-light: rgba(160,82,45,0.1);
+      --primary-brown-shadow: rgba(160,82,45,0.15);
+    }
+    
+    /* Ισχυρά CSS rules για override των inline styles */
+    #subjectFilter, #examTypeFilter {
+      appearance: none !important;
+      -webkit-appearance: none !important;
+      -moz-appearance: none !important;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A0522D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+      background-repeat: no-repeat !important;
+      background-position: right 12px center !important;
+      background-size: 16px !important;
+      padding-right: 40px !important;
+      accent-color: var(--primary-brown) !important;
+    }
+    
+    #subjectFilter:hover, #examTypeFilter:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 4px 12px var(--primary-brown-shadow) !important;
+      border-color: var(--primary-brown) !important;
+    }
+    
+    #subjectFilter:focus, #examTypeFilter:focus {
+      border-color: var(--primary-brown) !important;
+      box-shadow: 0 0 0 3px var(--primary-brown-light) !important;
+      outline: none !important;
+    }
+    
+    /* Styling για τα options - Comprehensive approach */
+    #subjectFilter option, #examTypeFilter option {
+      background-color: white !important;
+      background: white !important;
+      color: #333 !important;
+      padding: 8px !important;
+    }
+    
+    /* Multiple selectors για καλύτερο cross-browser support */
+    #subjectFilter option:checked, #examTypeFilter option:checked,
+    #subjectFilter option:hover, #examTypeFilter option:hover,
+    #subjectFilter option:focus, #examTypeFilter option:focus,
+    #subjectFilter option:active, #examTypeFilter option:active,
+    #subjectFilter option[selected], #examTypeFilter option[selected] {
+      background-color: var(--primary-brown) !important;
+      background: linear-gradient(var(--primary-brown), var(--primary-brown)) !important;
+      color: white !important;
+    }
+    
+    /* Browser-specific rules */
+    #subjectFilter::-webkit-calendar-picker-indicator,
+    #examTypeFilter::-webkit-calendar-picker-indicator {
+      filter: invert(31%) sepia(45%) saturate(1000%) hue-rotate(180deg);
+    }
+    
+    /* Force brown colors in all states */
+    #subjectFilter, #examTypeFilter {
+      color-scheme: light !important;
+    }
+    
+    #subjectFilter::selection, #examTypeFilter::selection {
+      background-color: var(--primary-brown) !important;
+      color: white !important;
+    }
+    
+    /* Alternative approach για browsers που δεν υποστηρίζουν option styling */
+    select {
+      accent-color: var(--primary-brown) !important;
+      color-scheme: light !important;
+    }
+    
+    .filter-group label {
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    @media (max-width: 768px) {
+      .grades-filters > div {
+        flex-direction: column !important;
+        gap: 20px !important;
+      }
+      
+      .grades-filters select {
+        min-width: 250px !important;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -33,8 +123,8 @@
     <div class="student-container">
       <h1>Βαθμολογίες Μαθητή</h1>
       
-      <div id="studentInfo" style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: none;">
-        <h3>Στοιχεία Μαθητή</h3>
+      <div id="studentInfo" style="background: #fffdd5; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: none;">
+        
         <div id="studentDetails"></div>
       </div>
       
@@ -44,16 +134,22 @@
         </div>
         
         <div id="gradesContent" style="display: none;">
-          <div class="grades-filters" style="margin-bottom: 20px; padding: 20px; background: #f5f5f5; border-radius: 8px;">
-            <label for="subjectFilter">Φίλτρο ανά μάθημα:</label>
-            <select id="subjectFilter" style="margin-left: 10px; margin-right: 20px; padding: 8px; border-radius: 4px; border: 1px solid #ddd;">
-              <option value="">Όλα τα μαθήματα</option>
-            </select>
-            
-            <label for="examTypeFilter">Φίλτρο ανά τύπο:</label>
-            <select id="examTypeFilter" style="margin-left: 10px; padding: 8px; border-radius: 4px; border: 1px solid #ddd;">
-              <option value="">Όλοι οι τύποι</option>
-            </select>
+          <div class="grades-filters" style="background-color: #fffdd5; margin-bottom: 20px; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap;">
+              <div class="filter-group" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <label for="subjectFilter" style="font-weight: 600; color: #333; font-size: 14px;">Φίλτρο ανά μάθημα:</label>
+                <select id="subjectFilter" style="padding: 12px 16px; border-radius: 8px; border: 2px solid #e1e5e9; background: white; font-size: 14px; min-width: 200px; cursor: pointer; transition: all 0.3s ease; outline: none;" onmouseover="this.style.borderColor='#A0522D'" onmouseout="this.style.borderColor='#e1e5e9'" onfocus="this.style.borderColor='#A0522D'; this.style.boxShadow='0 0 0 3px rgba(160,82,45,0.1)'" onblur="this.style.borderColor='#e1e5e9'; this.style.boxShadow='none'">
+                  <option value="">Όλα τα μαθήματα</option>
+                </select>
+              </div>
+              
+              <div class="filter-group" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <label for="examTypeFilter" style="font-weight: 600; color: #333; font-size: 14px;">Φίλτρο ανά τύπο:</label>
+                <select id="examTypeFilter" style="padding: 12px 16px; border-radius: 8px; border: 2px solid #e1e5e9; background: white; font-size: 14px; min-width: 200px; cursor: pointer; transition: all 0.3s ease; outline: none;" onmouseover="this.style.borderColor='#A0522D'" onmouseout="this.style.borderColor='#e1e5e9'" onfocus="this.style.borderColor='#A0522D'; this.style.boxShadow='0 0 0 3px rgba(160,82,45,0.1)'" onblur="this.style.borderColor='#e1e5e9'; this.style.boxShadow='none'">
+                  <option value="">Όλοι οι τύποι</option>
+                </select>
+              </div>
+            </div>
           </div>
           
           <div id="gradesStats" style="margin-bottom: 20px;">
@@ -87,6 +183,117 @@
     </div>
   </footer>
     <script src="grades.js"></script>
+    
+    <script>
+      // Comprehensive force καφέ χρώματα στα dropdown
+      document.addEventListener('DOMContentLoaded', function() {
+        const selects = document.querySelectorAll('#subjectFilter, #examTypeFilter');
+        
+        // CSS injection για override browser defaults
+        const style = document.createElement('style');
+        style.textContent = `
+          select, select:focus, select:hover, select:active {
+            accent-color: #A0522D !important;
+            color-scheme: light !important;
+          }
+          
+          select option {
+            background-color: white !important;
+            color: #333 !important;
+          }
+          
+          select option:hover,
+          select option:focus,
+          select option:checked,
+          select option:active,
+          select option[selected] {
+            background-color: #A0522D !important;
+            background: #A0522D !important;
+            color: white !important;
+          }
+          
+          /* Browser-specific overrides */
+          select::-webkit-calendar-picker-indicator {
+            filter: invert(31%) sepia(45%) saturate(1000%) hue-rotate(180deg) !important;
+          }
+          
+          select::-moz-list-bullet {
+            color: #A0522D !important;
+          }
+        `;
+        document.head.appendChild(style);
+        
+        selects.forEach(select => {
+          // Override inline styles
+          select.style.setProperty('accent-color', '#A0522D', 'important');
+          select.style.setProperty('color-scheme', 'light', 'important');
+          
+          // Force καφέ σε όλα τα options
+          const options = select.querySelectorAll('option');
+          options.forEach(option => {
+            option.style.setProperty('background-color', 'white', 'important');
+            option.style.setProperty('color', '#333', 'important');
+            
+            // Event listeners για τα options
+            option.addEventListener('mouseover', function() {
+              this.style.setProperty('background-color', '#A0522D', 'important');
+              this.style.setProperty('color', 'white', 'important');
+            });
+            
+            option.addEventListener('mouseout', function() {
+              if (!this.selected) {
+                this.style.setProperty('background-color', 'white', 'important');
+                this.style.setProperty('color', '#333', 'important');
+              }
+            });
+          });
+          
+          // Add event listeners για καφέ highlights στο select element
+          select.addEventListener('focus', function() {
+            this.style.setProperty('border-color', '#A0522D', 'important');
+            this.style.setProperty('box-shadow', '0 0 0 3px rgba(160,82,45,0.1)', 'important');
+          });
+          
+          select.addEventListener('blur', function() {
+            this.style.setProperty('border-color', '#e1e5e9', 'important');
+            this.style.setProperty('box-shadow', 'none', 'important');
+          });
+          
+          select.addEventListener('mouseover', function() {
+            this.style.setProperty('border-color', '#A0522D', 'important');
+          });
+          
+          select.addEventListener('mouseout', function() {
+            if (document.activeElement !== this) {
+              this.style.setProperty('border-color', '#e1e5e9', 'important');
+            }
+          });
+          
+          // Override οποιαδήποτε browser default highlighting
+          select.addEventListener('change', function() {
+            this.style.setProperty('accent-color', '#A0522D', 'important');
+          });
+        });
+        
+        // MutationObserver για νέα options που προστίθενται δυναμικά
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'childList') {
+              mutation.addedNodes.forEach(function(node) {
+                if (node.tagName === 'OPTION') {
+                  node.style.setProperty('background-color', 'white', 'important');
+                  node.style.setProperty('color', '#333', 'important');
+                }
+              });
+            }
+          });
+        });
+        
+        selects.forEach(select => {
+          observer.observe(select, { childList: true });
+        });
+      });
+    </script>
 
 </body>
 </html>

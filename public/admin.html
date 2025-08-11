@@ -43,7 +43,7 @@
             <input type="text" placeholder="Αναζήτηση...">
             <button><img src="\elements\search.svg" alt="fb"></button> 
           </div>
-          <button class="contact-btn" >Επικοινωνήστε μαζί μας</button>
+          <button onclick="window.location.href='contact.html'" class="contact-btn">Επικοινωνήστε μαζί μας</button>
         </div>
 
       </div>
@@ -119,27 +119,541 @@
 
     <div style="width: 1000px; height: 2px; background-color: rgb(253, 198, 150); justify-content:center; margin: auto;"></div>
 
- <section class="experience">
-  <h2>Ανακοινώσεις</h2>
-  <p>Μείνετε ενημερωμένοι σχετικά με οτιδήποτε συμβαίνει στο φροντιστήριο μας και όχι μόνο.</p>
+<!-- Announcements Management Section -->
+<section class="announcements-management" style="padding: 40px 20px; background: #fffdd5">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <h2 style="text-align: center; color: #2C5F4F; margin-bottom: 10px;">Διαχείριση Ανακοινώσεων</h2>
+    <p style="text-align: center; color: #666; margin-bottom: 30px;">Μείνετε ενημερωμένοι σχετικά με οτιδήποτε συμβαίνει στο φροντιστήριο μας και όχι μόνο.</p>
+    
+    <!-- Add Announcement Form -->
+    <div style="background: rgb(255, 247, 244); padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+      <h3 style="margin-bottom: 20px; color: #2C5F4F;">Προσθήκη Νέας Ανακοίνωσης</h3>
+      <form id="add-announcement-form">
+        <div style="margin-bottom: 20px;">
+          <label for="announcement-title" style="display: block; margin-bottom: 5px; font-weight: bold;">Τίτλος Ανακοίνωσης:</label>
+          <input type="text" id="announcement-title" placeholder="Εισάγετε τον τίτλο..." required 
+                 style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+          <label for="announcement-content" style="display: block; margin-bottom: 5px; font-weight: bold;">Περιεχόμενο:</label>
+          <textarea id="announcement-content" placeholder="Εισάγετε το περιεχόμενο της ανακοίνωσης..." required 
+                    style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 5px; box-sizing: border-box; min-height: 100px; resize: vertical;"></textarea>
+        </div>
+        
+        <button type="submit"
+                  onmouseover="this.style.background='#F7C19C'; this.style.color='#BC5E29'; this.style.boxShadow='0 0 0 2px rgba(183, 54, 22, 0.495)'"
+                  onmouseout="this.style.background='#4d2c1e'; this.style.color='#fff'; this.style.boxShadow='none'"
+                  style="background: #4d2c1e;
+                    color: #fff;
+                    border: none;
+                    border-radius: 20px;
+                    padding: 0.5rem 1.5rem;
+                    font-weight: 700;
+                    font-size:small;
+                    cursor: pointer;
+                    transition: all 0.2s;">
+          Προσθήκη Ανακοίνωσης
+        </button>
+        
 
-  <!-- Φόρμα προσθήκης ανακοίνωσης -->
-  <form id="add-announcement-form" style="margin-bottom: 20px;">
-    <input type="text" id="announcement-title" placeholder="Τίτλος" required>
-    <input type="text" id="announcement-content" placeholder="Περιεχόμενο" required>
-    <button type="submit">Προσθήκη</button>
-  </form>
+      </form>
+    </div>
 
-  <section class="announcements">
-    <div class="container-2">
-      <div class="announcements">
+    <!-- Announcements List -->
+    <div style="background: #eb6c4d; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+      <h3 style="padding: 20px; margin: 0; text-align: center; background: #ff7e5f; color: white;box-shadow: 0 2px 10px rgba(0,0,0,0.1);">Υπάρχουσες Ανακοινώσεις</h3>
+      <div id="announcements-container" style="max-height: 500px; overflow-y: auto; padding: 20px;">
         <!-- Εδώ θα μπουν οι ανακοινώσεις από JS -->
+        <div style="padding: 20px; background: #f0f0f0; margin: 10px 0; border-radius: 10px; text-align: center;">
+          🔄 Φόρτωση ανακοινώσεων...
+        </div>
       </div>
     </div>
-  </section>
-
-  <script src="announcements.js"></script>
+  </div>
 </section>
+
+<!-- Edit Announcement Modal -->
+<div id="editAnnouncementModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
+  <div style="background-color: white; margin: 5% auto; padding: 30px; border-radius: 10px; width: 90%; max-width: 600px;">
+    <span onclick="closeEditAnnouncementModal()" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+    <h2>Επεξεργασία Ανακοίνωσης</h2>
+    
+    <form id="editAnnouncementForm">
+      <input type="hidden" id="editAnnouncementId">
+      
+      <div style="margin-bottom: 20px;">
+        <label for="editAnnouncementTitle" style="display: block; margin-bottom: 5px; font-weight: bold;">Τίτλος:</label>
+        <input type="text" id="editAnnouncementTitle" required style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+      </div>
+      
+      <div style="margin-bottom: 30px;">
+        <label for="editAnnouncementContent" style="display: block; margin-bottom: 5px; font-weight: bold;">Περιεχόμενο:</label>
+        <textarea id="editAnnouncementContent" required style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px; box-sizing: border-box; min-height: 120px; resize: vertical;"></textarea>
+      </div>
+
+      <div style="text-align: center;">
+        <button type="button" onclick="closeEditAnnouncementModal()" style="padding: 12px 20px; background: #6c757d; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-right: 10px;">
+          Ακύρωση
+        </button>
+        <button type="submit" style="padding: 12px 20px; background: #28a745; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
+          Αποθήκευση
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+// Announcements management system
+let announcements = [];
+
+// Load announcements on page load
+document.addEventListener('DOMContentLoaded', function() {
+  loadAnnouncements();
+});
+
+// Load announcements from database
+async function loadAnnouncements() {
+  // Show loading state
+  const container = document.getElementById('announcements-container');
+  container.innerHTML = `
+    <div style="padding: 40px; text-align: center; color: #666;">
+      <h4>🔄 Φόρτωση ανακοινώσεων...</h4>
+      <p>Παρακαλώ περιμένετε...</p>
+    </div>
+  `;
+
+  try {
+    console.log('🔍 Loading announcements from database...');
+    
+    // Add cache-busting parameter to prevent browser caching
+    const timestamp = new Date().getTime();
+    const response = await fetch(`/announcements?_t=${timestamp}`, {
+      cache: 'no-cache',
+      headers: {
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache'
+      }
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    console.log('📦 Announcements data:', data);
+    console.log('📋 Available IDs:', data.map(a => a.notification_id));
+    
+    // Convert database format to our format
+    announcements = data.map(announcement => ({
+      id: announcement.notification_id,
+      title: announcement.title,
+      content: announcement.content,
+      created_at: new Date(announcement.created_at)
+    }));
+    
+    console.log('✅ Converted announcements:', announcements.map(a => ({ id: a.id, title: a.title })));
+    
+    displayAnnouncements();
+    
+  } catch (error) {
+    console.error('❌ Error loading announcements:', error);
+    container.innerHTML = `
+      <div style="padding: 20px; background: #ffebee; margin: 10px 0; border-radius: 5px; text-align: center;">
+        <h4 style="margin: 0 0 10px 0; color: #c62828;">❌ Σφάλμα φόρτωσης</h4>
+        <p style="margin: 0; color: #666;">Δεν μπορώ να συνδεθώ στη βάση δεδομένων.</p>
+        <p style="margin: 10px 0 0 0; font-size: 12px; color: #999;">Error: ${error.message}</p>
+        <button onclick="loadAnnouncements()" style="margin-top: 15px; padding: 8px 16px; background: #E39C50; color: white; border: none; border-radius: 4px; cursor: pointer;">
+          🔄 Δοκιμάστε ξανά
+        </button>
+      </div>
+    `;
+  }
+}
+
+// Display announcements in container
+function displayAnnouncements() {
+  const container = document.getElementById('announcements-container');
+  
+  if (announcements.length === 0) {
+    container.innerHTML = `
+      <div style="padding: 40px; text-align: center; color: #666;">
+        <h4>📝 Δεν υπάρχουν ανακοινώσεις</h4>
+        <p>Προσθέστε την πρώτη ανακοίνωση χρησιμοποιώντας τη φόρμα παραπάνω.</p>
+      </div>
+    `;
+    return;
+  }
+
+  // Sort announcements by date (newest first)
+  const sortedAnnouncements = [...announcements].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+  
+  console.log('🎨 Displaying announcements with IDs:', sortedAnnouncements.map(a => a.id));
+  
+  container.innerHTML = sortedAnnouncements.map(announcement => `
+    <div style="padding: 20px; background: #fff; margin-bottom: 15px; border-radius: 8px; border-left: 4px solid #E39C50; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+      <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 10px;">
+        <h4 style="margin: 0; color: #2C5F4F; flex-grow: 1;">${announcement.title}</h4>
+        <div style="display: flex; gap: 8px; margin-left: 15px;">
+          <button onclick="editAnnouncement(${announcement.id})" 
+                  onmouseover="this.style.background='#F7C19C'; this.style.color='#BC5E29'; this.style.boxShadow='0 0 0 2px rgba(183, 54, 22, 0.495)'"
+                  onmouseout="this.style.background='#4d2c1e'; this.style.color='#fff'; this.style.boxShadow='none'"
+                  style="background: #4d2c1e;
+                    color: #fff;
+                    border: none;
+                    border-radius: 20px;
+                    padding: 0.5rem 1.5rem;
+                    font-weight: 700;
+                    font-size:small;
+                    cursor: pointer;
+                    transition: all 0.2s;">
+            Επεξεργασία
+          </button>
+          <button onclick="deleteAnnouncement(${announcement.id})" 
+                   onmouseover="this.style.background='#F79C9C'; this.style.color='#D63838'; this.style.boxShadow='0 0 0 2px rgba(200, 0, 0, 0.495)'"
+                  onmouseout="this.style.background='#dc3545'; this.style.color='#fff'; this.style.boxShadow='none'"
+                  style="background: #dc3545;
+                    color: white;
+                    border: none;
+                    border-radius: 20px;
+                    padding: 0.5rem 1.5rem;
+                    font-weight: 700;
+                    font-size:small;
+                    cursor: pointer;
+                    transition: all 0.2s;">
+            Διαγραφή
+          </button>
+        </div>
+      </div>
+      <p style="margin: 0 0 10px 0; color: #555; line-height: 1.5;">${announcement.content}</p>
+      <small style="color: #999;">📅 ${new Date(announcement.created_at).toLocaleString('el-GR')}</small>
+    </div>
+  `).join('');
+}
+
+// Add announcement form submission
+document.getElementById('add-announcement-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const title = document.getElementById('announcement-title').value.trim();
+  const content = document.getElementById('announcement-content').value.trim();
+  const submitButton = this.querySelector('button[type="submit"]');
+  const originalButtonText = submitButton.textContent;
+  
+  if (!title || !content) {
+    showAnnouncementAlert('Παρακαλώ συμπληρώστε όλα τα πεδία!', 'error');
+    return;
+  }
+
+  // Show loading state
+  submitButton.disabled = true;
+  submitButton.textContent = '⏳ Προσθήκη...';
+
+  try {
+    const response = await fetch('/api/announcements', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ title, content })
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
+      throw new Error(`HTTP error! status: ${response.status} - ${errorData.error || 'Unknown error'}`);
+    }
+
+    const result = await response.json();
+    console.log('✅ Announcement created:', result);
+    
+    // Clear form
+    this.reset();
+    
+    // Reload announcements from database
+    await loadAnnouncements();
+    
+    showAnnouncementAlert('Η ανακοίνωση προστέθηκε επιτυχώς!', 'success');
+    
+  } catch (error) {
+    console.error('❌ Error creating announcement:', error);
+    
+    if (error.message.includes('Failed to fetch')) {
+      showAnnouncementAlert('Πρόβλημα σύνδεσης με τον server!', 'error');
+    } else {
+      showAnnouncementAlert(`Σφάλμα κατά την προσθήκη: ${error.message}`, 'error');
+    }
+  } finally {
+    // Reset button state
+    submitButton.disabled = false;
+    submitButton.textContent = originalButtonText;
+  }
+});
+
+// Edit announcement
+function editAnnouncement(id) {
+  const announcement = announcements.find(a => a.id === id);
+  if (!announcement) {
+    showAnnouncementAlert('Η ανακοίνωση δεν βρέθηκε!', 'error');
+    // Reload announcements to sync with database
+    loadAnnouncements();
+    return;
+  }
+
+  document.getElementById('editAnnouncementId').value = announcement.id;
+  document.getElementById('editAnnouncementTitle').value = announcement.title;
+  document.getElementById('editAnnouncementContent').value = announcement.content;
+  
+  document.getElementById('editAnnouncementModal').style.display = 'block';
+}
+
+function closeEditAnnouncementModal() {
+  document.getElementById('editAnnouncementModal').style.display = 'none';
+}
+
+// Edit announcement form submission
+document.getElementById('editAnnouncementForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const announcementId = parseInt(document.getElementById('editAnnouncementId').value);
+  const title = document.getElementById('editAnnouncementTitle').value.trim();
+  const content = document.getElementById('editAnnouncementContent').value.trim();
+  
+  if (!title || !content) {
+    showAnnouncementAlert('Παρακαλώ συμπληρώστε όλα τα πεδία!', 'error');
+    return;
+  }
+
+  try {
+    const response = await fetch(`/api/announcements/${announcementId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ title, content })
+    });
+
+    if (response.status === 404) {
+      showAnnouncementAlert('Η ανακοίνωση δεν βρέθηκε ή έχει διαγραφεί!', 'error');
+      closeEditAnnouncementModal();
+      await loadAnnouncements();
+      return;
+    }
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
+      throw new Error(`HTTP error! status: ${response.status} - ${errorData.error || 'Unknown error'}`);
+    }
+
+    const result = await response.json();
+    console.log('✅ Announcement updated:', result);
+    
+    closeEditAnnouncementModal();
+    
+    // Reload announcements from database
+    await loadAnnouncements();
+    
+    showAnnouncementAlert('Η ανακοίνωση ενημερώθηκε επιτυχώς!', 'success');
+    
+  } catch (error) {
+    console.error('❌ Error updating announcement:', error);
+    
+    if (error.message.includes('Failed to fetch')) {
+      showAnnouncementAlert('Πρόβλημα σύνδεσης με τον server!', 'error');
+    } else {
+      showAnnouncementAlert(`Σφάλμα κατά την ενημέρωση: ${error.message}`, 'error');
+    }
+  }
+});
+
+// Delete announcement
+async function deleteAnnouncement(id) {
+  console.log('🗑️ Attempting to delete announcement with ID:', id);
+  
+  // First, refresh data from database to make sure we have the latest state
+  await loadAnnouncements();
+  
+  console.log('📋 Current announcements after refresh:', announcements.map(a => ({ id: a.id, title: a.title })));
+  
+  const announcement = announcements.find(a => a.id === id);
+  if (!announcement) {
+    console.warn('⚠️ Announcement not found in local array after refresh!');
+    showAnnouncementAlert('Η ανακοίνωση δεν βρέθηκε ή έχει ήδη διαγραφεί!', 'error');
+    return;
+  }
+
+  console.log('✅ Found announcement to delete:', announcement);
+
+  if (confirm(`Είστε βέβαιοι ότι θέλετε να διαγράψετε την ανακοίνωση "${announcement.title}";`)) {
+    try {
+      console.log('🚀 Sending DELETE request to:', `/api/announcements/${id}`);
+      
+      const response = await fetch(`/api/announcements/${id}`, {
+        method: 'DELETE'
+      });
+
+      console.log('📡 Delete response status:', response.status);
+
+      if (response.status === 404) {
+        console.warn('⚠️ Server returned 404 - announcement not found in database');
+        showAnnouncementAlert('Η ανακοίνωση έχει ήδη διαγραφεί ή δεν υπάρχει στη βάση δεδομένων!', 'error');
+        // Reload announcements to sync with database
+        await loadAnnouncements();
+        return;
+      }
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
+        throw new Error(`HTTP error! status: ${response.status} - ${errorData.error || 'Unknown error'}`);
+      }
+
+      const result = await response.json();
+      console.log('✅ Announcement deleted successfully:', result);
+      
+      // Reload announcements from database
+      await loadAnnouncements();
+      
+      showAnnouncementAlert('Η ανακοίνωση διαγράφηκε επιτυχώς!', 'success');
+      
+    } catch (error) {
+      console.error('❌ Error deleting announcement:', error);
+      
+      // Check if it's a network error
+      if (error.message.includes('Failed to fetch')) {
+        showAnnouncementAlert('Πρόβλημα σύνδεσης με τον server!', 'error');
+      } else {
+        showAnnouncementAlert(`Σφάλμα κατά τη διαγραφή: ${error.message}`, 'error');
+      }
+      
+      // Reload announcements to ensure we have the latest data
+      await loadAnnouncements();
+    }
+  }
+}
+
+// Show alert function for announcements
+function showAnnouncementAlert(message, type = 'success') {
+  const alertDiv = document.createElement('div');
+  const backgroundColor = type === 'success' ? '#d4edda' : '#f8d7da';
+  const borderColor = type === 'success' ? '#c3e6cb' : '#f5c6cb';
+  const textColor = type === 'success' ? '#155724' : '#721c24';
+  
+  alertDiv.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: ${backgroundColor};
+    color: ${textColor};
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: 1px solid ${borderColor};
+    z-index: 2000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 400px;
+  `;
+  alertDiv.textContent = message;
+  document.body.appendChild(alertDiv);
+
+  setTimeout(() => {
+    if (document.body.contains(alertDiv)) {
+      document.body.removeChild(alertDiv);
+    }
+  }, 4000);
+}
+
+// Debug function to check database state
+async function debugAnnouncements() {
+  try {
+    console.log('🔍 DEBUG: Fetching fresh data from database...');
+    
+    const timestamp = new Date().getTime();
+    const response = await fetch(`/announcements?debug=true&_t=${timestamp}`, {
+      cache: 'no-cache',
+      headers: {
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache'
+      }
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    
+    console.log('=== DEBUG ANNOUNCEMENTS ===');
+    console.log('📊 Total announcements in database:', data.length);
+    console.log('📋 Database announcements:', data);
+    console.log('🔢 IDs in database:', data.map(a => a.notification_id));
+    console.log('📝 Current frontend announcements:', announcements);
+    console.log('🔢 IDs in frontend:', announcements.map(a => a.id));
+    console.log('===========================');
+    
+    // Show detailed info in an alert
+    const dbIds = data.map(a => a.notification_id).sort((a,b) => a-b);
+    const frontendIds = announcements.map(a => a.id).sort((a,b) => a-b);
+    
+    const message = `
+DATABASE: ${data.length} ανακοινώσεις
+IDs στη βάση: [${dbIds.join(', ')}]
+
+FRONTEND: ${announcements.length} ανακοινώσεις  
+IDs στο frontend: [${frontendIds.join(', ')}]
+
+Sync: ${JSON.stringify(dbIds) === JSON.stringify(frontendIds) ? '✅ ΟΚ' : '❌ ΟΧΙ ΣΥΓΧΡΟΝΙΣΜΕΝΑ'}
+    `.trim();
+    
+    alert(message);
+    
+  } catch (error) {
+    console.error('❌ Debug error:', error);
+    alert(`Debug σφάλμα: ${error.message}`);
+  }
+}
+
+// Test API connectivity
+async function testAPI() {
+  console.log('🧪 Testing API connectivity...');
+  
+  try {
+    // Test basic API endpoint
+    const testResponse = await fetch('/api/test');
+    console.log('🔌 API Test Response Status:', testResponse.status);
+    
+    if (testResponse.ok) {
+      const testData = await testResponse.json();
+      console.log('✅ API Test Success:', testData);
+      alert(`✅ API Test Success!\n\nMessage: ${testData.message}\nTime: ${testData.timestamp}`);
+    } else {
+      console.log('❌ API Test Failed:', testResponse.status);
+      alert(`❌ API Test Failed!\n\nStatus: ${testResponse.status}`);
+    }
+    
+    // Test announcements endpoint
+    const announcementsResponse = await fetch('/announcements');
+    console.log('📢 Announcements Test Status:', announcementsResponse.status);
+    
+    if (announcementsResponse.ok) {
+      const announcementsData = await announcementsResponse.json();
+      console.log('✅ Announcements Test Success:', announcementsData.length, 'announcements');
+    } else {
+      console.log('❌ Announcements Test Failed:', announcementsResponse.status);
+    }
+    
+  } catch (error) {
+    console.error('❌ API Test Error:', error);
+    alert(`❌ API Test Error!\n\n${error.message}`);
+  }
+}
+
+// Close modal when clicking outside
+window.addEventListener('click', function(event) {
+  const modal = document.getElementById('editAnnouncementModal');
+  if (event.target === modal) {
+    closeEditAnnouncementModal();
+  }
+});
+</script>
 
   <section class="stats-section" id="stats" style="padding-top: 120px;">
       <!-- Blob από κάτω -->
@@ -282,103 +796,9 @@ observer.observe(document.getElementById('stats'));
     </section>
 
     <!-- Teachers Management Section -->
-    <section class="teachers-management" style="padding: 40px 20px; background: #f8f9fa;">
-      <div style="max-width: 1200px; margin: 0 auto;">
-        <h2 style="text-align: center; color: #2C5F4F; margin-bottom: 30px;">Διαχείριση Καθηγητών</h2>
-        
-        <!-- Add Teacher Form -->
-        <div style="background: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-          <h3>Προσθήκη Νέου Καθηγητή</h3>
-          <form id="teacherForm" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: end;">
-            <div>
-              <label for="teacherName" style="display: block; margin-bottom: 5px; font-weight: bold;">Όνομα Καθηγητή:</label>
-              <input type="text" id="teacherName" required style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px;">
-            </div>
-            <div>
-              <label for="teacherSubject" style="display: block; margin-bottom: 5px; font-weight: bold;">Ειδικότητα:</label>
-              <input type="text" id="teacherSubject" required style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px;">
-            </div>
-            <div>
-              <label for="teacherPhone" style="display: block; margin-bottom: 5px; font-weight: bold;">Τηλέφωνο:</label>
-              <input type="tel" id="teacherPhone" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px;">
-            </div>
-            <div>
-              <label for="teacherEmail" style="display: block; margin-bottom: 5px; font-weight: bold;">Email:</label>
-              <input type="email" id="teacherEmail" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px;">
-            </div>
-            <button type="submit" style="grid-column: span 2; padding: 12px 20px; background: #E39C50; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
-              Προσθήκη Καθηγητή
-            </button>
-          </form>
-        </div>
+  
 
-        <!-- Teachers List -->
-        <div style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-          <h3 style="padding: 20px; margin: 0; background: #2C5F4F; color: white;">Λίστα Καθηγητών</h3>
-          <div style="overflow-x: auto;">
-            <table id="teachersTable" style="width: 100%; border-collapse: collapse;">
-              <thead>
-                <tr style="background: #f8f9fa;">
-                  <th style="padding: 15px; text-align: left; border-bottom: 1px solid #ddd;">ID</th>
-                  <th style="padding: 15px; text-align: left; border-bottom: 1px solid #ddd;">Όνομα</th>
-                  <th style="padding: 15px; text-align: left; border-bottom: 1px solid #ddd;">Ειδικότητα</th>
-                  <th style="padding: 15px; text-align: left; border-bottom: 1px solid #ddd;">Τηλέφωνο</th>
-                  <th style="padding: 15px; text-align: left; border-bottom: 1px solid #ddd;">Email</th>
-                  <th style="padding: 15px; text-align: left; border-bottom: 1px solid #ddd;">Τμήματα</th>
-                  <th style="padding: 15px; text-align: left; border-bottom: 1px solid #ddd;">Ενέργειες</th>
-                </tr>
-              </thead>
-              <tbody id="teachersTableBody">
-                <!-- Teachers will be loaded here -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Edit Teacher Modal -->
-    <div id="editTeacherModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
-      <div style="background-color: white; margin: 5% auto; padding: 30px; border-radius: 10px; width: 90%; max-width: 600px;">
-        <span onclick="closeEditTeacherModal()" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
-        <h2>Επεξεργασία Καθηγητή</h2>
-        
-        <form id="editTeacherForm">
-          <input type="hidden" id="editTeacherId">
-          
-          <div style="margin-bottom: 20px;">
-            <label for="editTeacherName" style="display: block; margin-bottom: 5px; font-weight: bold;">Όνομα Καθηγητή:</label>
-            <input type="text" id="editTeacherName" required style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px; box-sizing: border-box;">
-          </div>
-          
-          <div style="display: flex; gap: 15px; margin-bottom: 20px;">
-            <div style="flex: 1;">
-              <label for="editTeacherSubject" style="display: block; margin-bottom: 5px; font-weight: bold;">Ειδικότητα:</label>
-              <input type="text" id="editTeacherSubject" required style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px; box-sizing: border-box;">
-            </div>
-            <div style="flex: 1;">
-              <label for="editTeacherPhone" style="display: block; margin-bottom: 5px; font-weight: bold;">Τηλέφωνο:</label>
-              <input type="tel" id="editTeacherPhone" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px; box-sizing: border-box;">
-            </div>
-          </div>
-          
-          <div style="margin-bottom: 30px;">
-            <label for="editTeacherEmail" style="display: block; margin-bottom: 5px; font-weight: bold;">Email:</label>
-            <input type="email" id="editTeacherEmail" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px; box-sizing: border-box;">
-          </div>
-
-          <div style="text-align: center;">
-            <button type="button" onclick="closeEditTeacherModal()" style="padding: 12px 20px; background: #6c757d; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-right: 10px;">
-              Ακύρωση
-            </button>
-            <button type="submit" style="padding: 12px 20px; background: #28a745; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
-              Αποθήκευση
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-
+   
     <section class="faq">
       <h2>FAQ</h2>
       <details>

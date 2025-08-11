@@ -78,7 +78,7 @@ export async function getProgressNotes(student_id) {
             s.name AS subject_name
      FROM progress_notes p
      LEFT JOIN subjects s ON p.subject_id = s.id
-     WHERE p.student_id = ? ORDER BY p.note_date DESC`,
+     WHERE p.student_id = ? ORDER BY p.created_at DESC`,
     [student_id]
   );
   return rows;
@@ -684,6 +684,7 @@ export async function getAllSubjects() {
     FROM Subjects s
     LEFT JOIN Teachers t ON s.teacherId = t.id
     LEFT JOIN Enrollments e ON s.id = e.class_id
+    WHERE s.name != 'Γενικό Μάθημα'
     GROUP BY s.id
     ORDER BY s.class, s.name
   `);

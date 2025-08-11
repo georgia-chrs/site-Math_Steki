@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Μαθητικό Στέκι</title>
+  
+  <!-- Preload critical images for better performance -->
+  <link rel="preload" href="../photos-site/vathmol.jpg" as="image">
+  <link rel="preload" href="../photos-site/pallia-them.jpg" as="image">
+  <link rel="preload" href="../photos-site/trap-them.jpg" as="image">
+  <link rel="preload" href="../photos-site/mathimata.jpg" as="image">
+  <link rel="preload" href="../photos-site/mixanogr.jpg" as="image">
+  
   <link rel="stylesheet" href="../style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
 </head>
@@ -29,30 +37,42 @@
   </header>
   
   <main>
-    <div >
-  <h1>Πανελλαδικές Εξετάσεις</h1>
-  
-  <div ></div>
-  </div>
+    <div class="page-header">
+      <h1>Πανελλαδικές Εξετάσεις</h1>
+      <p>Όλα τα εργαλεία που χρειάζεστε για τις πανελλαδικές εξετάσεις</p>
+    </div>
 
-
-<div style="display: flex; justify-content: center; gap: 16px;">
-  <a href="../moria-calculator.html" class="student-box" style="height: 50px; width: 100px; background-color: brown; color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: bold;">
-    Υπολογισμός Μορίων
-  </a>
-  <a href="pallia-themata.html" class="student-box" style="height: 50px; width: 100px; background-color: #e2c08d; color: #333; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: bold;">
-    Παλλιά Θέματα
-  </a>
-  <a href="https://www.trapeza-thematon.gr/" target="_blank" class="student-box" style="height: 50px; width: 100px; background-color: #f7e7c1; color: #333; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: bold;">
-    Τράπεζα Θεμάτων
-  </a>
-  <a href="vasis-sholon.html" class="student-box" style="height: 50px; width: 100px; background-color: brown; color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: bold;">
-    Βάσεις Σχολών
-  </a>
-  <a href="mixanografiko.html" class="student-box" style="height: 50px; width: 100px; background-color: brown; color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: bold;">
-    Μηχανογραφικό
-  </a>
-</div>
+    <div class="panelladikes-grid">
+      <a href="../moria-calculator.html" class="panelladikes-card calculator-card">
+        <div class="card-overlay">
+          <h2>Υπολογισμός Μορίων</h2>
+        </div>
+      </a>
+      
+      <a href="pallia-themata.html" class="panelladikes-card pallia-card">
+        <div class="card-overlay">
+          <h2>Παλιά Θέματα</h2>
+        </div>
+      </a>
+      
+      <a href="https://www.trapeza-thematon.gr/" target="_blank" class="panelladikes-card trapeza-card">
+        <div class="card-overlay">
+          <h2>Τράπεζα Θεμάτων</h2>
+        </div>
+      </a>
+      
+      <a href="vasis-sholon.html" class="panelladikes-card vaseis-card">
+        <div class="card-overlay">
+          <h2>Βάσεις Σχολών</h2>
+        </div>
+      </a>
+      
+      <a href="mixanografiko.html" class="panelladikes-card mixano-card">
+        <div class="card-overlay">
+          <h2>Μηχανογραφικά</h2>
+        </div>
+      </a>
+    </div>
   </main>
   <footer>
     <div class="footer-content">
@@ -71,6 +91,7 @@
   </footer>
     <script src="../main.js"></script>
     <script src="../client-text.js"></script>
+    <script src="../lazy-images.js"></script>
 
 
 </body>

@@ -13,48 +13,122 @@
       padding: 20px;
     }
     
-    .filters-section {
-      background: #f8f9fa;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 30px;
+    .main-content {
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      align-items: end;
+      gap: 30px;
+      margin-top: 20px;
     }
     
-    .filter-group {
+    .filters-sidebar {
+      flex: 0 0 250px;
       display: flex;
       flex-direction: column;
-      min-width: 150px;
+      gap: 15px;
     }
     
-    .filter-group label {
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: #5b3c2a;
+    .filter-dropdown {
+      position: relative;
     }
     
-    .filter-group select {
-      padding: 8px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-size: 14px;
+    .filter-button {
+      width: 100%;
+      background: #f08955;
+      border: 2px solid transparent;
+      border-radius: 15px;
+      padding: 8px 40px 8px 16px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #eaeaea;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
     }
     
-    .clear-btn {
-      background: #6c757d;
+    .filter-button:hover {
+      background: #cf5b20;
+      border-color: #ffffff;
+    }
+    
+    .filter-button.active {
+      background: #cf5b20;
+      border-color: #ffffff;
+    }
+    
+    .filter-button::after {
+      content: '▼';
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      transition: transform 0.2s ease;
+    }
+    
+    .filter-button.active::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+    
+    .filter-options {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border: 1px solid #ffb8a1;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 1000;
+      display: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .filter-options.show {
+      display: block;
+    }
+    
+    .filter-option {
+      padding: 10px 16px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      border-bottom: 1px solid #faf9f8;
+    }
+    
+    .filter-option:hover {
+      background: #ffcaa7;
+    }
+    
+    .filter-option:last-child {
+      border-bottom: none;
+    }
+    
+    .filter-option.selected {
+      background: #fdf0e3;
+      color: #d25a19;
+      font-weight: 500;
+    }
+    
+    .content-area {
+      flex: 1;
+    }
+    
+    .clear-filters-btn {
+      background: #461e00;
       color: white;
       border: none;
-      padding: 8px 16px;
-      border-radius: 5px;
+      padding: 12px 16px;
+      border-radius: 20px;
       cursor: pointer;
-      height: fit-content;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background-color 0.2s ease;
+      margin-top: 10px;
     }
     
-    .clear-btn:hover {
-      background: #5a6268;
+    .clear-filters-btn:hover {
+      background: #d86710;
     }
     
     .pdf-grid {
@@ -195,6 +269,21 @@
       color: #5b3c2a;
       font-weight: bold;
     }
+    
+    @media (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+      }
+      
+      .filters-sidebar {
+        flex: none;
+        width: 100%;
+      }
+      
+      .filter-dropdown {
+        margin-bottom: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -222,56 +311,81 @@
     <div class="container">
       <h1>Παλιά Θέματα Πανελλαδικών</h1>
       
-      <!-- Φίλτρα -->
-      <div class="filters-section">
-        <div class="filter-group">
-          <label for="lykeio-filter">Τύπος Λυκείου:</label>
-          <select id="lykeio-filter">
-            <option value="">Όλα τα Λύκεια</option>
-            <option value="ΓΕΛ">ΓΕΛ (Γενικό Λύκειο)</option>
-            <option value="ΕΠΑΛ">ΕΠΑΛ (Επαγγελματικό Λύκειο)</option>
-          </select>
+      <div class="main-content">
+        <!-- Φίλτρα στο αριστερό sidebar -->
+        <div class="filters-sidebar">
+          <div class="filter-dropdown">
+            <button class="filter-button" id="lykeio-btn">Λύκειο</button>
+            <div class="filter-options" id="lykeio-options">
+              <div class="filter-option" data-value="">Όλα τα Λύκεια</div>
+              <div class="filter-option" data-value="ΓΕΛ">ΓΕΛ (Γενικό Λύκειο)</div>
+              <div class="filter-option" data-value="ΕΠΑΛ">ΕΠΑΛ (Επαγγελματικό Λύκειο)</div>
+            </div>
+          </div>
+          
+          <div class="filter-dropdown">
+            <button class="filter-button" id="year-btn">Έτος</button>
+            <div class="filter-options" id="year-options">
+              <div class="filter-option" data-value="">Όλα τα έτη</div>
+              <div class="filter-option" data-value="2024">2024</div>
+              <div class="filter-option" data-value="2023">2023</div>
+              <div class="filter-option" data-value="2022">2022</div>
+              <div class="filter-option" data-value="2021">2021</div>
+              <div class="filter-option" data-value="2020">2020</div>
+            </div>
+          </div>
+          
+          <div class="filter-dropdown">
+            <button class="filter-button" id="subject-btn">Μάθημα</button>
+            <div class="filter-options" id="subject-options">
+              <div class="filter-option" data-value="">Όλα τα μαθήματα</div>
+              <!-- Τα μαθήματα θα ενημερώνονται δυναμικά -->
+            </div>
+          </div>
+          
+          <div class="filter-dropdown">
+            <button class="filter-button" id="date-btn">Ημερομηνία</button>
+            <div class="filter-options" id="date-options">
+              <div class="filter-option" data-value="">Όλες οι ημερομηνίες</div>
+              <div class="filter-option" data-value="recent">Πρόσφατα</div>
+              <div class="filter-option" data-value="older">Παλαιότερα</div>
+            </div>
+          </div>
+          
+          <button id="clear-filters" class="clear-filters-btn"               
+                 onmouseover="this.style.background='#F7C19C'; this.style.color='#BC5E29'; this.style.boxShadow='0 0 0 2px rgba(183, 54, 22, 0.495)'"
+                  onmouseout="this.style.background='#4d2c1e'; this.style.color='#fff'; this.style.boxShadow='none'"
+                  style="background: #4d2c1e;
+                    color: #fff;
+                    border: none;
+                    border-radius: 20px;
+                    padding: 0.5rem 1.5rem;
+                    font-weight: 700;
+                    font-size:small;
+                    cursor: pointer;
+                    transition: all 0.2s;">Καθαρισμός Φίλτρων</button>
         </div>
-        
-        <div class="filter-group">
-          <label for="year-filter">Έτος:</label>
-          <select id="year-filter">
-            <option value="">Όλα τα έτη</option>
-            <option value="2024">2024</option>
-            <option value="2023">2023</option>
-            <option value="2022">2022</option>
-            <option value="2021">2021</option>
-            <option value="2020">2020</option>
-          </select>
+
+        <!-- Περιεχόμενο στα δεξιά -->
+        <div class="content-area">
+          <!-- Πληροφορίες αρχείων -->
+          <div id="files-info" class="admin-notice" style="display: none;">
+            <strong>Πληροφορίες:</strong> 
+            <span id="files-count-text"></span>
+          </div>
+
+          <!-- Περιοχή PDF αρχείων -->
+          <div id="pdf-container" class="pdf-grid">
+            <!-- Τα PDF θα φορτωθούν δυναμικά από JavaScript -->
+            <div class="loading">Φόρτωση παλιών θεμάτων...</div>
+          </div>
+
+          <!-- Μήνυμα όταν δεν υπάρχουν αρχεία -->
+          <div id="no-files-message" class="no-files" style="display: none;">
+            <h3>Δεν υπάρχουν διαθέσιμα αρχεία</h3>
+            <p>Δεν βρέθηκαν παλιά θέματα που να ταιριάζουν με τα κριτήρια αναζήτησης.</p>
+          </div>
         </div>
-        
-        <div class="filter-group">
-          <label for="subject-filter">Μάθημα:</label>
-          <select id="subject-filter">
-            <option value="">Όλα τα μαθήματα</option>
-            <!-- Τα μαθήματα θα ενημερώνονται δυναμικά -->
-          </select>
-        </div>
-        
-        <button id="clear-filters" class="clear-btn">Καθαρισμός Φίλτρων</button>
-      </div>
-
-      <!-- Πληροφορίες αρχείων -->
-      <div id="files-info" class="admin-notice" style="display: none;">
-        <strong> Πληροφορίες:</strong> 
-        <span id="files-count-text"></span>
-      </div>
-
-      <!-- Περιοχή PDF αρχείων -->
-      <div id="pdf-container" class="pdf-grid">
-        <!-- Τα PDF θα φορτωθούν δυναμικά από JavaScript -->
-        <div class="loading">Φόρτωση παλιών θεμάτων...</div>
-      </div>
-
-      <!-- Μήνυμα όταν δεν υπάρχουν αρχεία -->
-      <div id="no-files-message" class="no-files" style="display: none;">
-        <h3>Δεν υπάρχουν διαθέσιμα αρχεία</h3>
-        <p>Δεν βρέθηκαν παλιά θέματα που να ταιριάζουν με τα κριτήρια αναζήτησης.</p>
       </div>
     </div>
   <footer>
@@ -292,34 +406,280 @@
   <script src="../main.js"></script>
   <script src="../client-text.js"></script>
   <script>
+    // Μεταβλητές για τα φίλτρα
+    let currentFilters = {
+      lykeio: '',
+      year: '',
+      subject: '',
+      date: ''
+    };
+    
+    // Dropdown functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeDropdowns();
+      loadPDFs();
+    });
+    
+    function initializeDropdowns() {
+      // Διαχείριση όλων των dropdown buttons
+      const dropdownButtons = document.querySelectorAll('.filter-button');
+      
+      dropdownButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const dropdownId = this.id.replace('-btn', '-options');
+          const dropdown = document.getElementById(dropdownId);
+          const isOpen = dropdown.classList.contains('show');
+          
+          // Κλείσιμο όλων των άλλων dropdowns
+          document.querySelectorAll('.filter-options').forEach(opt => {
+            opt.classList.remove('show');
+          });
+          document.querySelectorAll('.filter-button').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          
+          // Toggle του τρέχοντος dropdown
+          if (!isOpen) {
+            dropdown.classList.add('show');
+            this.classList.add('active');
+          }
+        });
+      });
+      
+      // Χρήση event delegation για τις επιλογές (δουλεύει και με δυναμικό περιεχόμενο)
+      document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('filter-option')) {
+          handleFilterOptionClick(e.target);
+        }
+      });
+      
+      // Κλείσιμο dropdowns όταν κάνουμε click έξω
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.filter-dropdown')) {
+          document.querySelectorAll('.filter-options').forEach(opt => {
+            opt.classList.remove('show');
+          });
+          document.querySelectorAll('.filter-button').forEach(btn => {
+            btn.classList.remove('active');
+          });
+        }
+      });
+      
+      // Clear filters button
+      document.getElementById('clear-filters').addEventListener('click', function() {
+        clearAllFilters();
+      });
+    }
+    
+    function handleFilterOptionClick(option) {
+      const dropdown = option.parentElement;
+      const dropdownId = dropdown.id;
+      const buttonId = dropdownId.replace('-options', '-btn');
+      const button = document.getElementById(buttonId);
+      const value = option.dataset.value;
+      const text = option.textContent;
+      
+      // Ενημέρωση του button text (εκτός από το "Όλα τα μαθήματα")
+      if (value === '' && dropdownId === 'subject-options') {
+        button.textContent = 'Μάθημα';
+      } else if (value === '' && dropdownId === 'lykeio-options') {
+        button.textContent = 'Λύκειο';
+      } else if (value === '' && dropdownId === 'year-options') {
+        button.textContent = 'Έτος';
+      } else if (value === '' && dropdownId === 'date-options') {
+        button.textContent = 'Ημερομηνία';
+      } else {
+        button.textContent = text;
+      }
+      
+      // Ενημέρωση των φίλτρων
+      const filterType = dropdownId.replace('-options', '');
+      currentFilters[filterType] = value;
+      
+      // Εφαρμογή φίλτρων
+      applyFilters();
+      
+      // Κλείσιμο dropdown
+      dropdown.classList.remove('show');
+      button.classList.remove('active');
+      
+      // Ενημέρωση selected state
+      dropdown.querySelectorAll('.filter-option').forEach(opt => {
+        opt.classList.remove('selected');
+      });
+      option.classList.add('selected');
+      
+      // Ενημέρωση μαθημάτων όταν αλλάζει το λύκειο
+      if (filterType === 'lykeio') {
+        updateSubjectOptions(value);
+      }
+    }
+    
+    function updateSubjectOptions(lykeioType) {
+      const subjectOptions = document.getElementById('subject-options');
+      const subjectButton = document.getElementById('subject-btn');
+      
+      // Καθαρισμός υπαρχόντων επιλογών
+      subjectOptions.innerHTML = '<div class="filter-option selected" data-value="">Όλα τα μαθήματα</div>';
+      
+      // Προσθήκη μαθημάτων ανάλογα με τον τύπο λυκείου
+      if (lykeioType && subjectsByLykeio[lykeioType]) {
+        subjectsByLykeio[lykeioType].forEach(subject => {
+          const option = document.createElement('div');
+          option.className = 'filter-option';
+          option.dataset.value = subject;
+          option.textContent = subject;
+          subjectOptions.appendChild(option);
+        });
+      }
+      
+      // Reset subject filter και button text
+      currentFilters.subject = '';
+      subjectButton.textContent = 'Μάθημα';
+    }
+    
+    function clearAllFilters() {
+      // Reset όλων των φίλτρων
+      currentFilters = {
+        lykeio: '',
+        year: '',
+        subject: '',
+        date: ''
+      };
+      
+      // Reset button texts
+      document.getElementById('lykeio-btn').textContent = 'Λύκειο';
+      document.getElementById('year-btn').textContent = 'Έτος';
+      document.getElementById('subject-btn').textContent = 'Μάθημα';
+      document.getElementById('date-btn').textContent = 'Ημερομηνία';
+      
+      // Reset selected states
+      document.querySelectorAll('.filter-option').forEach(opt => {
+        opt.classList.remove('selected');
+      });
+      document.querySelectorAll('.filter-option[data-value=""]').forEach(opt => {
+        opt.classList.add('selected');
+      });
+      
+      // Reset subject options
+      updateSubjectOptions('');
+      
+      // Εφαρμογή φίλτρων (δηλαδή εμφάνιση όλων)
+      applyFilters();
+    }
+    
+    function applyFilters() {
+      console.log('Applying filters:', currentFilters);
+      
+      const filteredPDFs = allPDFs.filter(pdf => {
+        const matchesLykeio = !currentFilters.lykeio || pdf.lykeio === currentFilters.lykeio;
+        const matchesYear = !currentFilters.year || pdf.year === currentFilters.year;
+        const matchesSubject = !currentFilters.subject || pdf.subject === currentFilters.subject;
+        
+        return matchesLykeio && matchesYear && matchesSubject;
+      });
+      
+      console.log(`Filtered ${filteredPDFs.length} PDFs from ${allPDFs.length} total`);
+      displayPDFs(filteredPDFs);
+      updateFilesInfo(filteredPDFs.length);
+    }
+    
+    function updateFilesInfo(count) {
+      const infoDiv = document.getElementById('files-info');
+      const countText = document.getElementById('files-count-text');
+      
+      if (count > 0) {
+        countText.textContent = `Βρέθηκαν ${count} αρχεία`;
+        infoDiv.style.display = 'block';
+      } else {
+        infoDiv.style.display = 'none';
+      }
+    }
+
     // Δυναμική φόρτωση PDF αρχείων
     let allPDFs = [];
     
     // Μαθήματα ανά τύπο λυκείου
     const subjectsByLykeio = {
       'ΓΕΛ': [
-        'Μαθηματικά',
-        'Φυσική', 
-        'Χημεία',
-        'Βιολογία',
-        'Νεοελληνική Γλώσσα',
-        'Αρχαία Ελληνικά',
-        'Ιστορία',
+        'Μαθηματικά Προσανατολισμού',
+        'Μαθηματικά Γενικής Παιδείας',
+        'Φυσική Προσανατολισμού',
+        'Χημεία Προσανατολισμού',
+        'Βιολογία Προσανατολισμού',
+        'Νεοελληνική Γλώσσα και Λογοτεχνία',
+        'Αρχαία Ελληνική Γλώσσα και Γραμματεία',
+        'Ιστορία Γενικής Παιδείας',
+        'Ιστορία Προσανατολισμού',
         'Λατινικά',
+        'Άλγεβρα',
+        'Γεωμετρία',
+        'Εικαστικά',
+        'Μουσική',
+        'Κοινωνιολογία',
+        'Οικονομία',
+        'Ψυχολογία',
+        'Φιλοσοφία',
+        'Πολιτική Παιδεία',
+        'Πληροφορική',
+        'Γεωγραφία',
         'Αγγλικά',
         'Γαλλικά',
-        'Γερμανικά'
+        'Γερμανικά',
+        'Ιταλικά',
+        'Ισπανικά',
+        'Ρωσικά'
       ],
       'ΕΠΑΛ': [
-        'Μαθηματικά',
-        'Φυσική',
-        'Νεοελληνική Γλώσσα',
-        'Αγγλικά',
+        'Μαθηματικά και Στοιχεία Στατιστικής',
+        'Νεοελληνική Γλώσσα και Λογοτεχνία',
         'Ιστορία',
-        'Οικονομικά',
+        'Φυσικές Επιστήμες',
+        'Αγγλικά',
+        'Οικονομία',
         'Πληροφορική',
-        'Τεχνολογία',
-        'Τουρισμός'
+        'Αρχές Οικονομικής Θεωρίας',
+        'Αρχές Οργάνωσης και Διοίκησης Επιχειρήσεων',
+        'Στοιχεία Ηλεκτρολογίας',
+        'Στοιχεία Μηχανολογίας',
+        'Αρχές Μηχανικής - Αντοχή Υλικών',
+        'Τεχνολογία Επικοινωνιών',
+        'Προγραμματισμός Υπολογιστών',
+        'Ανάπτυξη Εφαρμογών σε Προγραμματιστικό Περιβάλλον',
+        'Δίκτυα Υπολογιστών',
+        'Σχεδίαση και Ανάπτυξη Ψηφιακών Εφαρμογών',
+        'Συστήματα Διαχείρισης Βάσεων Δεδομένων',
+        'Τουρισμός - Γεωγραφία Τουρισμού',
+        'Τουριστικές Επιχειρήσεις και Επαγγέλματα',
+        'Διοίκηση Τουριστικών Επιχειρήσεων',
+        'Τουριστικό Μάρκετινγκ',
+        'Ιστορία Τέχνης',
+        'Εικαστικά',
+        'Μουσική',
+        'Θεατρικό Εργαστήριο',
+        'Χορός',
+        'Σχέδιο',
+        'Τεχνολογία Υφασμάτων',
+        'Τεχνολογία Τροφίμων',
+        'Περιβάλλον και Φυσικοί Πόροι',
+        'Γεωπονία - Κτηνοτροφία',
+        'Φυτική Παραγωγή',
+        'Ζωική Παραγωγή',
+        'Αρχιτεκτονικό Σχέδιο',
+        'Στοιχεία Αρχιτεκτονικής',
+        'Τοπογραφία',
+        'Οικοδομική',
+        'Υδραυλικά - Υγειονομικά',
+        'Ηλεκτρικές Εγκαταστάσεις',
+        'Στοιχεία Ιατρικής',
+        'Στοιχεία Νοσηλευτικής',
+        'Ανατομία - Φυσιολογία',
+        'Παθολογία',
+        'Φαρμακολογία',
+        'Διατροφή - Διαιτολογία',
+        'Ψυχολογία - Κοινωνιολογία',
+        'Εργοθεραπεία - Φυσιοθεραπεία'
       ]
     };
     
@@ -495,11 +855,33 @@
           </div>
           
           <div class="pdf-actions">
-            <a href="javascript:void(0)" onclick="viewPDF('${pdf.filename}')" class="btn-view">
-              👁️ Προβολή
+            <a href="javascript:void(0)" onclick="viewPDF('${pdf.filename}')" class="btn-view" 
+                  onmouseover="this.style.background='#F7C19C'; this.style.color='#BC5E29'; this.style.boxShadow='0 0 0 2px rgba(183, 54, 22, 0.495)'"
+                  onmouseout="this.style.background='#4d2c1e'; this.style.color='#fff'; this.style.boxShadow='none'"
+                  style="background: #4d2c1e;
+                    color: #fff;
+                    border: none;
+                    border-radius: 20px;
+                    padding: 0.5rem 1.5rem;
+                    font-weight: 700;
+                    font-size:small;
+                    cursor: pointer;
+                    transition: all 0.2s;">
+              Προβολή
             </a>
-            <a href="javascript:void(0)" onclick="downloadPDF('${pdf.filename}', '${pdf.title}')" class="btn-download">
-              📥 Λήψη
+            <a href="javascript:void(0)" onclick="downloadPDF('${pdf.filename}', '${pdf.title}')" class="btn-download" 
+                  onmouseover="this.style.background='#FFC653'; this.style.color='#CF5E02'; this.style.boxShadow='0 0 0 2px rgba(183, 54, 22, 0.495)'"
+                  onmouseout="this.style.background='#F86511'; this.style.color='#fff'; this.style.boxShadow='none'"
+                  style="background: #F86511;
+                    color: #fff;
+                    border: none;
+                    border-radius: 20px;
+                    padding: 0.5rem 1.5rem;
+                    font-weight: 700;
+                    font-size:small;
+                    cursor: pointer;
+                    transition: all 0.2s;">
+               Λήψη
             </a>
           </div>
         </div>

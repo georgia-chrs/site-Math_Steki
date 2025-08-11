@@ -7,54 +7,133 @@
   <link rel="stylesheet" href="../style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
   <style>
+    /* Ensure header and footer are visible */
+    body {
+      display: block !important;
+      visibility: visible !important;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
     }
     
-    .filters-section {
-      background: #f8f9fa;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 30px;
+    .main-content {
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      align-items: end;
+      gap: 30px;
+      margin-top: 20px;
     }
-    
-    .filter-group {
+    .filters-sidebar {
+      flex: 0 0 250px;
       display: flex;
       flex-direction: column;
-      min-width: 150px;
+      gap: 15px;
     }
-    
-    .filter-group label {
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: #5b3c2a;
+    .filter-dropdown {
+      position: relative;
     }
-    
-    .filter-group select {
-      padding: 8px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-size: 14px;
+    .filter-button {
+      width: 100%;
+      background: #f08955;
+      border: 2px solid transparent;
+      border-radius: 15px;
+      padding: 8px 40px 8px 16px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #eaeaea;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
     }
-    
-    .clear-btn {
-      background: #6c757d;
+    .filter-button:hover {
+      background: #cf5b20;
+      border-color: #ffffff;
+    }
+    .filter-button.active {
+      background: #cf5b20;
+      border-color: #ffffff;
+    }
+    .filter-button::after {
+      content: '▼';
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      transition: transform 0.2s ease;
+    }
+    .filter-button.active::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+    .filter-options {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border: 1px solid #ffb8a1;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 1000;
+      display: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .filter-options.show {
+      display: block;
+    }
+    .filter-option {
+      padding: 10px 16px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      border-bottom: 1px solid #faf9f8;
+    }
+    .filter-option:hover {
+      background: #ffcaa7;
+    }
+    .filter-option:last-child {
+      border-bottom: none;
+    }
+    .filter-option.selected {
+      background: #fdf0e3;
+      color: #d25a19;
+      font-weight: 500;
+    }
+    .content-area {
+      flex: 1;
+    }
+    .clear-filters-btn {
+      background: #461e00;
       color: white;
       border: none;
-      padding: 8px 16px;
-      border-radius: 5px;
+      padding: 12px 16px;
+      border-radius: 20px;
       cursor: pointer;
-      height: fit-content;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background-color 0.2s ease;
+      margin-top: 10px;
     }
-    
-    .clear-btn:hover {
-      background: #5a6268;
+    .clear-filters-btn:hover {
+      background: #d86710;
+    }
+    @media (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+      }
+      .filters-sidebar {
+        flex: none;
+        width: 100%;
+      }
+      .filter-dropdown {
+        margin-bottom: 10px;
+      }
     }
     
     .pdf-grid {
@@ -208,10 +287,11 @@
       margin-top: 0;
       color: #5b3c2a;
     }
+
   </style>
 </head>
 <body>
-  <header>
+    <header>
     <div class="topbar">
       <div class="logo"><img src="logo.png" alt="logo"></div>
       <nav>
@@ -232,72 +312,72 @@
   </header>
   
   <main>
-    <div class="container">
-      <h1>Βάσεις Σχολών</h1>
-      
-      <!-- Περιγραφή σελίδας -->
-      <div class="description-section">
-        <h2>Τι θα βρείτε εδώ</h2>
-        <p>Σε αυτή τη σελίδα θα βρείτε πληροφορίες και αρχεία σχετικά με τις βάσεις εισαγωγής στις σχολές των ελληνικών πανεπιστημίων. Μπορείτε να φιλτράρετε τα αποτελέσματα με βάση το έτος, τον τύπο λυκείου και το πεδίο σπουδών για να βρείτε εύκολα τις πληροφορίες που σας ενδιαφέρουν.</p>
-      </div>
-      
-      <!-- Φίλτρα -->
-      <div class="filters-section">
-        <div class="filter-group">
-          <label for="year-filter">Έτος:</label>
-          <select id="year-filter">
-            <option value="">Όλα τα έτη</option>
-            <option value="2024">2024</option>
-            <option value="2023">2023</option>
-            <option value="2022">2022</option>
-            <option value="2021">2021</option>
-            <option value="2020">2020</option>
-          </select>
+      <div class="container">
+        <h1>Βάσεις Σχολών</h1>
+        <div class="main-content">
+          <!-- Sidebar φίλτρων -->
+          <div class="filters-sidebar">
+            <div class="filter-dropdown">
+              <button class="filter-button" id="lykeio-btn">Λύκειο</button>
+              <div class="filter-options" id="lykeio-options">
+                <div class="filter-option" data-value="">Όλα τα Λύκεια</div>
+                <div class="filter-option" data-value="ΓΕΛ">ΓΕΛ (Γενικό Λύκειο)</div>
+                <div class="filter-option" data-value="ΕΠΑΛ">ΕΠΑΛ (Επαγγελματικό Λύκειο)</div>
+              </div>
+            </div>
+            <div class="filter-dropdown">
+              <button class="filter-button" id="year-btn">Έτος</button>
+              <div class="filter-options" id="year-options">
+                <div class="filter-option" data-value="">Όλα τα έτη</div>
+                <div class="filter-option" data-value="2024">2024</div>
+                <div class="filter-option" data-value="2023">2023</div>
+                <div class="filter-option" data-value="2022">2022</div>
+                <div class="filter-option" data-value="2021">2021</div>
+                <div class="filter-option" data-value="2020">2020</div>
+              </div>
+            </div>
+            <div class="filter-dropdown">
+              <button class="filter-button" id="field-btn">Πεδίο Σπουδών</button>
+              <div class="filter-options" id="field-options">
+                <div class="filter-option" data-value="">Όλα τα πεδία</div>
+                <div class="filter-option" data-value="Θετικές Επιστήμες">Θετικές Επιστήμες</div>
+                <div class="filter-option" data-value="Ανθρωπιστικές Επιστήμες">Ανθρωπιστικές Επιστήμες</div>
+                <div class="filter-option" data-value="Οικονομικές Επιστήμες">Οικονομικές Επιστήμες</div>
+                <div class="filter-option" data-value="Τεχνολογικές Επιστήμες">Τεχνολογικές Επιστήμες</div>
+                <div class="filter-option" data-value="Επιστήμες Υγείας">Επιστήμες Υγείας</div>
+                <div class="filter-option" data-value="Τουρισμός">Τουρισμός</div>
+              </div>
+            </div>
+            <button id="clear-filters-btn" class="clear-filters-btn">Καθαρισμός Φίλτρων</button>
+          </div>
+          <!-- Περιεχόμενο δεξιά -->
+          <div class="content-area">
+            <!-- Περιγραφή σελίδας -->
+            <div class="description-section">
+              <h2>Τι θα βρείτε εδώ</h2>
+              <p>Σε αυτή τη σελίδα θα βρείτε πληροφορίες και αρχεία σχετικά με τις βάσεις εισαγωγής στις σχολές των ελληνικών πανεπιστημίων. Μπορείτε να φιλτράρετε τα αποτελέσματα με βάση το έτος, τον τύπο λυκείου και το πεδίο σπουδών για να βρείτε εύκολα τις πληροφορίες που σας ενδιαφέρουν.</p>
+            </div>
+            
+            <!-- Πληροφορίες αρχείων -->
+            <div id="files-info" class="info-notice" style="display: none;">
+              <strong> Πληροφορίες:</strong> 
+              <span id="files-count-text"></span>
+            </div>
+            
+            <!-- Περιοχή PDF αρχείων -->
+            <div id="pdf-container" class="pdf-grid">
+              <!-- Τα PDF θα φορτωθούν δυναμικά από JavaScript -->
+              <div class="loading">Φόρτωση βάσεων σχολών...</div>
+            </div>
+            
+            <!-- Μήνυμα όταν δεν υπάρχουν αρχεία -->
+            <div id="no-files-message" class="no-files" style="display: none;">
+              <h3>Δεν υπάρχουν διαθέσιμα αρχεία</h3>
+              <p>Δεν βρέθηκαν αρχεία βάσεων σχολών που να ταιριάζουν με τα κριτήρια αναζήτησης.</p>
+            </div>
+          </div>
         </div>
-        
-        <div class="filter-group">
-          <label for="lykeio-filter">Τύπος Λυκείου:</label>
-          <select id="lykeio-filter">
-            <option value="">Όλα τα Λύκεια</option>
-            <option value="ΓΕΛ">ΓΕΛ (Γενικό Λύκειο)</option>
-            <option value="ΕΠΑΛ">ΕΠΑΛ (Επαγγελματικό Λύκειο)</option>
-          </select>
-        </div>
-        
-        <div class="filter-group">
-          <label for="field-filter">Πεδίο Σπουδών:</label>
-          <select id="field-filter">
-            <option value="">Όλα τα πεδία</option>
-            <option value="Θετικές Επιστήμες">Θετικές Επιστήμες</option>
-            <option value="Ανθρωπιστικές Επιστήμες">Ανθρωπιστικές Επιστήμες</option>
-            <option value="Οικονομικές Επιστήμες">Οικονομικές Επιστήμες</option>
-            <option value="Τεχνολογικές Επιστήμες">Τεχνολογικές Επιστήμες</option>
-            <option value="Επιστήμες Υγείας">Επιστήμες Υγείας</option>
-            <option value="Τουρισμός">Τουρισμός</option>
-          </select>
-        </div>
-        
-        <button id="clear-filters" class="clear-btn">Καθαρισμός Φίλτρων</button>
       </div>
-
-      <!-- Πληροφορίες αρχείων -->
-      <div id="files-info" class="info-notice" style="display: none;">
-        <strong> Πληροφορίες:</strong> 
-        <span id="files-count-text"></span>
-      </div>
-
-      <!-- Περιοχή PDF αρχείων -->
-      <div id="pdf-container" class="pdf-grid">
-        <!-- Τα PDF θα φορτωθούν δυναμικά από JavaScript -->
-        <div class="loading">Φόρτωση βάσεων σχολών...</div>
-      </div>
-
-      <!-- Μήνυμα όταν δεν υπάρχουν αρχεία -->
-      <div id="no-files-message" class="no-files" style="display: none;">
-        <h3>Δεν υπάρχουν διαθέσιμα αρχεία</h3>
-        <p>Δεν βρέθηκαν αρχεία βάσεων σχολών που να ταιριάζουν με τα κριτήρια αναζήτησης.</p>
-      </div>
-    </div>
   </main>
   <footer>
     <div class="footer-content">
@@ -317,6 +397,89 @@
   <script src="../main.js"></script>
   <script src="../client-text.js"></script>
   <script>
+// Μεταβλητές για τα φίλτρα
+let currentFilters = {
+  lykeio: '',
+  year: '',
+  field: ''
+};
+
+// Dropdown functionality
+function initializeDropdowns() {
+  const dropdownButtons = document.querySelectorAll('.filter-button');
+  dropdownButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const dropdownId = this.id.replace('-btn', '-options');
+      const dropdown = document.getElementById(dropdownId);
+      const isOpen = dropdown.classList.contains('show');
+      document.querySelectorAll('.filter-options').forEach(opt => {
+        opt.classList.remove('show');
+      });
+      document.querySelectorAll('.filter-button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      if (!isOpen) {
+        dropdown.classList.add('show');
+        this.classList.add('active');
+      }
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('filter-option')) {
+      handleFilterOptionClick(e.target);
+    }
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.filter-dropdown')) {
+      document.querySelectorAll('.filter-options').forEach(opt => {
+        opt.classList.remove('show');
+      });
+      document.querySelectorAll('.filter-button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+    }
+  });
+  // Διόρθωση: χρήση του σωστού id για το κουμπί καθαρισμού φίλτρων με έλεγχο ύπαρξης
+  var clearBtn = document.getElementById('clear-filters-btn');
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function() {
+      clearAllFilters();
+    });
+  }
+}
+function handleFilterOptionClick(option) {
+  const dropdown = option.parentElement;
+  const dropdownId = dropdown.id;
+  const buttonId = dropdownId.replace('-options', '-btn');
+  const button = document.getElementById(buttonId);
+  const value = option.dataset.value;
+  const text = option.textContent;
+  if (value === '' && dropdownId === 'field-options') {
+    button.textContent = 'Πεδίο Σπουδών';
+  } else if (value === '' && dropdownId === 'lykeio-options') {
+    button.textContent = 'Λύκειο';
+  } else if (value === '' && dropdownId === 'year-options') {
+    button.textContent = 'Έτος';
+  } else {
+    button.textContent = text;
+  }
+  const filterType = dropdownId.replace('-options', '');
+  currentFilters[filterType] = value;
+  filterPDFs();
+}
+function clearAllFilters() {
+  currentFilters = { lykeio: '', year: '', field: '' };
+  document.getElementById('lykeio-btn').textContent = 'Λύκειο';
+  document.getElementById('year-btn').textContent = 'Έτος';
+  document.getElementById('field-btn').textContent = 'Πεδίο Σπουδών';
+  filterPDFs();
+}
+document.addEventListener('DOMContentLoaded', function() {
+  initializeDropdowns();
+  loadPDFs();
+});
+
     // Δυναμική φόρτωση PDF αρχείων βάσεων σχολών
     let allPDFs = [];
     
@@ -438,11 +601,31 @@
           </div>
           
           <div class="pdf-actions">
-            <a href="/api/vaseis-scholon/${pdf.id}/view" target="_blank" class="btn-view">
-               Προβολή
+            <a href="/api/vaseis-scholon/${pdf.id}/view" target="_blank" class="btn-view"                  
+                  onmouseover="this.style.background='#F7C19C'; this.style.color='#BC5E29'; this.style.boxShadow='0 0 0 2px rgba(183, 54, 22, 0.495)'"
+                  onmouseout="this.style.background='#4d2c1e'; this.style.color='#fff'; this.style.boxShadow='none'"
+                  style="background: #4d2c1e;
+                    color: #fff;
+                    border: none;
+                    border-radius: 20px;
+                    padding: 0.5rem 1.5rem;
+                    font-weight: 700;
+                    font-size:small;
+                    cursor: pointer;
+                    transition: all 0.2s;">Προβολή
             </a>
-            <a href="/api/vaseis-scholon/${pdf.id}/download" download class="btn-download">
-               Λήψη
+            <a href="/api/vaseis-scholon/${pdf.id}/download" download class="btn-download"
+            onmouseover="this.style.background='#FFC653'; this.style.color='#CF5E02'; this.style.boxShadow='0 0 0 2px rgba(183, 54, 22, 0.495)'"
+                  onmouseout="this.style.background='#F86511'; this.style.color='#fff'; this.style.boxShadow='none'"
+                  style="background: #F86511;
+                    color: #fff;
+                    border: none;
+                    border-radius: 20px;
+                    padding: 0.5rem 1.5rem;
+                    font-weight: 700;
+                    font-size:small;
+                    cursor: pointer;
+                    transition: all 0.2s;">Λήψη
             </a>
           </div>
         </div>
@@ -464,15 +647,15 @@
     
     // Φιλτράρισμα αρχείων
     function filterPDFs() {
-      const yearFilter = document.getElementById('year-filter').value;
-      const lykeioFilter = document.getElementById('lykeio-filter').value;
-      const fieldFilter = document.getElementById('field-filter').value;
-      
+      // Χρησιμοποιούμε τα φίλτρα από το αντικείμενο currentFilters
+      const yearFilter = currentFilters.year;
+      const lykeioFilter = currentFilters.lykeio;
+      const fieldFilter = currentFilters.field;
+
       let filteredPDFs = allPDFs.filter(pdf => {
         const matchesYear = !yearFilter || pdf.year === yearFilter;
         const matchesLykeio = !lykeioFilter || pdf.lykeio === lykeioFilter;
         const matchesField = !fieldFilter || pdf.field === fieldFilter;
-        
         return matchesYear && matchesLykeio && matchesField;
       });
       
@@ -500,8 +683,58 @@
     document.addEventListener('DOMContentLoaded', function() {
       loadPDFs();
     });
+    
+    // Επιλογή φίλτρων από dropdown
+    document.querySelectorAll('.filter-button').forEach(button => {
+      button.addEventListener('click', function() {
+        const options = this.nextElementSibling;
+        const isActive = this.classList.toggle('active');
+        
+        // Εμφάνιση ή απόκρυψη επιλογών
+        options.classList.toggle('show', isActive);
+        
+        // Κλείσιμο άλλων dropdowns
+        if (isActive) {
+          document.querySelectorAll('.filter-dropdown').forEach(dropdown => {
+            if (dropdown !== this.parentElement) {
+              dropdown.querySelector('.filter-button').classList.remove('active');
+              dropdown.querySelector('.filter-options').classList.remove('show');
+            }
+          });
+        }
+      });
+    });
+    
+    // Επιλογή φίλτρου
+    document.querySelectorAll('.filter-option').forEach(option => {
+      option.addEventListener('click', function() {
+        const value = this.getAttribute('data-value');
+        const group = this.closest('.filter-dropdown');
+        
+        // Ενημέρωση επιλεγμένου φίλτρου
+        group.querySelector('.filter-button').textContent = this.textContent;
+        group.querySelector('.filter-option.selected')?.classList.remove('selected');
+        this.classList.add('selected');
+        
+        // Φιλτράρισμα αρχείων
+        if (group.querySelector('.filter-button').id === 'lykeio-btn') {
+          const lykeioValue = value;
+          const yearValue = document.getElementById('year-options').querySelector('.filter-option.selected')?.getAttribute('data-value') || '';
+          const fieldValue = document.getElementById('field-options').querySelector('.filter-option.selected')?.getAttribute('data-value') || '';
+          
+          let filteredPDFs = allPDFs.filter(pdf => {
+            const matchesYear = !yearValue || pdf.year === yearValue;
+            const matchesLykeio = !lykeioValue || pdf.lykeio === lykeioValue;
+            const matchesField = !fieldValue || pdf.field === fieldValue;
+            
+            return matchesYear && matchesLykeio && matchesField;
+          });
+          
+          displayPDFs(filteredPDFs);
+          updateFilesInfo(filteredPDFs.length);
+        }
+      });
+    });
   </script>
-
-
 </body>
 </html>

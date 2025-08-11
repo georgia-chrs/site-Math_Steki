@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Επικοινωνία - Μαθητικό Στέκι</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .contact-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px #0001;
+      padding: 32px 24px;
+    }
+    .contact-container h1 {
+      text-align: center;
+      color: #4d2c1e;
+      margin-bottom: 24px;
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #4d2c1e;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 18px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      background: #f8f9fa;
+      resize: vertical;
+    }
+    .contact-form button {
+      background: #f08955;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 32px;
+      font-size: 18px;
+      width: 100%;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      display: block;
+      margin: 0 auto;
+    }
+    .contact-form button:hover {
+      background: #cf5b20;
+    }
+    .contact-info {
+      margin-top: 32px;
+      text-align: center;
+      color: #4d2c1e;
+    }
+    .contact-info a {
+      color: #f08955;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="logo"><img src="logo.png" alt="logo"></div>
+      <nav>
+        <a href="../index2.html">Αρχική Σελίδα</a>
+        <a href="programs.html">Προγράμματα</a>
+        <a href="panelladikes.html">Πανελλαδικές Εξετάσεις</a>
+        <a href="photos.html">Φωτογραφίες</a>
+        <a href="contact.html" class="active">Επικοινωνία</a>
+      </nav>
+      <div class="icons">
+        <a href="#"><img src="../elements/Group 17.svg" alt="fb" class="facebook-icon"></a>
+        <a href="#"><img src="../elements/mdi_instagram.svg" alt="insta" class="instagram-icon"></a>
+        <a href="#"><img src="../elements/phone.svg" alt="phone"></a>
+        <a href="#"><img src="../elements/mail.svg" alt="mail"></a>
+      </div>
+      <a href="../index2.html" class="login-btn" style="text-decoration: none;">Είσοδος</a>
+    </div>
+  </header>
+  <main>
+    <div class="contact-container">
+      <h1>Επικοινωνία</h1>
+      <form class="contact-form">
+        <label for="name">Όνομα</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Μήνυμα</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <button type="submit"
+                  onmouseover="this.style.background='#F7C19C'; this.style.color='#BC5E29'; this.style.boxShadow='0 0 0 2px rgba(183, 54, 22, 0.495)'"
+                  onmouseout="this.style.background='#4d2c1e'; this.style.color='#fff'; this.style.boxShadow='none'"
+                  style="background: #4d2c1e;
+                    color: #fff;
+                    border: none;
+                    border-radius: 20px;
+                    padding: 0.5rem 1.5rem;
+                    font-weight: 700;
+                    font-size:small;
+                    cursor: pointer;
+                    transition: all 0.2s;">Αποστολή</button>
+      </form>
+      <div class="contact-info">
+        <p>Μπορείτε να επικοινωνήσετε μαζί μας στο <a href="mailto:info@mathsteki.gr">info@mathsteki.gr</a></p>
+        <p>ή τηλεφωνικά στο <a href="tel:+302100000000">210 000 0000</a></p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">Μαθητικό Στέκι</div>
+      <div class="footer-links"  data-id="footer-links">
+        <span>Καθηγητές:</span>
+        <span>...</span>
+      </div>
+      <div class="footer-map" >
+        <img src="map.png" alt="Χάρτης">
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Μαθητικό Στέκι
+    </div>
+  </footer>
+</body>
+</html>

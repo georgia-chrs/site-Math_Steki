@@ -6,13 +6,15 @@
     <title>Μαθητικό Στέκι - Υπολογιστής Μορίων</title>
     <!-- XLSX Library για Excel export -->
     <script src="https://unpkg.com/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <!-- Moria Calculator Script -->
+    <script src="moria-calculator.js"></script>
     <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
 
     <style>
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background: linear-gradient(135deg, #8e8e93, #6d6d70, #48484a);
+            background-color: white;
             margin: 0;
             padding: 20px;
             min-height: 100vh;
@@ -82,7 +84,7 @@
         }
         
         .user-moria-box {
-            background: linear-gradient(135deg, #007aff, #0056cc);
+            background-color: rgba(193, 114, 11, 0.942);
             color: white;
             border-radius: 15px;
             padding: 20px 30px;
@@ -93,7 +95,7 @@
             overflow: hidden;
         }
         
-        .user-moria-box::before {
+       /* .user-moria-box::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -103,7 +105,7 @@
             background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
             transform: rotate(45deg);
             animation: shimmer 3s infinite;
-        }
+        }*/
         
         @keyframes shimmer {
             0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
@@ -229,12 +231,12 @@
         }
         
         .step-circle.completed {
-            background: #34c759;
+            background: #8a2500;
             color: white;
         }
         
         .step-circle.active {
-            background: #007aff;
+            background: #8a2500b2;
             color: white;
         }
         
@@ -275,7 +277,7 @@
         
         .step-subtitle {
             font-size: 14px;
-            color: #86868b;
+            color: #c9c8c8;
             margin: 5px 0 0 0;
         }
         
@@ -288,7 +290,7 @@
         
         .radio-option {
             background: white;
-            border: 2px solid #e5e5ea;
+            border: 2px solid #ffbabad8;
             border-radius: 12px;
             padding: 16px;
             cursor: pointer;
@@ -299,20 +301,20 @@
         }
         
         .radio-option:hover {
-            border-color: #007aff;
+            border-color: #601b00;
             background: #f0f8ff;
         }
         
         .radio-option.selected {
-            border-color: #007aff;
-            background: #007aff;
-            color: white;
+            border-color: #F9D0AE;
+            background: #F9D0AE;
+            /*color: white;*/
         }
         
         .radio-option input[type="radio"] {
             width: 20px;
             height: 20px;
-            accent-color: #007aff;
+            accent-color: #5e1400;
         }
         
         .radio-option.selected input[type="radio"] {
@@ -346,17 +348,17 @@
         }
         
         .nav-button.primary {
-            background: #007aff;
+            background: #333232;
             color: white;
         }
         
         .nav-button.primary:hover {
-            background: #0051d5;
+            background: #333232;
         }
         
         .nav-button.secondary {
             background: #f2f2f7;
-            color: #007aff;
+            color: #333232;
         }
         
         .nav-button.secondary:hover {
@@ -394,9 +396,163 @@
         
         .input-group input:focus,
         .input-group select:focus {
-            border-color: #007aff;
+            border-color: #7d2700;
             outline: none;
             background: #f0f8ff;
+        }
+        
+        /* CSS για πληροφορίες επιστημονικών πεδίων */
+        .pedia-info-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        .pedia-info-container h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        .pedia-info-container .description {
+            text-align: center;
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .pedia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .pedio-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .pedio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .pedio-card h3 {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #7d2700;
+            padding-bottom: 8px;
+        }
+        
+        .pedio-details h4 {
+            color: #495057;
+            font-size: 14px;
+            margin: 15px 0 8px 0;
+            font-weight: 600;
+        }
+        
+        .schools-list, .mathimata-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+        }
+        
+        .schools-list li, .mathimata-list li {
+            background: rgba(0, 122, 255, 0.05);
+            padding: 6px 12px;
+            margin: 3px 0;
+            border-radius: 6px;
+            font-size: 13px;
+            border-left: 3px solid #7d2700;
+        }
+        
+        .mathimata-list li {
+            background: rgba(40, 167, 69, 0.05);
+            border-left-color: #28a745;
+            font-weight: 500;
+        }
+        
+        .machografiko {
+            background: linear-gradient(135deg, #7d2700, #0056cc);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            margin: 8px 0 15px 0;
+            text-align: center;
+        }
+        
+        .syntelestes-info {
+            background: linear-gradient(135deg, #6c757d, #495057);
+            color: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+        
+        .syntelestes-info h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 22px;
+            text-align: center;
+        }
+        
+        .syntelestes-info h4 {
+            color: #f8f9fa;
+            margin: 20px 0 10px 0;
+        }
+        
+        .formula {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .formula-text {
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 4px;
+        }
+        
+        .explanation {
+            font-style: italic;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+        
+        .rules-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .rules-list li {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 15px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border-left: 4px solid #28a745;
+            line-height: 1.5;
+        }
+        
+        .rules-list li:before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 8px;
         }
         
         .grade-inputs {
@@ -422,7 +578,7 @@
         }
         
         .subject-input:hover {
-            border-color: #007aff;
+            border-color: #7d2700;
             background: #f0f8ff;
         }
         
@@ -446,7 +602,7 @@
         }
         
         .subject-input input:focus {
-            border-color: #007aff;
+            border-color: #7d2700;
             outline: none;
             background: #f0f8ff;
         }
@@ -582,7 +738,7 @@
         
         .school-field {
             background: rgba(0, 122, 255, 0.1);
-            color: #007aff;
+            color: #7d2700;
             padding: 4px 12px;
             border-radius: 15px;
             font-size: 13px;
@@ -605,7 +761,7 @@
             display: block;
             font-size: 18px;
             font-weight: bold;
-            color: #007aff;
+            color: #7d2700;
         }
         
         .school-item.selected .moria-value {
@@ -697,7 +853,7 @@
         }
         
         .results-table th {
-            background: #007aff;
+            background: #7d2700;
             color: white;
             padding: 12px 16px;
             text-align: left;
@@ -775,7 +931,7 @@
         }
         
         .selection-summary {
-            background: #007aff;
+            background: #7d2700;
             color: white;
             border-radius: 12px;
             padding: 16px;
@@ -835,7 +991,7 @@
         }
         
         .selected-priority-number {
-            background: #007aff;
+            background: #7d2700;
             color: white;
             border-radius: 8px;
             width: 32px;
@@ -968,8 +1124,9 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            background:linear-gradient(0deg, #eb5a4adb,#ff9b69);
         }
-        
+
         /* Drag & Drop Styles */
         .selected-school-item {
             position: relative;
@@ -988,7 +1145,7 @@
         
         .selected-school-item:hover {
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-color: #007aff;
+            border-color: #7d2700;
         }
         
         .selected-school-item.dragging {
@@ -998,7 +1155,7 @@
         }
         
         .selected-school-item.drag-over {
-            border-color: #007aff;
+            border-color: #7d2700;
             border-width: 2px;
             background: #f0f8ff;
         }
@@ -1013,7 +1170,7 @@
         }
         
         .drag-handle:hover {
-            color: #007aff;
+            color: #7d2700;
         }
         
         .drag-handle::before {
@@ -1023,7 +1180,7 @@
         }
         
         .school-position {
-            background: #007aff;
+            background: #7d2700;
             color: white;
             border-radius: 50%;
             width: 30px;
@@ -1089,7 +1246,7 @@
         }
         
         .stat-value.max {
-            color: #007aff;
+            color: #7d2700;
         }
         
         .stat-value.avg {
@@ -1122,17 +1279,17 @@
         
         .drag-instruction {
             background: #f0f8ff;
-            border: 1px solid #007aff;
+            border: 1px solid #7d2700;
             border-radius: 8px;
             padding: 10px 15px;
             margin-bottom: 20px;
-            color: #007aff;
+            color: #7d2700;
             font-size: 14px;
             text-align: center;
         }
         
         .school-moria {
-            color: #007aff;
+            color: #7d2700;
             font-size: 14px;
             text-align: right;
             min-width: 80px;
@@ -1264,7 +1421,8 @@
         }
 
         .school-card:hover {
-            transform: translateY(-2px);
+            /* Αφαιρέθηκε το transform για να μην μεγαλώνουν τα κουτιά στο βήμα 6 */
+            /* transform: translateY(-2px); */
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
         }
 
@@ -1687,13 +1845,13 @@
     .selected-school-item:hover::before {
         left: 100%;
     }
-
+/*
     .selected-school-item:hover {
         box-shadow: 0 8px 25px rgba(0,0,0,0.12), 0 4px 15px rgba(91, 60, 42, 0.2);
         transform: translateY(-3px) scale(1.02);
         border-color: #8b6c4a;
         background: linear-gradient(135deg, #ffffff, #f8f9fa);
-    }
+    }*/
 
     .selected-priority {
         background: linear-gradient(135deg, #5b3c2a, #8b6c4a, #a67c5a);
@@ -1867,7 +2025,9 @@
     </header>
     
     <main>
-        <div class="wizard">
+
+
+        <div class="wizard" style="margin-top: 20px; margin-bottom: 20px;">
             <!-- Βήμα 1ο: Επιλογή Λυκείου -->
             <div class="step active" id="step1">
                 <div class="step-container">
@@ -2088,6 +2248,48 @@
         // Global variables
         let currentStep = 1;
         let selectedSchoolType = '';
+
+        // Utility function to hide all steps
+        function hideAllSteps() {
+            for (let i = 1; i <= 6; i++) {
+                const step = document.getElementById(`step${i}`);
+                if (step) {
+                    step.classList.remove('active');
+                    step.style.display = 'none';
+                }
+            }
+        }
+
+        // Function to update step circles
+        function updateStepCircles(activeStep) {
+            document.querySelectorAll('.step-circle').forEach((circle, index) => {
+                circle.classList.remove('active', 'completed', 'pending');
+                if (index < activeStep - 1) {
+                    circle.classList.add('completed');
+                } else if (index === activeStep - 1) {
+                    circle.classList.add('active');
+                } else {
+                    circle.classList.add('pending');
+                }
+            });
+        }
+
+        // Utility function to show a specific step
+        function showStep(stepNumber) {
+            hideAllSteps();
+            const step = document.getElementById(`step${stepNumber}`);
+            if (step) {
+                step.classList.add('active');
+                step.style.display = 'block';
+            }
+            currentStep = stepNumber;
+            updateStepCircles(stepNumber);
+            
+            // If showing step 6, update the display
+            if (stepNumber === 6) {
+                updateStep6Display();
+            }
+        }
         let selectedField = '';
         let userGrades = {};
         let specialSubjects = {};
@@ -2100,9 +2302,80 @@
         // Load system configuration and schools data when page loads
         document.addEventListener('DOMContentLoaded', function() {
             console.log('DOM loaded, initializing calculator...');
+            
+            // Initialize step circles first
+            updateStepCircles(1);
+            
+            // Set initial step
+            showStep(1);
+            
+            // Load data
             loadSystemConfiguration();
-            loadSchoolsData();
+            loadSchoolsData().then(() => {
+                console.log('Schools data loaded successfully');
+            }).catch(error => {
+                console.error('Failed to load schools data:', error);
+            });
+            
+            initializePediaInfoButtons();
         });
+
+        // Initialize buttons for pedia information
+        function initializePediaInfoButtons() {
+            const showBtn = document.getElementById('show-pedia-info-btn');
+            const hideBtn = document.getElementById('hide-pedia-info-btn');
+            const contentDiv = document.getElementById('pedia-info-content');
+
+            if (showBtn) {
+                showBtn.addEventListener('click', async function() {
+                    await showPediaInfo();
+                });
+            }
+
+            if (hideBtn) {
+                hideBtn.addEventListener('click', function() {
+                    hidePediaInfo();
+                });
+            }
+        }
+
+        // Show pedia information
+        async function showPediaInfo() {
+            const contentDiv = document.getElementById('pedia-info-content');
+            const showBtn = document.getElementById('show-pedia-info-btn');
+            const hideBtn = document.getElementById('hide-pedia-info-btn');
+
+            if (!contentDiv) return;
+
+            try {
+                // Εμφάνιση loading
+                contentDiv.innerHTML = '<div style="text-align: center; padding: 20px;"><h3>⏳ Φόρτωση πληροφοριών...</h3></div>';
+                contentDiv.style.display = 'block';
+                showBtn.style.display = 'none';
+                hideBtn.style.display = 'inline-block';
+
+                // Φόρτωση πληροφοριών με τον υπολογιστή μορίων
+                const html = await moriaCalculator.displayPediaInfoHTML();
+                contentDiv.innerHTML = html;
+            } catch (error) {
+                console.error('Σφάλμα φόρτωσης πληροφοριών:', error);
+                contentDiv.innerHTML = '<div style="text-align: center; padding: 20px; color: red;"><h3>❌ Σφάλμα φόρτωσης πληροφοριών</h3><p>Παρακαλώ δοκιμάστε ξανά αργότερα.</p></div>';
+            }
+        }
+
+        // Hide pedia information
+        function hidePediaInfo() {
+            const contentDiv = document.getElementById('pedia-info-content');
+            const showBtn = document.getElementById('show-pedia-info-btn');
+            const hideBtn = document.getElementById('hide-pedia-info-btn');
+
+            if (contentDiv) {
+                contentDiv.style.display = 'none';
+                contentDiv.innerHTML = '';
+            }
+            if (showBtn) showBtn.style.display = 'inline-block';
+            if (hideBtn) hideBtn.style.display = 'none';
+        }
 
         // Load system configuration from JSON
         async function loadSystemConfiguration() {
@@ -2131,19 +2404,19 @@
                 }
                 const data = await response.json();
                 window.schoolsData = data;
+                schoolsData = data; // Also set the local variable
                 console.log('Schools data loaded:', data.length, 'schools');
+                return data;
             } catch (error) {
                 console.error('Error loading schools data:', error);
                 window.schoolsData = [];
+                schoolsData = [];
+                throw error;
             }
         }
 
         // Document ready initialization
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM loaded, initializing calculator...');
-            loadSystemConfiguration();
-            loadSchoolsData();
-        });
+
         // Field configurations for ΓΕΛ (keeping as fallback only)
         const gelFieldConfigs = {
             anthropistikes: {
@@ -2328,21 +2601,7 @@
             }
         }
 
-        function showStep(stepNumber) {
-            // Hide all steps
-            for (let i = 1; i <= 6; i++) {
-                document.getElementById(`step${i}`).style.display = 'none';
-            }
-            
-            // Show current step
-            document.getElementById(`step${stepNumber}`).style.display = 'block';
-            currentStep = stepNumber;
-            
-            // If showing step 6, update the display
-            if (stepNumber === 6) {
-                updateStep6Display();
-            }
-        }
+
 
         function setupFieldOptions() {
             const container = document.getElementById('field-options');
@@ -2353,7 +2612,7 @@
             
             // Get available scientific fields from admin data based on selected school type
             if (!schoolsData || schoolsData.length === 0) {
-                container.innerHTML = '<p>⚠️ Δεν υπάρχουν διαθέσιμα δεδομένα σχολών από τον admin</p>';
+                container.innerHTML = '<p> Δεν υπάρχουν διαθέσιμα δεδομένα σχολών από τον admin</p>';
                 console.error('No schools data available for field options');
                 return;
             }
@@ -2517,16 +2776,20 @@
         }
 
         function setupSpecialSubjects() {
-            if (!selectedField || !selectedSchoolType || !selectedFieldCode) {
-                console.log('Missing selections for special subjects:', { selectedField, selectedSchoolType, selectedFieldCode });
+            if (!selectedField || !selectedSchoolType) {
+                console.log('Missing selections for special subjects:', { selectedField, selectedSchoolType });
                 return;
             }
             
-            const configs = selectedSchoolType === 'gel' ? gelFieldConfigs : epalFieldConfigs;
-            const config = configs[selectedFieldCode];
+            // Get field configuration from system config
+            let fieldConfig = null;
+            if (systemConfig && systemConfig.pedia && systemConfig.pedia[selectedField]) {
+                fieldConfig = systemConfig.pedia[selectedField];
+                console.log('Using system config for special subjects:', selectedField, fieldConfig);
+            }
             
-            if (!config) {
-                console.error('No configuration found for special subjects with field code:', selectedFieldCode);
+            if (!fieldConfig || !fieldConfig.eidikaMathimata) {
+                console.error('No special subjects configuration found for field:', selectedField);
                 return;
             }
             
@@ -2534,17 +2797,22 @@
             let html = '<h3>Ειδικά Μαθήματα (Προαιρετικά)</h3>';
             html += '<p>Κάθε ειδικό μάθημα προσθέτει 10% επιπλέον μόρια</p>';
             
-            config.specialSubjects.forEach(subject => {
-                html += `
-                    <div class="input-group">
-                        <label>${subject} (Προαιρετικό)</label>
-                        <input type="number" 
-                               id="special-${subject.replace(/\s+/g, '-')}" 
-                               class="grade-input"
-                               min="0" max="20" step="0.1" 
-                               placeholder="Εισάγετε βαθμό (0-20)">
-                    </div>
-                `;
+            // Get special subjects list and convert to readable names
+            fieldConfig.eidikaMathimata.forEach(subjectCode => {
+                const subjectInfo = systemConfig.eidikaMathimata[subjectCode];
+                if (subjectInfo) {
+                    const subjectName = subjectInfo.name;
+                    html += `
+                        <div class="input-group">
+                            <label>${subjectName} (Προαιρετικό)</label>
+                            <input type="number" 
+                                   id="special-${subjectCode}" 
+                                   class="grade-input"
+                                   min="0" max="20" step="0.1" 
+                                   placeholder="Εισάγετε βαθμό (0-20)">
+                        </div>
+                    `;
+                }
             });
             
             container.innerHTML = html;
@@ -3159,23 +3427,6 @@
 
         // Cleanup completed - all required functions are implemented above
 
-        // Initialize the calculator when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Initializing moria calculator...');
-            
-            // Set initial step first
-            showStep(1);
-            
-            // Load schools data from API
-            loadSchoolsData().then(() => {
-                console.log('Schools data loaded successfully');
-                console.log('Total schools loaded:', schoolsData ? schoolsData.length : 0);
-            }).catch(error => {
-                console.error('Failed to load schools data:', error);
-                // Still show the interface, admin will need to upload data
-            });
-        });
-
         // Input validation for grade inputs
         document.addEventListener('input', function(e) {
             if (e.target.classList.contains('grade-input')) {
@@ -3190,6 +3441,9 @@
             }
         });
 
+        // Utility function to hide all steps
+
+
         // Go to step 2 (field selection)
         function goToStep2() {
             if (!selectedSchoolType) {
@@ -3197,25 +3451,7 @@
                 return;
             }
             
-            currentStep = 2;
-            
-            // Hide step 1 and show step 2
-            const step1 = document.getElementById('step1');
-            const step2 = document.getElementById('step2');
-            
-            if (step1) {
-                step1.classList.remove('active');
-                step1.style.display = 'none';
-            }
-            if (step2) {
-                step2.classList.add('active');
-                step2.style.display = 'block';
-            }
-            
-            // Update step circles
-            updateStepCircles(2);
-            
-            // Load field options based on school type
+            showStep(2);
             loadFieldOptions();
         }
 
@@ -3285,14 +3521,7 @@
 
         // Navigation functions
         function goToStep1() {
-            currentStep = 1;
-            document.getElementById('step2').classList.remove('active');
-            document.getElementById('step2').style.display = 'none';
-            document.getElementById('step1').classList.add('active');
-            document.getElementById('step1').style.display = 'block';
-            
-            // Update step circles
-            updateStepCircles(1);
+            showStep(1);
         }
 
         function selectField(fieldValue) {
@@ -3328,16 +3557,7 @@
                 return;
             }
             
-            currentStep = 3;
-            document.getElementById('step2').classList.remove('active');
-            document.getElementById('step2').style.display = 'none';
-            document.getElementById('step3').classList.add('active');
-            document.getElementById('step3').style.display = 'block';
-            
-            // Update step circles
-            updateStepCircles(3);
-            
-            // Load grade inputs based on selected field
+            showStep(3);
             loadGradeInputs();
         }
 
@@ -3347,13 +3567,7 @@
                 return;
             }
             
-            currentStep = 4;
-            document.getElementById('step3').classList.remove('active');
-            document.getElementById('step3').style.display = 'none';
-            document.getElementById('step4').classList.add('active');
-            document.getElementById('step4').style.display = 'block';
-            
-            updateStepCircles(4);
+            showStep(4);
             loadSpecialSubjects();
         }
 
@@ -3418,19 +3632,6 @@
         function validateSpecialSubjects() {
             // Special subjects are optional, so always enable next button
             document.getElementById('next-btn-4').disabled = false;
-        }
-
-        function updateStepCircles(activeStep) {
-            document.querySelectorAll('.step-circle').forEach((circle, index) => {
-                circle.classList.remove('active', 'completed', 'pending');
-                if (index < activeStep - 1) {
-                    circle.classList.add('completed');
-                } else if (index === activeStep - 1) {
-                    circle.classList.add('active');
-                } else {
-                    circle.classList.add('pending');
-                }
-            });
         }
 
         function loadGradeInputs() {
@@ -3512,13 +3713,7 @@
         }
 
         function goToStep5() {
-            currentStep = 5;
-            document.getElementById('step4').classList.remove('active');
-            document.getElementById('step4').style.display = 'none';
-            document.getElementById('step5').classList.add('active');
-            document.getElementById('step5').style.display = 'block';
-            
-            updateStepCircles(5);
+            showStep(5);
             loadSchoolSelections();
             showUserMoria(); // Show user's calculated moria
         }
@@ -3646,32 +3841,56 @@
 
         // Helper function to check if a school matches the selected field
         function checkSchoolFieldMatch(school, selectedField) {
-            // This function maps the numeric scientificField to our field codes
-            // Based on the data structure, we need to create a mapping
-            
-            if (selectedSchoolType === 'gel') {
-                // For GEL schools, map scientificField numbers to field codes
-                const gelFieldMapping = {
-                    '1': 'anthropistikes',     // Humanities
-                    '2': 'thetikes',           // Positive sciences  
-                    '3': 'ygeia',              // Health sciences
-                    '4': 'oikonomikes',        // Economics/Informatics
-                    '2/3': ['thetikes', 'ygeia'],  // Multiple fields
-                    '2/4': ['thetikes', 'oikonomikes'],
-                    '1/2': ['anthropistikes', 'thetikes'],
-                };
-                
-                const schoolFields = gelFieldMapping[school.scientificField];
-                if (Array.isArray(schoolFields)) {
-                    return schoolFields.includes(selectedField);
-                } else {
-                    return schoolFields === selectedField;
+            // Mapping των νέων field codes στα παλιά και στους κωδικούς επιστημονικών πεδίων
+            const fieldMappings = {
+                'pedio1': {
+                    oldCode: 'theoretiko', 
+                    scientificField: '1',
+                    alternativeFields: ['anthropistikes']
+                },
+                'pedio2': {
+                    oldCode: 'thetiko',
+                    scientificField: '2', 
+                    alternativeFields: ['thetikes']
+                },
+                'pedio3': {
+                    oldCode: 'thetiko',
+                    scientificField: '3',
+                    alternativeFields: ['ygeia']
+                },
+                'pedio4': {
+                    oldCode: 'oikonomiko',
+                    scientificField: '4',
+                    alternativeFields: ['oikonomikes', 'pliroforiki']
                 }
-            } else if (selectedSchoolType === 'epal') {
-                // For EPAL schools, the scientificField might already be normalized
-                return school.scientificField === selectedField;
+            };
+
+            const mapping = fieldMappings[selectedField];
+            if (!mapping) return false;
+
+            // Έλεγχος με το scientificField
+            if (school.scientificField === mapping.scientificField) {
+                return true;
             }
-            
+
+            // Έλεγχος με το παλιό field code
+            if (school.field === mapping.oldCode) {
+                return true;
+            }
+
+            // Έλεγχος για πολλαπλά πεδία (π.χ. "2/3", "1/2")
+            if (school.scientificField && school.scientificField.includes('/')) {
+                const schoolFields = school.scientificField.split('/');
+                if (schoolFields.includes(mapping.scientificField)) {
+                    return true;
+                }
+            }
+
+            // Έλεγχος με εναλλακτικά ονόματα πεδίων
+            if (mapping.alternativeFields && school.field) {
+                return mapping.alternativeFields.includes(school.field);
+            }
+
             return false;
         }
 
@@ -3770,13 +3989,7 @@
                 return;
             }
             
-            currentStep = 6;
-            document.getElementById('step5').classList.remove('active');
-            document.getElementById('step5').style.display = 'none';
-            document.getElementById('step6').classList.add('active');
-            document.getElementById('step6').style.display = 'block';
-            
-            updateStepCircles(6);
+            showStep(6);
             displayFinalResults();
             showUserMoria(); // Show user's calculated moria
         }
@@ -4340,14 +4553,7 @@
                     </div>
                 </div>
 
-                <div class="navigation">
-                    <button class="btn btn-secondary" onclick="goBack('page_1', 'page_2a')">
-                        ← Πίσω
-                    </button>
-                    <button class="btn btn-primary" onclick="goToGrades('gel')" disabled id="next_field_gel">
-                        Επόμενο βήμα →
-                    </button>
-                </div>
+                
             </div>
 
             <!-- Step 2b: EPAL Field Selection -->
@@ -4399,14 +4605,7 @@
                     </div>
                 </div>
 
-                <div class="navigation">
-                    <button class="btn btn-secondary" onclick="goBack('page_1', 'page_2b')">
-                        ← Πίσω
-                    </button>
-                    <button class="btn btn-primary" onclick="goToGrades('epal')" disabled id="next_field_epal">
-                        Επόμενο βήμα →
-                    </button>
-                </div>
+     
             </div>
 
             <!-- Step 3a: GEL Grades Input -->
@@ -4939,6 +5138,30 @@
                             const gelData = await gelResponse.json();
                             if (gelData && Array.isArray(gelData) && gelData.length > 0) {
                                 gelSchools = gelData.filter(school => school.id !== "ΚΩΔΙΚΟΣ ΣΧΟΛΗΣ"); // Remove header row
+                                
+                                // Calculate correct avgScore for each school
+                                gelSchools = gelSchools.map(school => {
+                                    const maxMoria = parseFloat(school.maxMoria) || 0;
+                                    const minMoria = parseFloat(school.minMoria) || 0;
+                                    
+                                    // Calculate average as (max + min) / 2, but ensure it's reasonable
+                                    let avgScore = (maxMoria + minMoria) / 2;
+                                    
+                                    // If max and min are the same, use that value
+                                    if (maxMoria === minMoria) {
+                                        avgScore = maxMoria;
+                                    }
+                                    
+                                    // Ensure avgScore is between min and max
+                                    if (avgScore < minMoria) avgScore = minMoria;
+                                    if (avgScore > maxMoria) avgScore = maxMoria;
+                                    
+                                    return {
+                                        ...school,
+                                        avgScore: avgScore
+                                    };
+                                });
+                                
                                 console.log('📄 Loaded GEL schools:', gelSchools.length);
                             }
                         }
@@ -4989,7 +5212,7 @@
                                         minMoria: school.vasi - 1000,
                                         schoolType: 'epal',
                                         field: field,
-                                        avgScore: 15,
+                                        avgScore: school.vasi + 500, // More reasonable average calculation
                                         city: 'Αθήνα',
                                         subjects: school.mathimata || [],
                                         coefficients: school.syntelesties || [],
@@ -5029,7 +5252,29 @@
                     if (savedData) {
                         const localData = JSON.parse(savedData);
                         if (localData && Array.isArray(localData) && localData.length > 0) {
-                            schoolsData = localData; // OVERRIDE any previous data
+                            // Fix avgScore for localStorage data as well
+                            schoolsData = localData.map(school => {
+                                const maxMoria = parseFloat(school.maxMoria) || 0;
+                                const minMoria = parseFloat(school.minMoria) || 0;
+                                
+                                // Calculate average as (max + min) / 2
+                                let avgScore = (maxMoria + minMoria) / 2;
+                                
+                                // If max and min are the same, use that value
+                                if (maxMoria === minMoria) {
+                                    avgScore = maxMoria;
+                                }
+                                
+                                // Ensure avgScore is between min and max
+                                if (avgScore < minMoria) avgScore = minMoria;
+                                if (avgScore > maxMoria) avgScore = maxMoria;
+                                
+                                return {
+                                    ...school,
+                                    avgScore: avgScore
+                                };
+                            });
+                            
                         window.schoolsData = schoolsData; // Make available globally
                             console.log('🎯 OVERRIDING with localStorage admin data:', schoolsData.length, 'schools');
                             console.log('Admin data sample:', schoolsData[0]);
@@ -5049,6 +5294,33 @@
 
                 // Final check: do we have any data?
                 if (schoolsData && schoolsData.length > 0) {
+                    // Final data validation and cleanup
+                    schoolsData = schoolsData.map(school => {
+                        const maxMoria = parseFloat(school.maxMoria) || 0;
+                        const minMoria = parseFloat(school.minMoria) || 0;
+                        
+                        // If avgScore is suspicious (like 15), recalculate it
+                        if (!school.avgScore || school.avgScore === 15 || school.avgScore < minMoria || school.avgScore > maxMoria) {
+                            let avgScore = (maxMoria + minMoria) / 2;
+                            
+                            // If max and min are the same, use that value
+                            if (maxMoria === minMoria) {
+                                avgScore = maxMoria;
+                            }
+                            
+                            // Ensure avgScore is between min and max
+                            if (avgScore < minMoria) avgScore = minMoria;
+                            if (avgScore > maxMoria) avgScore = maxMoria;
+                            
+                            return {
+                                ...school,
+                                avgScore: avgScore
+                            };
+                        }
+                        
+                        return school;
+                    });
+                    
                     console.log('✅ Final data loaded:', schoolsData.length, 'schools');
                     
                     // Make data available globally

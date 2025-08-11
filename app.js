@@ -978,9 +978,15 @@ app.post('/api/progress', async (req, res) => {
       return res.status(400).json({ error: 'Required fields missing' });
     }
 
+    // Validation για το subject_id
+    if (!finalSubjectId) {
+      console.log('❌ Invalid subject_id:', finalSubjectId);
+      return res.status(400).json({ error: 'Πρέπει να επιλέξετε ένα συγκεκριμένο μάθημα' });
+    }
+
     const result = await pool.execute(
       'INSERT INTO progress_notes (student_id, subject_id, note_date, content, performance_level, created_at) VALUES (?, ?, ?, ?, ?, NOW())',
-      [finalStudentId, finalSubjectId || null, finalDate, finalContent, finalRating || 'average']
+      [finalStudentId, finalSubjectId, finalDate, finalContent, finalRating || 'average']
     );
     
     console.log('✅ Progress note added successfully, ID:', result[0].insertId);
@@ -1034,9 +1040,10 @@ app.delete('/api/progress/:id', async (req, res) => {
 app.get('/api/calendar/:studentId', async (req, res) => {
   try {
     const result = await pool.execute(
-      `SELECT c.*, s.name as subject_name 
+      `SELECT c.*, s.name as subject_name, st.class as student_class 
        FROM calendar_entries c 
        LEFT JOIN subjects s ON c.subject_id = s.id 
+       LEFT JOIN Students st ON c.student_id = st.id
        WHERE c.student_id = ? 
        ORDER BY c.entry_date DESC`,
       [req.params.studentId]
@@ -1061,9 +1068,15 @@ app.post('/api/calendar', async (req, res) => {
       return res.status(400).json({ error: 'Required fields missing' });
     }
 
+    // Validation για το subject_id
+    if (!subjectId) {
+      console.log('❌ Invalid subject_id:', subjectId);
+      return res.status(400).json({ error: 'Πρέπει να επιλέξετε ένα συγκεκριμένο μάθημα' });
+    }
+
     const result = await pool.execute(
       'INSERT INTO calendar_entries (student_id, subject_id, entry_date, event_type, title, description, created_at) VALUES (?, ?, ?, ?, ?, ?, NOW())',
-      [studentId, subjectId || null, entryDate, eventType || 'Ενημέρωση', title, description || '']
+      [studentId, subjectId, entryDate, eventType || 'Ενημέρωση', title, description || '']
     );
     
     console.log('✅ Calendar entry added successfully, ID:', result[0].insertId);
@@ -1542,15 +1555,109 @@ app.post('/login', async (req, res) => {
   }
 });
 
-// ==================== ANNOUNCEMENTS ENDPOINT ====================
+// ==================== ANNOUNCEMENTS ENDPOINTS ====================
 
+// Test endpoint to check if API is working
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'API is working!', timestamp: new Date().toISOString() });
+});
+
+// Get all announcements
 app.get('/announcements', async (req, res) => {
   try {
+    console.log('📡 GET /announcements called');
     const announcements = await getAnnouncements();
+    console.log('📦 Found announcements:', announcements.length);
     res.json(announcements);
   } catch (err) {
     console.error('Error fetching announcements:', err);
     res.status(500).json({ error: 'Error fetching announcements' });
+  }
+});
+
+// Create new announcement
+app.post('/api/announcements', async (req, res) => {
+  try {
+    console.log('📡 POST /api/announcements called with body:', req.body);
+    const { title, content } = req.body;
+    
+    if (!title || !content) {
+      console.log('❌ Missing title or content');
+      return res.status(400).json({ error: 'Title and content are required' });
+    }
+
+    console.log('🚀 Creating announcement:', { title, content });
+    const announcementId = await createAnnouncement(title, content, 1); // admin_id = 1
+    console.log('✅ Created announcement with ID:', announcementId);
+    
+    res.status(201).json({ 
+      id: announcementId, 
+      message: 'Announcement created successfully' 
+    });
+  } catch (err) {
+    console.error('Error creating announcement:', err);
+    res.status(500).json({ error: 'Error creating announcement' });
+  }
+});
+
+// Update announcement
+app.put('/api/announcements/:id', async (req, res) => {
+  try {
+    console.log('📡 PUT /api/announcements/:id called with params:', req.params, 'body:', req.body);
+    const { id } = req.params;
+    const { title, content } = req.body;
+    
+    if (!title || !content) {
+      return res.status(400).json({ error: 'Title and content are required' });
+    }
+
+    await updateAnnouncement(id, title, content);
+    res.json({ message: 'Announcement updated successfully' });
+  } catch (err) {
+    console.error('Error updating announcement:', err);
+    res.status(500).json({ error: 'Error updating announcement' });
+  }
+});
+
+// Delete announcement
+app.delete('/api/announcements/:id', async (req, res) => {
+  try {
+    console.log('📡 DELETE /api/announcements/:id called with ID:', req.params.id);
+    const { id } = req.params;
+    
+    // First check if announcement exists
+    const existing = await pool.query(
+      'SELECT notification_id FROM Notifications WHERE notification_id = ?',
+      [id]
+    );
+    
+    console.log('📋 Existing announcement check:', existing[0]);
+    
+    if (existing[0].length === 0) {
+      console.log('❌ Announcement not found in database');
+      return res.status(404).json({ error: 'Announcement not found' });
+    }
+    
+    // Delete the announcement
+    const result = await pool.query(
+      'DELETE FROM Notifications WHERE notification_id = ?',
+      [id]
+    );
+    
+    console.log(`✅ Deleted announcement ${id}, affected rows:`, result[0].affectedRows);
+    
+    if (result[0].affectedRows === 0) {
+      return res.status(404).json({ error: 'Announcement not found or already deleted' });
+    }
+    
+    res.json({ 
+      message: 'Announcement deleted successfully',
+      deletedId: id,
+      affectedRows: result[0].affectedRows
+    });
+  } catch (err) {
+    console.error('Error deleting announcement:', err);
+    res.status(500).json({ error: 'Error deleting announcement' });
   }
 });
 

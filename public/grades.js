@@ -44,12 +44,12 @@ async function loadGrades(studentId) {
 function displayStudentInfo(student) {
   const studentInfo = document.getElementById('studentInfo');
   const studentDetails = document.getElementById('studentDetails');
-  
+  /*
   studentDetails.innerHTML = `
     <div><strong>Όνομα:</strong> ${student.first_name} ${student.last_name}</div>
     <div><strong>Τάξη:</strong> ${student.class}</div>
     <div><strong>Τηλέφωνο:</strong> ${student.phone}</div>
-  `;
+  `;*/
   
   studentInfo.style.display = 'block';
 }
@@ -84,8 +84,12 @@ function populateFilters(grades) {
   
   // Subjects
   const subjects = [...new Set(grades.map(grade => grade.subject_name).filter(Boolean))];
-  const firstSubjectOption = subjectFilter.querySelector('option[value=""]');
   subjectFilter.innerHTML = '';
+  
+  // Recreate the first option with arrow
+  const firstSubjectOption = document.createElement('option');
+  firstSubjectOption.value = '';
+  firstSubjectOption.textContent = 'Όλα τα μαθήματα';
   subjectFilter.appendChild(firstSubjectOption);
   
   subjects.forEach(subject => {
@@ -97,8 +101,12 @@ function populateFilters(grades) {
   
   // Exam types
   const examTypes = [...new Set(grades.map(grade => grade.exam_type).filter(Boolean))];
-  const firstExamOption = examTypeFilter.querySelector('option[value=""]');
   examTypeFilter.innerHTML = '';
+  
+  // Recreate the first option with arrow
+  const firstExamOption = document.createElement('option');
+  firstExamOption.value = '';
+  firstExamOption.textContent = 'Όλοι οι τύποι';
   examTypeFilter.appendChild(firstExamOption);
   
   examTypes.forEach(type => {
@@ -168,11 +176,11 @@ function displayGradeStatistics(grades) {
   
   gradesStats.innerHTML = `
     <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <h3 style="margin-top: 0;">Στατιστικά Βαθμολογίας</h3>
+      <h3 style="margin-top: 0; text-align: center;">Στατιστικά Βαθμολογίας</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 15px;">
-        <div><strong>Συνολικός Μ.Ο.:</strong> <span style="color: ${getGradeColor(average)}">${average}</span></div>
-        <div><strong>Υψηλότερος:</strong> <span style="color: ${getGradeColor(highest)}">${highest}</span></div>
-        <div><strong>Χαμηλότερος:</strong> <span style="color: ${getGradeColor(lowest)}">${lowest}</span></div>
+        <div><strong>Συνολικός Μ.Ο.:</strong> </div>
+        <div><strong>Υψηλότερος:</strong> </div>
+        <div><strong>Χαμηλότερος:</strong> </div>
         <div><strong>Συνολικά:</strong> ${grades.length} βαθμοί</div>
       </div>
       ${Object.keys(subjectStats).length > 0 ? `
@@ -209,13 +217,13 @@ function updateGradesDisplay(grades) {
     
     gradesHtml += `
       <div class="subject-grades" style="margin-bottom: 30px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <div class="subject-header" style="background: #007bff; color: white; padding: 15px; font-weight: bold;">
+        <div class="subject-header" style="background:rgb(255, 135, 75); color: white; padding: 15px; font-weight: bold;">
           ${subject}
         </div>
         <div class="grades-table-container" style="overflow-x: auto;">
           <table style="width: 100%; border-collapse: collapse;">
             <thead>
-              <tr style="background: #f8f9fa;">
+              <tr style="background:rgba(252, 195, 164, 0.32);">
                 <th style="padding: 12px; text-align: left; border-bottom: 1px solid #dee2e6;">Τύπος</th>
                 <th style="padding: 12px; text-align: center; border-bottom: 1px solid #dee2e6;">Βαθμός</th>
                 <th style="padding: 12px; text-align: left; border-bottom: 1px solid #dee2e6;">Ημερομηνία</th>
@@ -228,8 +236,7 @@ function updateGradesDisplay(grades) {
                   <td style="padding: 12px;">${grade.exam_type || 'Διαγώνισμα'}</td>
                   <td style="padding: 12px; text-align: center;">
                     <span style="
-                      background-color: ${getGradeColor(grade.grade)}; 
-                      color: white; 
+                      color: rgb(255, 85, 0); 
                       padding: 4px 8px; 
                       border-radius: 4px; 
                       font-weight: bold;
@@ -250,14 +257,34 @@ function updateGradesDisplay(grades) {
   
   gradesList.innerHTML = gradesHtml;
 }
-
+/*
 function getGradeColor(grade) {
   const gradeValue = parseFloat(grade);
   if (gradeValue >= 18) return '#28a745'; // Green
   if (gradeValue >= 15) return '#17a2b8'; // Blue
   if (gradeValue >= 10) return '#ffc107'; // Yellow
   return '#dc3545'; // Red
-}
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Initialize page
 document.addEventListener('DOMContentLoaded', async function() {
