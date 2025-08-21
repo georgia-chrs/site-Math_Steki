@@ -57,6 +57,49 @@
         text-align: center !important;
       }
     }
+    
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      color: white;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .card-overlay {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .card img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    
+    .card h2 {
+      font-size: 1.5em;
+      margin: 0;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+    }
   </style>
 </head>
 <body>
@@ -131,23 +174,23 @@
 
     <div class="student-tools-section">
       <h2 style="color: #2C5F4F; text-align: center; margin: 40px 0 30px 0;">Εργαλεία Μαθητή</h2>
-      <div class="student-tools-grid" style="display: flex; gap: 30px; justify-content: center; margin-bottom: 40px;">
-        <a href="grades.html" class="student-tool-card grades-card" style="flex:1; min-width:220px; max-width:320px; background:#fff; border-radius:16px; box-shadow:0 2px 12px #0001; text-align:center; text-decoration:none;">
-          <div class="card-overlay" style="padding:24px 10px;">
-            <img src="elements/grades-icon.png" alt="Βαθμολογίες" style="width:56px; height:56px; margin-bottom:16px;">
-            <h2 style="color:#2C5F4F; font-size:1.3em; margin:0;">Βαθμολογίες Μαθητή</h2>
+      <div class="cards-grid">
+        <a href="grades.html" class="card" style="background-image: url('elements/grades-bg.jpg');">
+          <div class="card-overlay">
+            <img src="elements/grades-icon.png" alt="Βαθμολογίες">
+            <h2>Βαθμολογίες Μαθητή</h2>
           </div>
         </a>
-        <a href="calendar.html" class="student-tool-card calendar-card" style="flex:1; min-width:220px; max-width:320px; background:#fff; border-radius:16px; box-shadow:0 2px 12px #0001; text-align:center; text-decoration:none;">
-          <div class="card-overlay" style="padding:24px 10px;">
-            <img src="elements/calendar-icon.png" alt="Ημερολόγιο" style="width:56px; height:56px; margin-bottom:16px;">
-            <h2 style="color:#2C5F4F; font-size:1.3em; margin:0;">Ημερολόγιο</h2>
+        <a href="calendar.html" class="card" style="background-image: url('elements/calendar-bg.jpg');">
+          <div class="card-overlay">
+            <img src="elements/calendar-icon.png" alt="Ημερολόγιο">
+            <h2>Ημερολόγιο</h2>
           </div>
         </a>
-        <a href="progress.html" class="student-tool-card progress-card" style="flex:1; min-width:220px; max-width:320px; background:#fff; border-radius:16px; box-shadow:0 2px 12px #0001; text-align:center; text-decoration:none;">
-          <div class="card-overlay" style="padding:24px 10px;">
-            <img src="elements/progress-icon.png" alt="Πρόοδος" style="width:56px; height:56px; margin-bottom:16px;">
-            <h2 style="color:#2C5F4F; font-size:1.3em; margin:0;">Πρόοδος Μαθητή</h2>
+        <a href="progress.html" class="card" style="background-image: url('elements/progress-bg.jpg');">
+          <div class="card-overlay">
+            <img src="elements/progress-icon.png" alt="Πρόοδος Μαθητή">
+            <h2>Πρόοδος Μαθητή</h2>
           </div>
         </a>
       </div>

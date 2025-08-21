@@ -10,7 +10,7 @@
 <body>
   <header>
     <div class="topbar">
-      <div class="logo"><img src="logo.png" alt="logo"></div>
+      <div class="logo"><img src="logo/b.png" alt="logo"></div>
       <nav>
         <a href="#">Αρχική Σελίδα</a>
         <div class="dropdown">
@@ -57,21 +57,17 @@
   
   <main>
     <div class="ball"></div>
-    <section class="hero" style="align-items: left;">
-      <div class="hero-text" style="align-items: center; justify-content: center;margin-left: 20px; ">
-        <h1>Μαθητικό Στέκι<br>
-        <span>we offer lessons to students for All classes and we do our best.</span></h1>
-
-        <div style="display: flex; align-items: center; justify-content: center; gap: 302px; margin-top: 150px;">
-          <div class="search-bar">
-            <input type="text" placeholder="Αναζήτηση...">
-            <button><img src="\elements\search.svg" alt="fb"></button> 
-          </div>
-          <button class="contact-btn" onclick="window.location.href='contact.html'">Επικοινωνήστε μαζί μας</button>
+    <section class="hero" style="align-items: left; gap: 200px; margin-top: 0px; padding-top: 0;">
+      <div class="hero-text" style="align-items: center; justify-content: center; margin-left: 20px; margin-top: -100px;">
+        <div class="hero-logo" style="margin-bottom: 1rem;">
+          <img src="logo/l.png" alt="Μαθητικό Στέκι" style="max-width: 520px; width: 100%; height: auto;">
         </div>
+        <!-- <h1>Μαθητικό Στέκι<br>
+        <span>we offer lessons to students for All classes and we do our best.</span></h1> -->
+        <span>Στο στέκι μας, η επιτυχία είναι ομαδική υπόθεση</span>
 
       </div>
-      <div class="slideshow-wrapper" style="margin-right:20px;">
+      <div class="slideshow-wrapper" style="margin-left: 60px; margin-right: auto; margin-top: 80px;">
         <img class="slide active" src="photos/i1.jpeg" alt="photo 1">
         <img class="slide" src="photos/i2.jpeg" alt="photo 2">
         <img class="slide" src="photos/i3.jpeg" alt="photo 3">
@@ -81,37 +77,46 @@
         <img class="slide" src="photos/i7.jpeg" alt="photo 7">
         <img class="slide" src="photos/i8.jpeg" alt="photo 8">
       </div>
-        <script src="image.js"></script>
+      <script src="image.js"></script>
 
     </section>
+        <div style="display: flex; justify-content: left; align-items: center; margin-top: -10px; width: 100%; margin-left: 50px; padding-bottom: 100px;">
+          <button class="contact-btn" onclick="window.location.href='contact.html'">Επικοινωνήστε μαζί μας</button>
+        </div>
+
+
     <section class="programs-section">     
-  
-  <div class="programs-grid" id="program-title"  style="margin-top :50px">
-  <div class="box" id="program-prog" >  <h2>Προγράμματα</h2></div>
-  <div class="box"  id="program-title-btm">  
-    <div class="full-program">
-    <a href="#" class="contact-btn" style="text-decoration: none;">Πλήρες πρόγραμμα</a>
-  </div>
-  </div>
+      <div style="width: 1000px; height: 2px; background-color: rgb(253, 198, 150); justify-content:center; margin: auto;"></div>
+
+  <div class="programs-grid" id="program-title" style="margin-top:50px; display: flex; align-items: center; justify-content: space-between;">
+    <div class="box" id="program-prog" style="flex:1; text-align:center; margin:0;">
+      <h2 style="margin-left: 300px;">Πρόγραμμα σπουδών</h2>
+    </div>
+    <div class="box" id="program-title-btm" style=" margin:0; display:flex; justify-content:flex-end; align-items:center;">
+      <div class="full-program" style="margin:0;">
+        <a href="#" class="contact-btn" style="text-decoration: none;">Πλήρες πρόγραμμα</a>
+      </div>
+    </div>
   </div>    
 
 
 
-  <p>Για αναλυτικότερη περιγραφή των προγραμμάτων παρακαλούμε συνδεθείτε στο σύστημα του φροντιστηρίου μας ή επικοινωνήστε μαζί μας.</p>
+  <p style=" color: rgba(10, 10, 10, 0.500); margin-top: 10px; padding: 10px; margin-bottom: 50px; text-align: center;">Για αναλυτικότερη περιγραφή των προγραμμάτων παρακαλούμε συνδεθείτε στο σύστημα του φροντιστηρίου μας ή επικοινωνήστε μαζί μας.</p>
    
-  <div class="programs-grid">
+  <div class="programs-grid" style="display: flex; justify-content: center; align-items: center; margin-bottom: 100px; width: 100vw; max-width: 1200px; margin-left: auto; margin-right: auto;">
     <!-- Δημοτικό -->
-    <div class="program-category">
+    <div class="program-category" style="flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; margin-right: 40px;">
       <div class="icon-circle">  
         <img src="elements\book-1.svg" alt="Book Icon">
       </div>
       <h3>Δημοτικό</h3>
       <button class="btn brown">Δημιουργική Μελέτη</button>
       <button class="btn yellow">Προετοιμασία Για Πρότυπα</button>
+      <button class="btn yellow" style="visibility: hidden;">Προετοιμασία Για Πρότυπα</button>
     </div>
 
     <!-- Γυμνάσιο -->
-    <div class="program-category">
+    <div class="program-category" style="flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; margin-right: 40px;">
       <div class="icon-circle">
                 <img src="elements\book-2.svg" alt="Book Icon">
 
@@ -123,8 +128,7 @@
     </div>
 
     <!-- Λύκειο -->
-    <div class="program-category">
-
+    <div class="program-category" style="flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; margin-right: 40px;">
       <div class="icon-circle">
                 <img src="elements\book-3.svg" alt="Book Icon">
 
@@ -148,8 +152,8 @@
   
       
         <h2>Ανακοινώσεις</h2>
-        <p>Μείνετε ενημερωμένοι σχετικά με οτιδήποτε συμβαίνει στο φροντιστήριο μας και όχι μόνο.</p>
-     <section class="announcements">
+        <p style=" color: rgba(10, 10, 10, 0.500); margin-top: 10px; padding: 10px; margin-bottom: 50px; text-align: center;">Μείνετε διαρκώς ενημερωμένοι για όλα όσα αφορούν το Μαθητικό Στέκι αλλά και την ευρύτερη εκπαιδευτική επικαιρότητα.</p>
+    <section class="announcements">
     <div class="container-2">
       <div class="announcements">
         <!-- Εδώ θα μπουν οι ανακοινώσεις από JS -->
@@ -163,146 +167,85 @@
 
 
 
-
-  <section class="stats-section" id="stats" style="padding-top: 120px;">
+  <section class="stats-section" id="stats" style="position: relative; overflow: visible; padding-top: 120px; z-index: 1; min-height: 180px;">
       <!-- Blob από κάτω -->
-      <svg class="blob-bg blob1" id="blob1" viewBox="0 0 1440 800" preserveAspectRatio="none">
+      <svg class="blob-bg blob1" id="blob1" viewBox="0 0 1440 800" preserveAspectRatio="none" style="position: absolute; left: 0; right: 0; width: 100%; height: 180px; z-index: 0;">
         <path fill="#EB5A4A" fill-opacity="1"
-
   d="M0,530L60,479C120,428,240,328,360,326.7C480,328,600,428,720,507C840,586,960,642,1080,584.4C1200,530,1320,384,1380,306L1440,228L1440,800L1380,800C1320,800,1200,800,1080,800C960,800,840,800,720,800C600,800,480,800,360,800C240,800,120,800,60,800L0,800Z" />
       </svg>
 
       <!-- Blob από πάνω -->
-      <svg class="blob-bg blob2" id="blob2" viewBox="0 0 1440 800" preserveAspectRatio="none">
+      <svg class="blob-bg blob2" id="blob2" viewBox="0 0 1440 800" preserveAspectRatio="none" style="position: absolute; left: 0; right: 0; width: 100%; height: 180px; z-index: 0;">
         <path fill="#FF9B69" fill-opacity="0.8" transform="scale(-1, 1) translate(-1440, 0)"
   d="M0,530L60,479C120,428,240,328,360,326.7C480,328,600,428,720,507C840,586,960,642,1080,584.4C1200,530,1320,384,1380,306L1440,228L1440,800L1380,800C1320,800,1200,800,1080,800C960,800,840,800,720,800C600,800,480,800,360,800C240,800,120,800,60,800L0,800Z" />
       </svg>
-
-      <!-- Κείμενο -->
+ <!-- Blob από πάνω 
       <div class="stats-content" id="statsContent" >
-        <div class="stat">150+ mathites</div>
-        <div class="stat">7 kathigites</div>
-        <div class="stat">84 epituxondes</div>
-      </div>
+        <div class="stat">150+ μαθητές</div>
+        <div class="stat">7 καθηγητές</div>
+        <div class="stat">84 επιτυχόντες</div>
+      </div>-->
   </section>
-
-
   <script>
 const blob1 = document.getElementById('blob1');
 const blob2 = document.getElementById('blob2');
+const statsSection = document.getElementById('stats');
 const statsContent = document.getElementById('statsContent');
+
+let blobsShown = false;
+blob1.style.display = 'none';
+blob2.style.display = 'none';
+
+function showBlobsAnimated() {
+  if (blobsShown) return;
+  blobsShown = true;
+  blob1.style.display = 'block';
+  blob2.style.display = 'block';
+  blob1.classList.add('visible');
+  blob2.classList.add('visible');
+  setTimeout(() => {
+    blob1.classList.add('animate');
+    blob2.classList.add('animate');
+    if (statsContent) statsContent.classList.add('animate');
+  }, 50);
+}
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      // Βάζουμε display: block
-      blob1.classList.add('visible');
-      blob2.classList.add('visible');
-
-      // Περιμένουμε 50ms για να γίνει reflow ώστε να λειτουργήσει το transition
-      setTimeout(() => {
-        blob1.classList.add('animate');
-        blob2.classList.add('animate');
-        statsContent.classList.add('animate');
-      }, 50);
+      showBlobsAnimated();
     }
   });
 }, { threshold: 0.4 });
+observer.observe(statsSection);
 
-observer.observe(document.getElementById('stats'));
+statsSection.addEventListener('mouseenter', showBlobsAnimated);
   </script>
-    <section class="experience" >
-      <h2>Η Εμπειρία Μας</h2>
-                <div style=" color: rgba(10, 10, 10, 0.500); margin-top: 10px; padding: 10px; margin-bottom: 150px; text-align: center;">
-            <p>hkkfkfjfjyjjdfthffhddfsssssssssssssssssfffffffffffffffffffffffffffsss</p>
-          </div>
-      <div class="programs-grid">
-        <div class="program-category">
-       
-            <div class="icon-circle" style="width: 50px; height: 50px; border-radius: 50%; background-color: #FDE9DA;  align-items: center;  justify-content: center;  ">  
-              <!-- Το εικονίδιο μικρότερο από τον κύκλο -->
-              <img src="elements/secure.svg" alt="" style="width: 30px; height: 30px;">
+  <section class="resources" >
+        <h2 style="margin-bottom: 48px;">Χρήσιμο Υλικό</h2>
+  
+        <div class="resources-list" >
+          <div class="resource-card" style="position: relative; height: 320px; padding:0; overflow:hidden;">
+            <img src="photos-site/main-FEKAEI.jpg" alt="ΦΕΚ Μετεγγραφών Αντιστοιχίας Τμημάτων" style="width:100%; height:100%; object-fit:cover; display:block;">
+            <div class="resource-overlay">
+              <h3 style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:transparent; background-color: #b85422ac; color:#fff; margin:0; padding:12px; font-size:1.2em; width:80%; text-align:center;display:flex; align-items:center; justify-content:center; height:60px; border-radius: 10px;">ΦΕΚ Μετεγγραφών Αντιστοιχίας Τμημάτων</h3>
             </div>
-          
-          <div style=" color: rgba(10, 10, 10, 0.500); padding: 10px; border-radius: 5px; background-color: #fefefe; height: 150px;">
-          <h3>Άρτια καταρτισμένο Προσωπικό</h3>
-            <p style=" width: 250px; word-break: break-word; text-align: center; margin: 0 auto;">hkkfkfjfjyjjdfthffhddfssssssssssssggggggggggggggggggggggggggggssssssss</p>
           </div>
-        </div>
-        <div class="program-category">
-          <div class="icon-circle" style="width: 50px; height: 50px; border-radius: 50%; background-color: #FDE9DA; display: flex; align-items: center;  justify-content: center;  ">
-            <img src="elements\teach.svg" alt=""  style="width: 30px; height: 30px;">
-          </div>
-          <div style=" background-color: #fefefe;height: 150px; color: rgba(10, 10, 10, 0.500); padding: 10px; border-radius: 5px; text-align: center;  justify-content: center;">
-            <h3>Πλήρως Εξοπλισμένες Υποδομές</h3>
-            <p style="width: 250px; word-break: break-word; text-align: center; margin: 0 auto;">hkkfkfjfjyjjdfthffhddfssssssssssssggggggggggggggggggggggggggggssssssss</p>
-          </div>
-        </div>
-        <div class="program-category">
-          <div class="icon-circle" style="width: 50px; height: 50px; border-radius: 50%; background-color: #FDE9DA; display: flex; align-items: center;   justify-content: center;  display: flex;">
-            <img src="elements\tube.svg" alt=""  style="width: 30px; height: 30px;">
-          </div>
-          <div style=" background-color: #fefefe; height: 150px; color: rgba(10, 10, 10, 0.500); padding: 10px; border-radius: 5px;">
-            <h3>Θεματική Εκπαίδευση</h3>
-            <p style="width: 250px; word-break: break-word; text-align: center; margin: 0 auto;">hkkfkfjfjyjjdfthffhddfssssssssssssggggggggggggggggggggggggggggssssssss</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div style="width: 1000px; height: 2px; background-color: rgb(253, 198, 150); justify-content:center; margin: auto;"></div>
-    <section class="resources">
-            <h2>Χρήσιμο Υλικό</h2>
-                            <div style=" color: rgba(10, 10, 10, 0.500); margin-top: 10px; padding: 10px; margin-bottom: 15px; text-align: center;">
-            <p>hkkfkfjfjyjjdfthffhddfsssssssssssssssssfffffffffffffffffffffffffffsss</p>
-          </div>
-
-<div class="carousel-wrapper">
-  <div class="background-blob" id="blob"></div>
-
-
-              <div class="carousel">
-                <button class="nav prev" onclick="prevSlide()">&#10094;</button>
-
-                <div class="carousel-viewport">
-                  <div class="carousel-track" id="carouselTrack">
-                    <div class="card">Test Προσανατολισμού</div>
-                    <div class="card">ΦΕΚ EBE</div>
-                    <div class="card">ΦΕΚ Μετεγγραφών AEI</div>
-                    <div class="card">ΦΕΚ Μετεγγραφών Αντιστοιχίας</div>
-                  </div>
-                </div>
-
-                <button class="nav next" onclick="nextSlide()">&#10095;</button>
-              </div>
+          <div class="resource-card" style="position: relative; height: 320px; padding:0; overflow:hidden;">
+            <img src="photos-site/main-EBE.jpg" alt="ΦΕΚ EBE" style="width:100%; height:100%; object-fit:cover; display:block;">
+            <div class="resource-overlay">
+              <h3 style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:transparent; background-color: #b85422ac; color:#fff; margin:0; padding:12px; font-size:1.2em; width:80%; text-align:center; display:flex; align-items:center; justify-content:center; height:60px; border-radius: 10px;">ΦΕΚ EBE</h3>
             </div>
-      <script>
-  let index = 0;
-  const track = document.getElementById("carouselTrack");
-  const blob = document.getElementById("blob");
-  const cardWidth = 320; // 300px card + 20px margin
-  const totalCards = document.querySelectorAll(".card").length;
-
-  function updateCarousel() {
-    track.style.transform = `translateX(-${index * cardWidth}px)`;
-    blob.style.transform = `translate(-50%, -50%) scale(${10 + index * 0.5})`;
-  }
-
-  function nextSlide() {
-    if (index < totalCards - 1) {
-      index++;
-      updateCarousel();
-    }
-  }
-
-  function prevSlide() {
-    if (index > 0) {
-      index--;
-      updateCarousel();
-    }
-  }
-</script>
-
-    </section>
+          </div>
+          <div class="resource-card" style="position: relative; height: 320px; padding:0; overflow:hidden;">
+            <img src="photos-site/main-FEKmet.jpg" alt="ΦΕΚ Μετεγγραφών AEI" style="width:100%; height:100%; object-fit:cover; display:block;">
+            <div class="resource-overlay">
+              <h3 style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:transparent;background-color: #b85422ac; color:#fff; margin:0; padding:12px; font-size:1.2em; width:80%; text-align:center;display:flex; align-items:center; justify-content:center; height:60px; border-radius: 10px;">ΦΕΚ Μετεγγραφών AEI</h3>
+            </div>
+          </div>
+        </div> 
+    
+      </section>
     <section class="faq">
       <h2>FAQ</h2>
       <details>
@@ -336,7 +279,6 @@ observer.observe(document.getElementById('stats'));
   </footer>
     <script src="main.js"></script>
     <script src="client-text.js"></script>
-
 
 </body>
 </html>

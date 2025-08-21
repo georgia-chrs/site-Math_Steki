@@ -120,7 +120,13 @@ function displayAnnouncementsOnMainPage(announcements) {
         min-width: 120px;
         font-weight: bold;
         text-align: left;
-      ">${day}/${month}/${year}, ${time}</div>
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      ">
+        <span>${day}/${month}/${year}</span>
+        <span style="font-size: 12px; color: #ffd6a0; margin-top: 2px;">${time}</span>
+      </div>
       <div style="
         width: 2px;
         background: rgba(255,255,255,0.4);

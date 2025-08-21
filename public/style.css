@@ -183,13 +183,14 @@ header {
   /*max-width: 1200px;
   margin: 2rem auto;
   gap: 2rem;*/
-  padding-top: 3vw;/**/
   max-width: none;
   margin: 0;
   width: 100%;
   padding-left: 2vw;
   padding-right: 2vw;
   box-sizing: border-box;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 .hero-text h1 {
@@ -542,26 +543,90 @@ header {
   justify-content: center;
   gap: 2rem;
   margin-top: 1rem;
+  flex-wrap: wrap;
 }
-
-.resources-list div {
-  border-radius: 12px;
-  padding: 1rem;
-  height: 400px;
+.resource-card {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #0001;
+  text-align: center;
   width: 300px;
-  box-shadow: 0 2px 8px #0001;
+  min-width: 220px;
+  max-width: 320px;
+  height: 320px;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.35s cubic-bezier(0.23, 1, 0.32, 1);
 }
-
-.resources-list img {
+.resource-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+}
+.resource-card img {
   width: 100%;
-  border-radius: 8px;
-  margin-top: 0.5rem;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
-
+.resource-card h3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(44,95,79,0.7);
+  color: #fff;
+  margin: 0;
+  padding: 12px;
+  font-size: 1.2em;
+}
+.resource-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(95, 64, 44, 0.0);
+  transition: background 0.3s;
+  z-index: 2;
+}
+.resource-card:hover .resource-overlay {
+  background: #b85422ac; 
+}
+.resource-overlay h3 {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  color: #fff;
+  margin: 0;
+  padding: 12px;
+  font-size: 1.2em;
+  width: 80%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  border-radius: 10px;
+  z-index: 3;
+}
+@media (max-width: 900px) {
+  .resources-list {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .resource-card {
+    max-width: 95vw;
+  }
+}
 .faq {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 2rem auto;
-  background: #f7e7db;
+  background: #ffffff;
   border-radius: 12px;
   padding: 1.5rem;
 }
@@ -651,8 +716,9 @@ footer {
     }
 
     .announcements {
-      padding: 0 20px 20px;
+      padding: 0 0px 0px;
       color: #ffffffcc;
+      height: 150px;
     }
 
     .announcement {
@@ -738,28 +804,23 @@ footer {
 
      .stats-section {
       position: relative;
-      overflow: hidden;
+      overflow: visible !important;
       padding: 0px 70px;
       margin-bottom: 50px;
     }
 .blob-bg {
   position: absolute;
   width: 100%;
-    height: 150px;
+  height: 180px !important;
   z-index: 0;
-  display: none;              /* Απόκρυψη στην αρχή */
+  display: none;
   opacity: 0;
-  transform: translateY(30px); /* Ξεκινά από κάτω */
-  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .blob-bg.visible {
-  display: block;
-}
-
-.blob-bg.animate {
-  transform: translateY(0);
-  opacity: 1;
+  display: block !important;
+  opacity: 1 !important;
 }
 
     /* Blob 1 (από κάτω προς τα πάνω) */
@@ -859,57 +920,128 @@ footer {
 }
 
 .card {
-  min-width: 300px;
-  margin-right: 20px;
+  position: relative;
   height: 200px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
   display: flex;
+  align-items: flex-end;
+}
+
+.card:hover {
+  filter: brightness(1.1) contrast(1.05);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+  transform: translateY(-10px) scale(1.03);
+}
+
+.card-overlay {
+  width: 100%;
+  background: linear-gradient(transparent, rgba(173, 15, 15, 0.7));
+  padding: 40px 30px 30px 30px;
+  color: white;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  text-align: center;
 }
 
-.nav {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 2;
-  user-select: none;
+.card-overlay img {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 16px;
 }
 
-/* Panelladikes page styling */
-.page-header {
-  text-align: center;
-  margin: 40px 0 60px 0;
-  padding: 0 20px;
+.card-overlay h2 {
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-.page-header h1 {
-  font-size: 2.5em;
-  margin-bottom: 15px;
-  color: #4d2c1e;
-}
-
-.page-header p {
-  font-size: 1.2em;
-  color: #666;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.panelladikes-grid {
+.cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px 60px 20px;
 }
 
+@media (max-width: 700px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 10px 30px 10px;
+  }
+}
+
+/* Εργαλεία Μαθητή - Βελτιωμένο layout και responsive */
+.student-tools-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px 20px;
+}
+.student-tools-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.student-tool-card {
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 320px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #0001;
+  text-align: center;
+  text-decoration: none;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+.card-overlay {
+  padding: 24px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.student-tool-card img {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 16px;
+}
+.student-tool-card h2 {
+  color: #2C5F4F;
+  font-size: 1.3em;
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .student-tools-grid {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .student-tool-card {
+    max-width: 95vw;
+  }
+}
+
+/* Πανελλαδικές Κάρτες */
 .panelladikes-card {
   position: relative;
   height: 200px;
@@ -920,12 +1052,13 @@ footer {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
 }
 
 .panelladikes-card:hover {
-  transform: translateY(-15px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
   filter: brightness(1.1) contrast(1.05);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+  transform: translateY(-10px) scale(1.03);
 }
 
 .card-overlay {
@@ -939,34 +1072,39 @@ footer {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.card-overlay::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-  backdrop-filter: blur(10px);
-  border-radius: 0 0 20px 20px;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  z-index: -1;
-}
-
-.panelladikes-card:hover .card-overlay::before {
-  height: 100%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
-}
-
-.panelladikes-card:hover .card-overlay h2 {
-  transform: translateY(-5px);
-  text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
-}
-
 .card-overlay h2 {
   margin: 0;
   font-size: 1.8em;
   font-weight: 700;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Νέο CSS για τις κάρτες πανελλαδικών */
+.panelladikes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 60px 20px;
+}
+
+@media (max-width: 700px) {
+  .panelladikes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 10px 30px 10px;
+  }
+}
+
+/* Αφαίρεση hover εμφάνισης για blobs ώστε να μην εξαφανίζονται */
+.stats-section:hover .blob-bg {
+  /* display: block !important; */
+  /* opacity: 1 !important; */
+}
+.stats-section:hover .blob1 {
+  /* transform: translateY(0); */
+}
+.stats-section:hover .blob2 {
+  /* transform: translateY(0); */
 }
