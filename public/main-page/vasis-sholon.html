@@ -291,14 +291,33 @@
   </style>
 </head>
 <body>
-    <header>
+  <header>
     <div class="topbar">
-      <div class="logo"><img src="logo.png" alt="logo"></div>
+      <div class="logo"><img src="../logo/b.png" alt="logo"></div>
       <nav>
-        <a href="#">Αρχική Σελίδα</a>
-        <a href="#">Προγράμματα</a>
-        <a href="#">Πανελλαδικές Εξετάσεις</a>
-        <a href="#">Φωτογραφίες</a>
+        <a href="#" style="color: #960e0e;">Αρχική Σελίδα</a>
+        <div class="dropdown">
+          <a href="programs.html">Πρόγραμμα Σπουδών</a>
+          <div class="dropdown-content">
+            <a href="programs.html">Πλήρες Πρόγραμμα</a>
+            <a href="#">Μαθήματα ΓΕΛ</a>
+            <a href="#">Μαθήματα ΕΠΑΛ</a>
+            <a href="#">Ιδιαίτερα Μαθήματα</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="/panelladikes.html">Πανελλαδικές Εξετάσεις</a>
+          <div class="dropdown-content">
+            <a href="#">Όλα τα παρακάτω</a>
+            <a href="../moria-calculator.html">Υπολογισμός Μορίων</a>
+            <a href="pallia-themata.html">Παλιά Θέματα</a>
+            <a href="#">Τράπεζα Θεμάτων</a>
+            <a href="admin-vaseis-scholon.html">Βάσεις Σχολών</a>
+            <a href="#">Μηχανογραφικό</a>
+          </div>
+        </div>
+        <a href="photos.html">Φωτογραφίες</a>
         <a href="#">Σχετικά με εμάς</a>
       </nav>
       <div class="icons">
@@ -307,13 +326,21 @@
         <a href="#"><img src="\elements\phone.svg" alt="phone"></a>
         <a href="#"><img src="\elements\mail.svg" alt="mail"></a>
       </div>
-      <a href="../index2.html" class="login-btn" style="text-decoration: none;">Είσοδος</a>
+      <a href="index2.html" class="login-btn" style="text-decoration: none;">Είσοδος</a>
     </div>
   </header>
   
   <main>
-      <div class="container">
-        <h1>Βάσεις Σχολών</h1>
+      <div class="container" style="margin-bottom: 80px;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 18px; justify-content: flex-start;">
+          <a href="panelladikes.html" title="Πίσω στις Πανελλαδικές Εξετάσεις" style="display: flex; align-items: center; text-decoration: none; color: #333; font-weight: 500; font-size: 1.1em;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;">
+              <path d="M15 6L9 12L15 18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Πανελλαδικές Εξετάσεις
+          </a>
+        </div>
+        <h1 style="justify-self: center; text-align: center; margin-bottom: 100px;">Βάσεις Σχολών</h1>
         <div class="main-content">
           <!-- Sidebar φίλτρων -->
           <div class="filters-sidebar">
@@ -348,15 +375,11 @@
                 <div class="filter-option" data-value="Τουρισμός">Τουρισμός</div>
               </div>
             </div>
-            <button id="clear-filters-btn" class="clear-filters-btn">Καθαρισμός Φίλτρων</button>
+            <button id="clear-filters-btn" class="login-btn">Καθαρισμός Φίλτρων</button>
           </div>
           <!-- Περιεχόμενο δεξιά -->
           <div class="content-area">
-            <!-- Περιγραφή σελίδας -->
-            <div class="description-section">
-              <h2>Τι θα βρείτε εδώ</h2>
-              <p>Σε αυτή τη σελίδα θα βρείτε πληροφορίες και αρχεία σχετικά με τις βάσεις εισαγωγής στις σχολές των ελληνικών πανεπιστημίων. Μπορείτε να φιλτράρετε τα αποτελέσματα με βάση το έτος, τον τύπο λυκείου και το πεδίο σπουδών για να βρείτε εύκολα τις πληροφορίες που σας ενδιαφέρουν.</p>
-            </div>
+     
             
             <!-- Πληροφορίες αρχείων -->
             <div id="files-info" class="info-notice" style="display: none;">
@@ -380,17 +403,32 @@
       </div>
   </main>
   <footer>
-    <div class="footer-content">
-      <div class="footer-logo">Μαθητικό Στέκι</div>
-      <div class="footer-links"  data-id="footer-links">
-        <span>Καθηγητές:</span>
-        <span>...</span>
+    <div class="footer-content" style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start;  width: 100%; max-width: 100vw; box-sizing: border-box;">
+      <div class="hero-logo" style="margin-bottom: 1rem; margin-top: -20px;">
+        <img src="../logo/b-l.png" alt="Μαθητικό Στέκι" style="max-width: 320px; width: 100%; height: auto; filter: brightness(0) invert(1); ">
+      </div>
+      <div class="footer-links"  data-id="footer-links" style="display: flex; flex-direction: column; align-items: center; gap: 0.3em; text-align: center; justify-content: center; margin-top: 40px;">
+        <span>Επικοινωνία</span>
+        <span>τηλέφωνο επικοινωνίας: 2101553200236</span>
+         <span>e-mail: info@mathsteki.gr</span>
+         <span>Facebook: info@mathsteki.gr</span>
+         <span>Instagram: info@mathsteki.gr</span>
       </div>
       <div class="footer-map" >
-        <img src="map.png" alt="Χάρτης">
+        <!-- Ενσωματωμένος χάρτης Google Maps με marker στη διεύθυνση Κρόνου 14, Κορυδαλλός 181 22 -->
+        <iframe
+          src="https://www.google.com/maps?q=Κρόνου+14,+Κορυδαλλός+181+22&output=embed"
+          width="290"
+          height="140"
+          style="border:10px solid #ffffff; border-radius: 10px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Χάρτης διεύθυνσης φροντιστηρίου"
+        ></iframe>
       </div>
     </div>
-    <div class="footer-bottom">
+    <div class="footer-bottom" style="margin-top: 30px;  text-align: center; font-size: 0.9em; color: #ccc;">
       &copy; 2025 Μαθητικό Στέκι
     </div>
   </footer>
@@ -615,9 +653,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     transition: all 0.2s;">Προβολή
             </a>
             <a href="/api/vaseis-scholon/${pdf.id}/download" download class="btn-download"
-            onmouseover="this.style.background='#FFC653'; this.style.color='#CF5E02'; this.style.boxShadow='0 0 0 2px rgba(183, 54, 22, 0.495)'"
-                  onmouseout="this.style.background='#F86511'; this.style.color='#fff'; this.style.boxShadow='none'"
-                  style="background: #F86511;
+              onmouseover="this.style.background='#FFC76C'; this.style.color='#C95A1F'; this.style.boxShadow='0 0 0 2px rgba(183, 54, 22, 0.495)'"
+                  onmouseout="this.style.background='#ff7c4ce0'; this.style.color='#fff'; this.style.boxShadow='none'"
+                  style="background: #ff7c4ce0;
                     color: #fff;
                     border: none;
                     border-radius: 20px;

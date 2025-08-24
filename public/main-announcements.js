@@ -41,10 +41,10 @@ function displayAnnouncementsOnMainPage(announcements) {
   // Create main container with orange background like admin
   const mainContainer = document.createElement('div');
   mainContainer.style.cssText = `
-    background: #FF7755;
+   
     border-radius: 8px;
     padding: 20px;
-    height: 200px;
+    height: 350px;
     overflow-y: scroll;
   `;
 
@@ -114,18 +114,18 @@ function displayAnnouncementsOnMainPage(announcements) {
 
     announcementDiv.innerHTML = `
       <div style="
-        color: white;
         font-size: 13px;
         margin-right: 15px;
         min-width: 120px;
         font-weight: bold;
-        text-align: left;
+        text-align: center;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        color:rgba(95, 26, 15, 0.47);
       ">
         <span>${day}/${month}/${year}</span>
-        <span style="font-size: 12px; color: #ffd6a0; margin-top: 2px;">${time}</span>
+        <span style="font-size: 12px; margin-top: 2px;">${time}</span>
       </div>
       <div style="
         width: 2px;
@@ -144,11 +144,11 @@ function displayAnnouncementsOnMainPage(announcements) {
       ">
         <h3 style="
           margin: 0 0 8px 0;
-          color: white;
           font-size: 16px;
           font-weight: bold;
           text-align: left;
           flex-shrink: 0;
+          color:rgba(212, 79, 34, 0.82);
         ">${announcement.title}</h3>
         <div style="
           flex: 1;
@@ -157,7 +157,7 @@ function displayAnnouncementsOnMainPage(announcements) {
         " class="announcement-content-scroll">
           <p style="
             margin: 0;
-            color: rgba(255,255,255,0.9);
+            color:rgba(95, 26, 15, 0.64);
             font-size: 14px;
             line-height: 1.4;
             text-align: left;

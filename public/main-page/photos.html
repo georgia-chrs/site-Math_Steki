@@ -239,12 +239,31 @@
 <body>
   <header>
     <div class="topbar">
-      <div class="logo"><img src="logo.png" alt="logo"></div>
+      <div class="logo"><img src="../logo/b.png" alt="logo"></div>
       <nav>
-        <a href="#">Αρχική Σελίδα</a>
-        <a href="#">Προγράμματα</a>
-        <a href="#">Πανελλαδικές Εξετάσεις</a>
-        <a href="#">Φωτογραφίες</a>
+        <a href="#" style="color: #960e0e;">Αρχική Σελίδα</a>
+        <div class="dropdown">
+          <a href="main-page/programs.html">Πρόγραμμα Σπουδών</a>
+          <div class="dropdown-content">
+            <a href="main-page/programs.html">Πλήρες Πρόγραμμα</a>
+            <a href="#">Μαθήματα ΓΕΛ</a>
+            <a href="#">Μαθήματα ΕΠΑΛ</a>
+            <a href="#">Ιδιαίτερα Μαθήματα</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="main-page/panelladikes.html">Πανελλαδικές Εξετάσεις</a>
+          <div class="dropdown-content">
+            <a href="#">Όλα τα παρακάτω</a>
+            <a href="moria-calculator.html">Υπολογισμός Μορίων</a>
+            <a href="main-page/pallia-themata.html">Παλιά Θέματα</a>
+            <a href="#">Τράπεζα Θεμάτων</a>
+            <a href="admin-vaseis-scholon.html">Βάσεις Σχολών</a>
+            <a href="#">Μηχανογραφικό</a>
+          </div>
+        </div>
+        <a href="main-page/photos.html">Φωτογραφίες</a>
         <a href="#">Σχετικά με εμάς</a>
       </nav>
       <div class="icons">
@@ -253,18 +272,21 @@
         <a href="#"><img src="\elements\phone.svg" alt="phone"></a>
         <a href="#"><img src="\elements\mail.svg" alt="mail"></a>
       </div>
-      <a href="../index2.html" class="login-btn" style="text-decoration: none;">Είσοδος</a>
+      <a href="index2.html" class="login-btn" style="text-decoration: none;">Είσοδος</a>
     </div>
   </header>
   
   <main>
     <div class="photos-container">
-      <h1>Φωτογραφίες του Μαθητικού Στεκιού</h1>
-        <p style=" color: rgba(10, 10, 10, 0.500); margin-top: 10px; padding: 10px; margin-bottom: 50px; text-align: center;">Μια γρήγορη ματιά στο Στεκι μας και στις δράσεις του.</p>
+      
+      <h1 style="  color: #3c1d0c;">Φωτογραφίες του Μαθητικού Στεκιού</h1>
+            <div style=" color: rgba(10, 10, 10, 0.500); margin-top: -30px; margin-bottom: 50px; text-align: center; ">
+              <p >Μια γρήγορη ματιά στο Στεκι μας και στις δράσεις του.</p>
+            </div>
 
 
       
-      <div class="photo-gallery">
+      <div class="photo-gallery" style="margin-bottom: 250px;">
         <div class="gallery-container">
           <button class="nav-btn prev-btn" id="prevBtn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -299,18 +321,33 @@
       </div>
     </div>
   </main>
-  <footer>
-    <div class="footer-content">
-      <div class="footer-logo">Μαθητικό Στέκι</div>
-      <div class="footer-links"  data-id="footer-links">
-        <span>Καθηγητές:</span>
-        <span>...</span>
+   <footer >
+    <div class="footer-content" style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start;  width: 100%; max-width: 100vw; box-sizing: border-box;">
+      <div class="hero-logo" style="margin-bottom: 1rem; margin-top: -20px;">
+        <img src="../logo/b-l.png" alt="Μαθητικό Στέκι" style="max-width: 320px; width: 100%; height: auto; filter: brightness(0) invert(1); ">
+      </div>
+      <div class="footer-links"  data-id="footer-links" style="display: flex; flex-direction: column; align-items: center; gap: 0.3em; text-align: center; justify-content: center; margin-top: 40px;">
+        <span>Επικοινωνία</span>
+        <span>τηλέφωνο επικοινωνίας: 2101553200236</span>
+         <span>e-mail: info@mathsteki.gr</span>
+         <span>Facebook: info@mathsteki.gr</span>
+         <span>Instagram: info@mathsteki.gr</span>
       </div>
       <div class="footer-map" >
-        <img src="map.png" alt="Χάρτης">
+        <!-- Ενσωματωμένος χάρτης Google Maps με marker στη διεύθυνση Κρόνου 14, Κορυδαλλός 181 22 -->
+        <iframe
+          src="https://www.google.com/maps?q=Κρόνου+14,+Κορυδαλλός+181+22&output=embed"
+          width="290"
+          height="140"
+          style="border:10px solid #ffffff; border-radius: 10px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Χάρτης διεύθυνσης φροντιστηρίου"
+        ></iframe>
       </div>
     </div>
-    <div class="footer-bottom">
+    <div class="footer-bottom" style="margin-top: 30px;  text-align: center; font-size: 0.9em; color: #ccc;">
       &copy; 2025 Μαθητικό Στέκι
     </div>
   </footer>
