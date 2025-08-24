@@ -9,13 +9,12 @@
   <style>
     .info-item {
       padding: 10px;
-      background: #f8f9fa;
-      color: #402818c2;
+      color: #ffffffc2;
       border-radius: 5px;
     }
     
     .info-item strong {
-      color: #402818;
+      color: #f4f4f4;
       display: block;
       margin-bottom: 5px;
     }
@@ -134,8 +133,7 @@
         </button>
       </div>
        <div id="student-info" >
-        <div class="profile-section" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 20px;">
-          <h2 style="color: #5f3d2c; margin-bottom: 20px;">Προσωπικά Στοιχεία</h2>
+        <div class="profile-section" style=" margin-top: -55px; background: rgb(239, 123, 52); padding: 10px; border-radius: 20px; box-shadow: 0 2px 10px  rgba(0, 0, 0, 0.667); margin-bottom: 20px; border: 2px solid rgb(232, 93, 6);">
           <div class="profile-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
             <div class="info-item">
               <strong>Username:</strong> <span id="student-username"></span>
@@ -158,7 +156,7 @@
           </div>
         </div>
         
-        <div class="subjects-section" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 20px;">
+        <div class="subjects-section" style="background: white; padding: 20px; border-radius: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 20px;">
           <h2 style="color: #5f3d2c; margin-bottom: 20px;">Τα Μαθήματά Μου</h2>
           <div id="student-subjects">
             <!-- Τα μαθήματα θα φορτωθούν εδώ -->
@@ -216,19 +214,19 @@
   
   // Check if student is already logged in (check localStorage)
   document.addEventListener('DOMContentLoaded', function() {
-    console.log('🚀 Student tablet loading...');
-    console.log('🔍 Checking localStorage for logged in student...');
+    console.log('Student tablet loading...');
+    console.log('Checking localStorage for logged in student...');
     
     // Ελέγχουμε αν υπάρχει συνδεδεμένος μαθητής
     const loggedInStudent = getLoggedInStudent();
     
     if (loggedInStudent && loggedInStudent.username) {
-      console.log('✅ Found logged in student:', loggedInStudent.username);
+      console.log('Found logged in student:', loggedInStudent.username);
       // Αυτόματη φόρτωση των στοιχείων του συνδεδεμένου μαθητή
       loadStudentProfile(loggedInStudent.username);
     } else {
-      console.log('❌ No logged in student found');
-      console.log('💾 Current localStorage state:', localStorage.getItem('loggedInStudent'));
+      console.log('No logged in student found');
+      console.log('Current localStorage state:', localStorage.getItem('loggedInStudent'));
       // Αν δεν υπάρχει συνδεδεμένος μαθητής, ανακατεύθυνση στη σελίδα login
       showLoginRequired();
     }
@@ -238,11 +236,11 @@
   function getLoggedInStudent() {
     try {
       const loggedInData = localStorage.getItem('loggedInStudent');
-      console.log('📦 Raw localStorage data:', loggedInData);
+      console.log('Raw localStorage data:', loggedInData);
       
       if (loggedInData) {
         const student = JSON.parse(loggedInData);
-        console.log('👤 Parsed student data:', student);
+        console.log('Parsed student data:', student);
         
         // Έλεγχος αν υπάρχει username (βασικό κριτήριο)
         if (student.username) {
@@ -251,11 +249,11 @@
             const loginTime = new Date(student.loginTime);
             const now = new Date();
             const hoursDiff = (now - loginTime) / (1000 * 60 * 60);
-            console.log('⏰ Hours since login:', hoursDiff);
+            console.log('Hours since login:', hoursDiff);
             
             // Αν έχουν περάσει πάνω από 24 ώρες, σβήνουμε τα δεδομένα
             if (hoursDiff > 24) {
-              console.log('⏱️ Login expired, clearing localStorage');
+              console.log('Login expired, clearing localStorage');
               localStorage.removeItem('loggedInStudent');
               return null;
             }
@@ -263,20 +261,20 @@
           
           // Έλεγχος ρόλου (αν υπάρχει)
           if (student.role && student.role !== 'student') {
-            console.log('🚫 Wrong role:', student.role);
+            console.log('Wrong role:', student.role);
             return null;
           }
           
-          console.log('✅ Valid student found:', student.username);
+          console.log('Valid student found:', student.username);
           return student;
         }
       }
     } catch (e) {
-      console.error('❌ Error parsing logged in student:', e);
+      console.error('Error parsing logged in student:', e);
       localStorage.removeItem('loggedInStudent'); // Καθαρίζουμε corrupted data
     }
-    
-    console.log('❌ No valid student found');
+
+    console.log('No valid student found');
     return null;
   }
   
@@ -284,7 +282,7 @@
   function showLoginRequired() {
     document.getElementById('login-prompt').innerHTML = `
       <div style="text-align: center; padding: 40px; background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; border-radius: 10px;">
-        <h3>🔐 Απαιτείται Σύνδεση</h3>
+        <h3>Απαιτείται Σύνδεση</h3>
         <p>Πρέπει να συνδεθείτε για να δείτε τα στοιχεία σας.</p>
         <button onclick="window.location.href='/index2.html'" style="padding: 10px 20px; background: #2C5F4F; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">
           Μετάβαση στη Σύνδεση
@@ -327,7 +325,7 @@
   // Function to show username selector if no username found
   // Load student profile data
   async function loadStudentProfile(username) {
-    console.log('🔄 Loading profile for username:', username);
+    console.log('Loading profile for username:', username);
     
     // Καθαρίζουμε όλα τα προηγούμενα cached δεδομένα πρώτα
     localStorage.removeItem('loggedInStudent');
@@ -336,7 +334,7 @@
     
     try {
       const response = await fetch(`/api/student/profile/${username}?_t=${Date.now()}`);
-      console.log('📡 API Response status:', response.status);
+      console.log('API Response status:', response.status);
       
       if (!response.ok) {
         if (response.status === 404) {
@@ -346,7 +344,7 @@
       }
       
       const studentData = await response.json();
-      console.log('📊 Student data received:', studentData);
+      console.log('Student data received:', studentData);
       
       // Αποθηκεύουμε τα ΝΕΑ στοιχεία
       sessionStorage.setItem('currentUsername', username);
@@ -355,14 +353,14 @@
       displayStudentProfile(studentData);
       
     } catch (error) {
-      console.error('❌ Error loading student profile:', error);
+      console.error('Error loading student profile:', error);
       showError(error.message || 'Σφάλμα φόρτωσης των στοιχείων σας');
     }
   }
   
   // Clear previous data to avoid showing wrong student info
   function clearPreviousData() {
-    console.log('🧹 Clearing previous student data...');
+    console.log('Clearing previous student data...');
     
     // Clear all profile fields
     document.getElementById('student-username').textContent = '';
@@ -378,12 +376,12 @@
   
   // Display student profile data
   function displayStudentProfile(student) {
-    console.log('🎨 Displaying student profile:', student);
+    console.log('Displaying student profile:', student);
     
     // Show logout button
     document.getElementById('logout-btn').style.display = 'block';
     
-    console.log('👤 Setting student details...');
+    console.log('Setting student details...');
     
     // Fill personal information (using correct field names from database)
     document.getElementById('student-username').textContent = student.username || '-';
@@ -393,20 +391,20 @@
     document.getElementById('student-phone').textContent = student.phone || '-';
     document.getElementById('student-class').textContent = student.class || '-';
     
-    console.log('📚 Setting student enrollments...');
-    console.log('📊 Enrollments data:', student.enrollments);
+    console.log('Setting student enrollments...');
+    console.log('Enrollments data:', student.enrollments);
     
     // Display enrollments (subjects)
     displayStudentSubjects(student.enrollments || []);
-    
-    console.log('✅ Profile display completed for:', student.username);
+
+    console.log('Profile display completed for:', student.username);
   }
   
   // Display student subjects/enrollments
   function displayStudentSubjects(enrollments) {
     const subjectsContainer = document.getElementById('student-subjects');
     
-    console.log('📋 Displaying subjects:', enrollments);
+    console.log('Displaying subjects:', enrollments);
     
     if (enrollments.length === 0) {
       subjectsContainer.innerHTML = '<p style="text-align: center; color: #666;">Δεν είστε εγγεγραμμένοι σε κανένα μάθημα ακόμα.</p>';
@@ -448,7 +446,7 @@
   function showError(message) {
     document.getElementById('login-prompt').innerHTML = `
       <div style="text-align: center; padding: 40px; background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; border-radius: 10px;">
-        <h3>⚠️ Σφάλμα</h3>
+        <h3>Σφάλμα</h3>
         <p>${message}</p>
         <button onclick="window.location.href='/index2.html'" style="padding: 10px 20px; background: #2C5F4F; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">
           Μετάβαση στη Σύνδεση
