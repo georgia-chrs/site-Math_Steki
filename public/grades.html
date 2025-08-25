@@ -121,7 +121,15 @@
   
   <main>
     <div class="student-container">
-      <h1>Βαθμολογίες Μαθητή</h1>
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 18px; justify-content: flex-start; margin-top: 20px;">
+          <a href="student-tablet.html" title="Πίσω στην Καρτέλα Μαθητή" style="display: flex; align-items: center; text-decoration: none; color: #333; font-weight: 500; font-size: 1.1em;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;">
+              <path d="M15 6L9 12L15 18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Καρτέλα Μαθητή
+          </a>
+        </div>
+      <h1 style="justify-self: center;">Βαθμολογίες Μαθητή</h1>
       
       <div id="studentInfo" style="background: #fffdd5; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: none;">
         
@@ -133,27 +141,29 @@
           Φόρτωση βαθμολογίας...
         </div>
         
-        <div id="gradesContent" style="display: none;">
-          <div class="grades-filters" style="background-color: #fffdd5; margin-bottom: 20px; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <div id="gradesContent" style="display: none; margin-top: -40px;">
+         
+          
+          <div id="gradesStats" style="margin-bottom: 20px;">
+            <!-- Grade statistics will be displayed here -->
+          </div>
+
+                   <div class="grades-filters" style="background-color: #fffdd5; margin-bottom: 20px; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
             <div style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap;">
               <div class="filter-group" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
                 <label for="subjectFilter" style="font-weight: 600; color: #333; font-size: 14px;">Φίλτρο ανά μάθημα:</label>
-                <select id="subjectFilter" style="padding: 12px 16px; border-radius: 8px; border: 2px solid #e1e5e9; background: white; font-size: 14px; min-width: 200px; cursor: pointer; transition: all 0.3s ease; outline: none;" onmouseover="this.style.borderColor='#A0522D'" onmouseout="this.style.borderColor='#e1e5e9'" onfocus="this.style.borderColor='#A0522D'; this.style.boxShadow='0 0 0 3px rgba(160,82,45,0.1)'" onblur="this.style.borderColor='#e1e5e9'; this.style.boxShadow='none'">
+                <select id="subjectFilter" style="padding: 12px 16px; border-radius: 20px; border: 2px solid #e1e5e9; background: white; font-size: 14px; min-width: 200px; cursor: pointer; transition: all 0.3s ease; outline: none;" onmouseover="this.style.borderColor='#A0522D'" onmouseout="this.style.borderColor='#e1e5e9'" onfocus="this.style.borderColor='#A0522D'; this.style.boxShadow='0 0 0 3px rgba(160,82,45,0.1)'" onblur="this.style.borderColor='#e1e5e9'; this.style.boxShadow='none'">
                   <option value="">Όλα τα μαθήματα</option>
                 </select>
               </div>
               
-              <div class="filter-group" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+              <div class="filter-group" style="display: flex; flex-direction: column; align-items: center; gap: 8px; visibility: hidden;">
                 <label for="examTypeFilter" style="font-weight: 600; color: #333; font-size: 14px;">Φίλτρο ανά τύπο:</label>
-                <select id="examTypeFilter" style="padding: 12px 16px; border-radius: 8px; border: 2px solid #e1e5e9; background: white; font-size: 14px; min-width: 200px; cursor: pointer; transition: all 0.3s ease; outline: none;" onmouseover="this.style.borderColor='#A0522D'" onmouseout="this.style.borderColor='#e1e5e9'" onfocus="this.style.borderColor='#A0522D'; this.style.boxShadow='0 0 0 3px rgba(160,82,45,0.1)'" onblur="this.style.borderColor='#e1e5e9'; this.style.boxShadow='none'">
+                <select id="examTypeFilter" style="padding: 12px 16px; border-radius: 20px; border: 2px solid #e1e5e9; background: white; font-size: 14px; min-width: 200px; cursor: pointer; transition: all 0.3s ease; outline: none;" onmouseover="this.style.borderColor='#A0522D'" onmouseout="this.style.borderColor='#e1e5e9'" onfocus="this.style.borderColor='#A0522D'; this.style.boxShadow='0 0 0 3px rgba(160,82,45,0.1)'" onblur="this.style.borderColor='#e1e5e9'; this.style.boxShadow='none'">
                   <option value="">Όλοι οι τύποι</option>
                 </select>
               </div>
             </div>
-          </div>
-          
-          <div id="gradesStats" style="margin-bottom: 20px;">
-            <!-- Grade statistics will be displayed here -->
           </div>
           
           <div id="gradesList">

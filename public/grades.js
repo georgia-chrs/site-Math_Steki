@@ -175,12 +175,9 @@ function displayGradeStatistics(grades) {
   });
   
   gradesStats.innerHTML = `
-    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <div style="color: white; background:rgb(255, 135, 75); border-radius: 20px; box-shadow: 0 2px 10px  rgba(0, 0, 0, 0.667); margin-bottom: 20px; border: 2px solid rgb(232, 93, 6); width:80%; justify-content: center; margin-left: auto; margin-right: auto; padding: 20px;">
       <h3 style="margin-top: 0; text-align: center;">Στατιστικά Βαθμολογίας</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 15px;">
-        <div><strong>Συνολικός Μ.Ο.:</strong> </div>
-        <div><strong>Υψηλότερος:</strong> </div>
-        <div><strong>Χαμηλότερος:</strong> </div>
         <div><strong>Συνολικά:</strong> ${grades.length} βαθμοί</div>
       </div>
       ${Object.keys(subjectStats).length > 0 ? `
@@ -216,7 +213,7 @@ function updateGradesDisplay(grades) {
     const subjectGrades = gradesBySubject[subject].sort((a, b) => new Date(b.exam_date) - new Date(a.exam_date));
     
     gradesHtml += `
-      <div class="subject-grades" style="margin-bottom: 30px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+      <div class="subject-grades" style="margin-bottom: 30px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); width:80%; justify-content: center; margin-left: auto; margin-right: auto;">
         <div class="subject-header" style="background:rgb(255, 135, 75); color: white; padding: 15px; font-weight: bold;">
           ${subject}
         </div>

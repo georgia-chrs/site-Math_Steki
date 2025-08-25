@@ -114,6 +114,9 @@ function populateSubjectFilter(progressNotes) {
 
 function updateProgressDisplay(progressNotes) {
   const progressList = document.getElementById('progressList');
+  // Enable scroll if there are many notes
+  progressList.style.maxHeight = "500px";
+  progressList.style.overflowY = "auto";
   
   if (progressNotes.length === 0) {
     progressList.innerHTML = '<div style="text-align: center; padding: 20px; color: #666;">Δεν βρέθηκαν σημειώσεις για το επιλεγμένο φίλτρο.</div>';
@@ -127,9 +130,9 @@ function updateProgressDisplay(progressNotes) {
       const performanceText = getPerformanceText(note.performance_level);
       
       return `
-        <div class="progress-note" style="margin-bottom: 20px; padding: 20px; border-radius: 8px; background: white; border-left: 4px solid ${getPerformanceColor(note.performance_level)}; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <div class="progress-note" style="width: 80%;justify-content: center; margin-left: auto; margin-right: auto; margin-bottom: 20px; padding: 20px; border-radius: 20px; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
           <div class="progress-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-            <div class="progress-subject" style="font-weight: bold; color: #333;">
+            <div class="progress-subject" style="font-weight: bold; color:${getPerformanceColor(note.performance_level)};">
               ${note.subject_name || 'Γενική σημείωση'}
             </div>
             <div class="progress-date" style="color: #666; font-size: 14px;">

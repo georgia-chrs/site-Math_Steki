@@ -66,7 +66,7 @@ function convertAnnouncementsToEvents(announcements) {
     
     return {
       id: `announcement_${announcement.notification_id}`,
-      title: `📢 ${announcement.title}`,
+      title: ` ${announcement.title}`,
       eventType: 'announcement',
       eventDescription: announcement.content,
       eventDate: eventDate,
@@ -228,7 +228,7 @@ function updateCalendarDisplay(calendarEntries) {
   // Display upcoming events
   const upcomingEventsList = document.getElementById('upcomingEventsList');
   if (upcomingEvents.length === 0) {
-    upcomingEventsList.innerHTML = '<div style="color: #666; font-style: italic;">Δεν υπάρχουν προσεχή γεγονότα</div>';
+    upcomingEventsList.innerHTML = '<div style="color:rgba(251, 251, 251, 0.86); font-style: italic;">Δεν υπάρχουν προσεχή γεγονότα</div>';
   } else {
     upcomingEventsList.innerHTML = upcomingEvents.map(entry => createEventCard(entry, true)).join('');
   }
@@ -236,7 +236,7 @@ function updateCalendarDisplay(calendarEntries) {
   // Display past events
   const pastEventsList = document.getElementById('pastEventsList');
   if (pastEvents.length === 0) {
-    pastEventsList.innerHTML = '<div style="color: #666; font-style: italic;">Δεν υπάρχουν παλαιότερα γεγονότα</div>';
+    pastEventsList.innerHTML = '<div style="color:rgba(251, 251, 251, 0.86); font-style: italic;">Δεν υπάρχουν παλαιότερα γεγονότα</div>';
   } else {
     pastEventsList.innerHTML = pastEvents.map(entry => createEventCard(entry, false)).join('');
   }
@@ -257,9 +257,8 @@ function createEventCard(entry, isUpcoming) {
     <div class="event-card" style="
       margin-bottom: 15px; 
       padding: 15px; 
-      border-radius: 8px; 
+      border-radius: 20px; 
       background: white; 
-      border-left: 4px solid ${eventTypeColor}; 
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       ${isToday ? 'border: 2px solid rgba(252, 151, 62, 0.76);' : ''}
       ${isAnnouncement ? 'background-color: #f8f9fa;' : ''}
@@ -286,7 +285,7 @@ function createEventCard(entry, isUpcoming) {
             font-size: 12px;
             font-weight: bold;
           ">
-            ${isAnnouncement ? '📢 Ανακοίνωση' : getDisplayEventType(entry.eventType || entry.event_type)}
+            ${isAnnouncement ? 'Ανακοίνωση' : getDisplayEventType(entry.eventType || entry.event_type)}
           </span>
           ${subjectName ? `<span style="margin-left: 10px; color: #666;">Μάθημα: ${subjectName}</span>` : ''}
           ${entry.student_class ? `<span style="margin-left: 10px; color: #666;">Τάξη: ${entry.student_class}</span>` : ''}
@@ -314,7 +313,7 @@ function createEventCard(entry, isUpcoming) {
         ${entry.external_link ? `
           <div class="event-link" style="margin-top: 10px;">
             <a href="${entry.external_link}" target="_blank" style="color: #007bff; text-decoration: none;">
-              🔗 Περισσότερες πληροφορίες
+              Περισσότερες πληροφορίες
             </a>
           </div>
         ` : ''}
