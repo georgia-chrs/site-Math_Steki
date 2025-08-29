@@ -33,7 +33,7 @@ import {
   // Database connection
   pool
 } from './db.js';
-
+const PORT = process.env.PORT || 8080;
 const app = express();
 app.use(express.json({ limit: '100mb' })); // Αύξηση ορίου για PDF uploads
 app.use(express.urlencoded({ limit: '100mb', extended: true }));
@@ -1157,6 +1157,40 @@ app.post('/api/events', async (req, res) => {
   }
 });
 
+// Μαζική προσθήκη γεγονότων σε όλους τους μαθητές μιας τάξης
+app.post('/api/events/bulk', async (req, res) => {
+  try {
+    const { class: className, eventType, subjectId, date, time, title, description } = req.body;
+    // Βρες όλους τους μαθητές της τάξης
+    const [students] = await pool.execute(
+      'SELECT id FROM Students WHERE class = ?',
+      [className]
+    );
+if (!students.length) {
+  // Επιστρέφει επιτυχία χωρίς insert
+  return res.json({ success: true, message: 'Δεν βρέθηκαν μαθητές για την τάξη, αλλά η ενέργεια ολοκληρώθηκε.' });
+}
+    // Ασφαλής μετατροπή undefined ή κενό σε null
+    const safeSubjectId = typeof subjectId !== 'undefined' && subjectId !== '' ? subjectId : null;
+    const safeEventDate = typeof date !== 'undefined' && date !== '' ? date : null;
+    const safeEventType = typeof eventType !== 'undefined' && eventType !== '' ? eventType : 'other';
+    const safeEventTitle = typeof title !== 'undefined' && title !== '' ? title : null;
+    const safeEventDescription = typeof description !== 'undefined' && description !== '' ? description : null;
+    const safeEventTime = typeof time !== 'undefined' && time !== '' ? time : null;
+    // Για κάθε μαθητή κάνε insert το γεγονός
+    for (const student of students) {
+      await pool.execute(
+        'INSERT INTO calendar_entries (student_id, subject_id, entry_date, event_type, title, description, created_at) VALUES (?, ?, ?, ?, ?, ?, NOW())',
+        [student.id, safeSubjectId, safeEventDate, safeEventType, safeEventTitle, safeEventDescription,]
+      );
+    }
+    res.json({ success: true, message: 'Τα γεγονότα προστέθηκαν σε όλους τους μαθητές της τάξης!' });
+  } catch (error) {
+    console.error('Error in bulk event:', error);
+    res.status(500).json({ error: 'Σφάλμα κατά την μαζική προσθήκη γεγονότων' });
+  }
+});
+
 // ========== SUBJECTS API ==========
 
 // Get all subjects
@@ -1765,9 +1799,7 @@ app.post('/api/upload-schools-csv', async (req, res) => {
       
       // Θεωρητικές
       if (name.includes('νομικ') || name.includes('φιλοσοφ') || 
-          name.includes('ιστορί') || name.includes('αρχαιολογ') || 
-          name.includes('γλώσσ') || name.includes('λογοτεχνί') ||
-          name.includes('ψυχολογ') || name.includes('κοινωνιολογ')) {
+          name.includes('ιστορί') || name.includes('ψυχολογ') || name.includes('κοινωνιολογ')) {
         return 'theoretiko';
       }
       
@@ -2165,7 +2197,7 @@ app.delete('/api/calculator-templates/:fileName', async (req, res) => {
     
   } catch (error) {
     console.error('Error deleting calculator template:', error);
-    res.status(500).json({ error: 'Σφάλμα διαγραφής template: ' + error.message });
+    res.status(500).json({ error: 'Σφάλμα φόρτωσης στατιστικών templates: ' + error.message });
   }
 });
 
@@ -2274,9 +2306,8 @@ app.post('/api/create-sample-templates', async (req, res) => {
   }
 });
 
-// ========== END CALCULATOR TEMPLATES API ==========
 
-const PORT = process.env.PORT || 8080;
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
