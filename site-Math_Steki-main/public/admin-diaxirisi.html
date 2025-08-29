@@ -219,7 +219,7 @@
     }
     
     .modal {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
@@ -229,107 +229,209 @@
       z-index: 1000;
       overflow: auto;
     }
-    
     .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       background: #fff;
-      margin: 40px auto;
-      padding: 30px 24px;
       border-radius: 12px;
-      max-width: 600px;
+      padding: 30px 24px;
       box-shadow: 0 2px 20px #0002;
       overflow-y: auto;
+      max-width: 600px;
       max-height: 90vh;
+      margin: 0;
     }
-    
+    #subjectsModal .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      max-width: 1000px;
+      min-width: 600px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px 32px;
+      box-shadow: 0 2px 20px #0002;
+      overflow-y: auto;
+      max-height: 95vh;
+    }
+
     .close {
       color: #aaa;
       float: right;
       font-size: 28px;
       font-weight: bold;
       cursor: pointer;
+      transition: color 0.2s;
     }
-    
+
     .close:hover {
       color: black;
+      cursor: pointer;
     }
-    
-    .form-group {
-      margin-bottom: 20px;
-    }
-    
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-      color: #333;
-    }
-    
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 10px;
-      border: 2px solid #ddd;
-      border-radius: 5px;
-      font-size: 14px;
-      box-sizing: border-box;
-    }
-    
-    .form-row {
-      display: flex;
-      gap: 15px;
-    }
-    
-    .form-row .form-group {
-      flex: 1;
-    }
-    
-    .alert {
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      display: none;
-    }
-    
-    .alert-success {
-      background: #d4edda;
-      color: #155724;
-      border: 1px solid #c3e6cb;
-    }
-    
-    .alert-error {
-      background: #f8d7da;
-      color: #721c24;
-      border: 1px solid #f5c6cb;
-    }
-    
-    .student-details {
-      background: #f8f9fa;
-      padding: 25px;
-      border-radius: 5px;
-      margin-bottom: 15px;
-    }
-    
-    #subjectsModal {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.4);
-  display: none;
-  z-index: 1000;
-  overflow: auto;
-}
-#subjectsModal .modal-content {
-  margin: 40px auto;
-  max-width: 800px;
-  background: #fff;
+
+
+
+
+    /* Ομορφότερα input/select για το teacherForm */
+#teacherForm .form-group {
+  margin-bottom: 0;
+  flex: 1;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   border-radius: 12px;
-  padding: 30px 24px;
-  box-shadow: 0 2px 20px #0002;
-  overflow-y: auto;
-  max-height: 90vh;
+  box-shadow: 0 2px 8px rgba(232, 93, 6, 0.08);
+  padding: 18px 16px;
+  margin-right: 10px;
+}
+#teacherForm label {
+  font-weight: bold;
+  color: #ac4e26;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+#teacherForm input[type="text"],
+#teacherForm select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 2px solid #e39c50;
+  font-size: 15px;
+  background: #fff8f2;
+  color: #572e0e;
+  margin-bottom: 0;
+  box-shadow: 0 1px 4px rgba(232, 93, 6, 0.07);
+  transition: border-color 0.2s;
+}
+#teacherForm input[type="text"]:focus,
+#teacherForm select:focus {
+  border-color: #ac4e26;
+  outline: none;
+}
+#teacherForm button[type="submit"] {
+  margin-bottom: 0;
+  height: 48px;
+  font-size: 16px;
+  border-radius: 12px;
+  padding: 0 32px;
+  box-shadow: 0 2px 8px rgba(232, 93, 6, 0.12);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Ομορφότερα input/select για το studentForm */
+#studentForm .form-group {
+  margin-bottom: 0;
+  flex: 1;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(232, 93, 6, 0.08);
+  padding: 18px 16px;
+  margin-right: 10px;
+}
+#studentForm label {
+  font-weight: bold;
+  color: #ac4e26;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+#studentForm input[type="text"],
+#studentForm select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 2px solid #e39c50;
+  font-size: 15px;
+  background: #fff8f2;
+  color: #572e0e;
+  margin-bottom: 0;
+  box-shadow: 0 1px 4px rgba(232, 93, 6, 0.07);
+  transition: border-color 0.2s;
+}
+#studentForm input[type="text"]:focus,
+#studentForm select:focus {
+  border-color: #ac4e26;
+  outline: none;
+}
+#studentForm button[type="submit"] {
+  margin-bottom: 0;
+  height: 48px;
+  font-size: 16px;
+  border-radius: 12px;
+  padding: 0 32px;
+  box-shadow: 0 2px 8px rgba(232, 93, 6, 0.12);
+}
+
+
+
+
+
+
+
+
+
+    /* Ομορφότερα input/select για το subjectForm */
+#subjectForm .form-group {
+  margin-bottom: 0;
+  flex: 1;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(232, 93, 6, 0.08);
+  padding: 18px 16px;
+  margin-right: 10px;
+}
+#subjectForm label {
+  font-weight: bold;
+  color: #ac4e26;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+#subjectForm input[type="text"],
+#subjectForm select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 2px solid #e39c50;
+  font-size: 15px;
+  background: #fff8f2;
+  color: #572e0e;
+  margin-bottom: 0;
+  box-shadow: 0 1px 4px rgba(232, 93, 6, 0.07);
+  transition: border-color 0.2s;
+}
+#subjectForm input[type="text"]:focus,
+#subjectForm select:focus {
+  border-color: #ac4e26;
+  outline: none;
+}
+#subjectForm button[type="submit"] {
+  margin-bottom: 0;
+  height: 48px;
+  font-size: 16px;
+  border-radius: 12px;
+  padding: 0 32px;
+  box-shadow: 0 2px 8px rgba(232, 93, 6, 0.12);
 }
 
     @media (max-width: 768px) {
@@ -564,8 +666,8 @@
     </div>
 
     <!-- Add/Edit Student Modal -->
-    <div id="studentModal" class="modal">
-      <div class="modal-content">
+    <div id="studentModal" class="modal" >
+      <div class="modal-content" style="width: 1000px;">
         <span class="close" onclick="closeModal()">&times;</span>
         <h2 id="modalTitle">Προσθήκη Νέου Μαθητή</h2>
         
@@ -686,7 +788,7 @@
 
     <!-- Subjects/Classes Management Modal -->
     <div id="subjectsModal" class="modal">
-      <div class="modal-content" style="max-width: 800px;">
+      <div class="modal-content" style="max-width: 1000px; min-width: 1000px;">
         <span class="close" onclick="closeSubjectsModal()">&times;</span>
         <h2>Διαχείριση Τμημάτων και Μαθημάτων</h2>
         
@@ -719,7 +821,7 @@
                 <option value="">Επιλέξτε καθηγητή</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-success" style="margin-bottom: 0;">Προσθήκη</button>
+            <button type="submit" class="btn btn-success" style="margin-bottom: 0; justify-self: center">Προσθήκη</button>
           </form>
         </div>
 
@@ -838,7 +940,7 @@
 
     <!-- Add/Edit Teacher Modal -->
     <div id="teacherModal" class="modal">
-      <div class="modal-content">
+      <div class="modal-content" style="width: 1000px;">
         <span class="close" onclick="closeTeacherModal()">&times;</span>
         <h2 id="teacherModalTitle">Προσθήκη Νέου Καθηγητή</h2>
         
@@ -1487,15 +1589,14 @@
         const enrolledCount = enrollments.filter(e => e.class_id === subject.id).length;
         const teacher = teachers.find(t => t.id === subject.teacherId);
         const teacherName = teacher ? teacher.name : 'Δεν έχει ανατεθεί';
-        
         const row = document.createElement('tr');
         row.innerHTML = `
-          <td>${subject.id}</td>
+        <td>${subject.id}</td>
           <td>${subject.name}</td>
           <td>${subject.code}</td>
           <td>${subject.class}</td>
           <td>${teacherName}</td>
-          <td>${teacher ? teacher.subject : 'Δεν έχει ανατεθεί'}</td>
+          <td>${teacher.subject}</td>
           <td>${enrolledCount}</td>
           <td>
             <div class="action-buttons">
@@ -1535,6 +1636,11 @@
       loadSubjectTeachersDropdown();
       initializeSubjectsDisplay();
       document.getElementById('subjectsModal').style.display = 'block';
+      // Scroll στο κουμπί "Νέο Τμήμα" όταν ανοίγει η modal
+      const btn = document.querySelector('button.btn-success[onclick="openAddSubjectModal()"]');
+      if (btn) {
+        btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     }
 
     // Open subjects modal (general)
